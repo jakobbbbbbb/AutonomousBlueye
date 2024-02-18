@@ -1,0 +1,3 @@
+bool depth_hold_state
+bool heading_hold_state
+bool waypoint_state
