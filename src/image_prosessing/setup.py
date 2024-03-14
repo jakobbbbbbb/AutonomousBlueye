@@ -20,7 +20,12 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'blueye_image_simple = image_prosessing.blueye_image_simple:main',
+            'canny_with_box = image_prosessing.canny_with_box:main',
+            'canny_with_box_original = image_prosessing.canny_with_box_original:main',
+            'Image_test = image_prosessing.Image_test:main',
+            'blueye_image_yolo = image_prosessing.blueye_image_yolo:main',
+            'yolo_chain_value = image_prosessing.yolo_chain_value:main',
+            'threshold_with_box = image_prosessing.threshold_with_box:main',
         ],
     },
 )
