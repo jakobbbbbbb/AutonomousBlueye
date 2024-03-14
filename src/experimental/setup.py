@@ -20,7 +20,10 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'Image_test = experimental.Image_test:main',
+            #'Image_test = experimental.Image_test:main',
+            #'blueye_image_yolo = experimental.blueye_image_yolo:main',
+            'Video_to_topic = experimental.Video_to_topic:main',
+            'control_test = experimental.control_test:main',
         ],
     },
 )
