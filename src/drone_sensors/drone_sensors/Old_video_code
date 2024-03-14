@@ -15,11 +15,6 @@ class BlueyeCommandNode(Node):
     def read_camera(self):
         rtsp_url = "rtsp://192.168.1.101:8554/test"
         cap = cv2.VideoCapture(rtsp_url)
-        # gst_pipeline = 'rtspsrc latency=0 location=rtsp://192.168.1.101:8554/test ! decodebin ! videoconvert ! appsink'
-        # cap = cv2.VideoCapture(gst_pipeline, cv2.CAP_GSTREAMER)
-
-        # rtsp_url = "rtspsrc latency=0 rtsp://192.168.1.101:8554/test"
-        # cap = cv2.VideoCapture(rtsp_url, cv2.CAP_GSTREAMER)
 
         if not cap.isOpened():
             self.get_logger().error("Unable to open camera stream.")
