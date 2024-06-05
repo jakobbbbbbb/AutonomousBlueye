@@ -50,6 +50,11 @@ def generate_launch_description():
         name = 'Threshold'
     )
 
+    Chain_pos_thresh_mean = Node(
+        package='image_prosessing',
+        executable='threshold_median_mean',
+        name = 'Threshold_mean'
+    )
     Chain_pos_box_orig = Node(
         package='image_prosessing',
         executable='canny_with_box_original',
@@ -65,18 +70,35 @@ def generate_launch_description():
     yolo_image = Node(
         package='image_prosessing',
         executable='blueye_image_yolo',
-        name = 'test_yolo'
+        name = 'Yolo_bbox_drawer'
     )
     yolo_chain_canny = Node(
         package='image_prosessing',
         executable='yolo_chain_value',
         name = 'yolo_chain'
     )
+    Canny_inside_yolo = Node(
+        package='image_prosessing',
+        executable='Canny_inside_yolo',
+        name = 'Canny_inside_yolo'
+    )
+
+    Thresh_inside_yolo = Node(
+        package='image_prosessing',
+        executable='Thresh_inside_yolo',
+        name = 'Thresh_inside_yolo'
+    )
+    Median_inside_yolo = Node(
+        package='image_prosessing',
+        executable='Median_inside_yolo',
+        name = 'Median_inside_yolo'
+    )
 
     Video_topic = Node(
         package='experimental',
+        # executable='Video_to_topic_no_trackbar',
         executable='Video_to_topic',
-        name = 'test_yolo'
+        name = 'video_topic'
     )
 
     Desired_velocity = Node(
@@ -138,20 +160,23 @@ def generate_launch_description():
         # Laptop_camera,
 
         # Image_test,
-        # Chain_pos_box_orig,
-        Chain_pos_canny,
-        Chain_pos_thresh,
+        # Chain_pos_canny,
+        # Chain_pos_thresh,
+        # Chain_pos_thresh_mean,
 
+        # Desired_velocity_test,
         # Desired_velocity,
-        Desired_velocity_test,
         # Desired_velocity_spiral,
         # Desired_velocity_compass,
-        # Desired_velocity_switch,
-        # control,
-        # control_test,
 
-        # yolov5_ros,-.
+        # control,
+
+        # yolov5_ros,
         # yolo_image,
         # yolo_chain_canny,
+
+        # Canny_inside_yolo,
+        # Thresh_inside_yolo,
+        # Median_inside_yolo,
     ])
 
