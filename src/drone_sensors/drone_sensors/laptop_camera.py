@@ -8,6 +8,7 @@ class CameraPublisher(Node):
     def __init__(self):
         super().__init__('laptop_camera_node')
         self.publisher_ = self.create_publisher(Image, '/camera', 10)
+        # self.publisher_ = self.create_publisher(Image, '/image_raw', 10)
         self.bridge = CvBridge()
         
         # Attempt to open the camera; adjust the device path or index as necessary

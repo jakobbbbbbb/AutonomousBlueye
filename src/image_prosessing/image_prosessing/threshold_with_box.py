@@ -19,7 +19,7 @@ class BlueyeImage(Node):
         self.bridge = CvBridge()
 
         cv2.namedWindow('Threshold', cv2.WINDOW_NORMAL)
-        cv2.resizeWindow('Threshold', 800, 600)
+        cv2.resizeWindow('Threshold', 800, 500)
         
         cv2.createTrackbar("Min Threshold", 'Threshold', 151, 255, nothing)
         cv2.createTrackbar("Box Size", 'Threshold', 800, 1000, nothing)
@@ -81,9 +81,6 @@ class BlueyeImage(Node):
             cv2.putText(opened_bgr, width_text, (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
         cv2.imshow('Threshold', opened_bgr)
-
-        # combined_frame = np.hstack((Threshold, edges_bgr))
-        # cv2.imshow('Threshold', combined_frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             rclpy.shutdown()
 

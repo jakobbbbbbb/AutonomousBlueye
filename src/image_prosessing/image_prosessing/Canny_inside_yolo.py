@@ -17,9 +17,11 @@ class BlueyeImage(Node):
         self.bounding_boxes = None
         self.bbox_subscriber = self.create_subscription(BoundingBoxes, 'yolov5/bounding_boxes', self.bbox_callback, 10)
         self.YoloChainPose_publisher = self.create_publisher(YoloCannyChainPose, 'YoloCannyChainPose', 10)
-        cv2.namedWindow('Yolov5 Image', cv2.WINDOW_NORMAL)
-        cv2.createTrackbar("Min Threshold", "Yolov5 Image", 42, 255, lambda x: None)
-        cv2.createTrackbar("Max Threshold", "Yolov5 Image", 78, 255, lambda x: None)
+        cv2.namedWindow('Yolov5 Canny', cv2.WINDOW_NORMAL)
+        cv2.resizeWindow('Yolov5 Canny', 800, 500)
+
+        cv2.createTrackbar("Min Threshold", "Yolov5 Canny", 42, 255, lambda x: None)
+        cv2.createTrackbar("Max Threshold", "Yolov5 Canny", 78, 255, lambda x: None)
 
     def bbox_callback(self, msg):
         self.bounding_boxes = msg.bounding_boxes
@@ -34,12 +36,10 @@ class BlueyeImage(Node):
                     # Extract ROI and apply Gaussian Blur
                     roi = image[box.ymin:box.ymax, box.xmin:box.xmax]
                     blurred_roi = cv2.GaussianBlur(roi, (5, 5), 0)
-                    min_val = cv2.getTrackbarPos("Min Threshold", "Yolov5 Image")
-                    max_val = cv2.getTrackbarPos("Max Threshold", "Yolov5 Image")
+                    min_val = cv2.getTrackbarPos("Min Threshold", "Yolov5 Canny")
+                    max_val = cv2.getTrackbarPos("Max Threshold", "Yolov5 Canny")
                     canny_roi = cv2.Canny(blurred_roi, min_val, max_val)
-                    
-                    row_white_pixel_counts = np.sum(canny_roi == 255, axis=1)
-                    average_width = np.mean(row_white_pixel_counts) if row_white_pixel_counts.size > 0 else 0
+
                     # Replace ROI with Canny results first
                     image[box.ymin:box.ymax, box.xmin:box.xmax] = cv2.cvtColor(canny_roi, cv2.COLOR_GRAY2BGR)
 
@@ -75,12 +75,10 @@ class BlueyeImage(Node):
                         self.YoloChainPose_publisher.publish(pose_msg)
 
                         cv2.circle(image, (mid_x, mid_y), 5, (255, 0, 0), -1)  # Draw the midpoint circle
-                        cv2.putText(image, f'Midpoint: ({mid_x}, {mid_y})', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-                        cv2.putText(image, f'Angle: {angle_deg:.2f} degrees', (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-                        cv2.putText(image, f'Width: {average_width:.2f} pixels', (10, 110), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
+                        cv2.putText(image, f'Midpoint: ({mid_x}, {mid_y})', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+                        cv2.putText(image, f'Angle: {angle_deg:.2f} degrees', (10, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-
-        cv2.imshow("Yolov5 Image", image)
+        cv2.imshow("Yolov5 Canny", image)
         cv2.waitKey(1)
 
 def main():

@@ -58,13 +58,13 @@ class ChainPosController(Node):
     def update_gains_from_trackbars(self):
         #between 0 and 2
         self.surge_gain = cv2.getTrackbarPos("Surge Gain", 'Gain') / 10.0
-        # self.sway_gain = cv2.getTrackbarPos("Sway Gain", 'Gain') / 10.0
+        self.sway_gain = cv2.getTrackbarPos("Sway Gain", 'Gain') / 10.0
         # self.heave_gain = cv2.getTrackbarPos("Heave Gain", 'Gain') / 10.0
         self.yaw_gain = cv2.getTrackbarPos("Yaw Gain", 'Gain') / 10.0
 
         #Between -1 and 1
         # self.surge_gain = (cv2.getTrackbarPos("Surge Gain", 'Gain') - 10) / 10.0
-        self.sway_gain = (cv2.getTrackbarPos("Sway Gain", 'Gain') - 10) / 10.0
+        # self.sway_gain = (cv2.getTrackbarPos("Sway Gain", 'Gain') - 10) / 10.0
         self.heave_gain = (cv2.getTrackbarPos("Heave Gain", 'Gain') - 10) / 10.0
         # self.yaw_gain = (cv2.getTrackbarPos("Yaw Gain", 'Gain') - 10) / 10.0
 
@@ -75,7 +75,7 @@ class ChainPosController(Node):
         cv2.namedWindow('Gain', cv2.WINDOW_NORMAL)
         cv2.resizeWindow('Gain', 600, 600)
 
-        cv2.createTrackbar("Surge Gain", 'Gain', 10, 20, nothing)
+        cv2.createTrackbar("Surge Gain", 'Gain', 5, 20, nothing)
         cv2.createTrackbar("Sway Gain", 'Gain', 10, 20, nothing)
         cv2.createTrackbar("Heave Gain", 'Gain', 10, 20, nothing)
         cv2.createTrackbar("Yaw Gain", 'Gain', 10, 20, nothing)
@@ -109,6 +109,7 @@ class ChainPosController(Node):
         # Directly use the gain attributes
         normalized_mid_x = (msg.data[0] / 960)
         width = msg.data[3]
+        width_threshhold = 70.0
         
         # Set default values
         surge = 0.0
@@ -120,7 +121,7 @@ class ChainPosController(Node):
         if width > 20:  # Assuming 20 is the threshold below which the object is considered out of view
             self.last_normalized_mid_x = normalized_mid_x
             sway = normalized_mid_x * self.sway_gain
-            surge = (1 - width / 100.0) * self.surge_gain if width <= 100 else -((width - 100) / 200.0) * self.surge_gain
+            surge = (1 - width / width_threshhold) * self.surge_gain if width <= width_threshhold else -((width - width_threshhold) / 200.0) * self.surge_gain
             yaw = self.yaw_gain * normalized_mid_x
         else:
             # If the object is out of view, set yaw based on the last known side

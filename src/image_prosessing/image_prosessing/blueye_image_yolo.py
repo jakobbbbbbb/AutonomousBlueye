@@ -42,11 +42,13 @@ class BlueyeImage(Node):
             # Calculate the bounding box's midpoint adjusted to the image center
             bbox_mid_x = (highest_confidence_box.xmin + highest_confidence_box.xmax) / 2
             bbox_mid_y = (highest_confidence_box.ymin + highest_confidence_box.ymax) / 2
+            bbox_width = (highest_confidence_box.xmax - highest_confidence_box.xmin) / 8
+
             adjusted_bbox_mid_x = bbox_mid_x - image_center_x
             adjusted_bbox_mid_y = image_center_y - bbox_mid_y  # Invert Y axis to match the specified coordinate system
 
             pose_msg = YoloChainPose()
-            pose_msg.data = [float(adjusted_bbox_mid_x), float(adjusted_bbox_mid_y)]
+            pose_msg.data = [float(adjusted_bbox_mid_x), float(adjusted_bbox_mid_y), float(bbox_width), float(bbox_width)]
             self.YoloChainPose_publisher.publish(pose_msg)
 
         cv2.imshow("Yolov5 Image", image)

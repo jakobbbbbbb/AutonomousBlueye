@@ -26,6 +26,10 @@ setup(
             'blueye_image_yolo = image_prosessing.blueye_image_yolo:main',
             'yolo_chain_value = image_prosessing.yolo_chain_value:main',
             'threshold_with_box = image_prosessing.threshold_with_box:main',
+            'threshold_median_mean = image_prosessing.threshold_median_mean:main',
+            'Canny_inside_yolo = image_prosessing.Canny_inside_yolo:main',
+            'Thresh_inside_yolo = image_prosessing.Thresh_inside_yolo:main',
+            'Median_inside_yolo = image_prosessing.Median_inside_yolo:main',
         ],
     },
 )

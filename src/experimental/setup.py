@@ -24,6 +24,7 @@ setup(
             #'blueye_image_yolo = experimental.blueye_image_yolo:main',
             'Video_to_topic = experimental.Video_to_topic:main',
             'control_test = experimental.control_test:main',
+            'Video_to_topic_no_trackbar = experimental.Video_to_topic_no_trackbar:main',
         ],
     },
 )

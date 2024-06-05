@@ -17,6 +17,8 @@ class ChainPosController(Node):
         self.current_subscription = None  # Initialized as None to handle the zero output state.
         self.current_topic = 'ZERO_OUTPUT'  # No topic is initially selected.
         self.desired_vel = DesiredVelocity()
+        self.last_normalized_mid_x = 0  # Initialize to 0, assuming the object starts centered.
+
         
         self.surge_gain = 1.0
         self.sway_gain = 1.0
@@ -73,7 +75,7 @@ class ChainPosController(Node):
         cv2.namedWindow('Gain', cv2.WINDOW_NORMAL)
         cv2.resizeWindow('Gain', 600, 600)
 
-        cv2.createTrackbar("Surge Gain", 'Gain', 10, 20, nothing)
+        cv2.createTrackbar("Surge Gain", 'Gain', 5, 20, nothing)
         cv2.createTrackbar("Sway Gain", 'Gain', 10, 20, nothing)
         cv2.createTrackbar("Heave Gain", 'Gain', 10, 20, nothing)
         cv2.createTrackbar("Yaw Gain", 'Gain', 10, 20, nothing)
@@ -107,18 +109,29 @@ class ChainPosController(Node):
         # Directly use the gain attributes
         normalized_mid_x = (msg.data[0] / 960)
         width = msg.data[3]
+        width_threshhold = 70.0
 
-        surge = (1 - width / 100.0) * self.surge_gain if width <= 100 else -((width - 100) / 200.0) * self.surge_gain
-        # sway = normalized_mid_x * self.sway_gain
         
-        current_time = time.time()
-        if int(current_time) % 10 < 5:
-            sway = self.sway_gain
-        else:
-            sway = -self.sway_gain
-        
+        # Set default values
+        surge = 0.0
+        sway = 0.0
         heave = self.heave_gain
-        yaw = self.yaw_gain * normalized_mid_x
+        yaw = 0.0
+        
+        # Update last known position if the object is visible
+        if width > 20:  # Assuming 20 is the threshold below which the object is considered out of view
+            self.last_normalized_mid_x = normalized_mid_x
+            surge = (1 - width / width_threshhold) * self.surge_gain if width <= width_threshhold else -((width - width_threshhold) / 200.0) * self.surge_gain
+            yaw = self.yaw_gain * normalized_mid_x
+
+            current_time = time.time()
+            if int(current_time) % 20 < 10:
+                sway = self.sway_gain
+            else:
+                sway = -self.sway_gain
+        else:
+            # If the object is out of view, set yaw based on the last known side
+            yaw = 0.1 if self.last_normalized_mid_x > 0 else -0.1
        
         self.publish_velocity(surge, sway, yaw, heave)
 
@@ -139,3 +152,9 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
+#setting a constant sway that alternats pos/neg on a timer 10 sec
+#Controlling yaw to put line in middle of camera.
+#If line goes ourtside box a constand sway is set depending on side it dissapres on
+#Controlling surge to be within with threshold at 70 
+#Heave is controlled with gain values where negative -> down 

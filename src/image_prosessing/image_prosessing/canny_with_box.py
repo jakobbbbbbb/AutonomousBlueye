@@ -19,9 +19,9 @@ class BlueyeImage(Node):
         self.bridge = CvBridge()
 
         cv2.namedWindow('Canny', cv2.WINDOW_NORMAL)
-        cv2.resizeWindow('Canny', 800, 600)
-        cv2.createTrackbar("Lower Threshold", 'Canny', 50, 255, nothing)
-        cv2.createTrackbar("Upper Threshold", 'Canny', 80, 255, nothing)
+        cv2.resizeWindow('Canny', 800, 500)
+        cv2.createTrackbar("Lower Threshold", 'Canny', 30, 255, nothing)
+        cv2.createTrackbar("Upper Threshold", 'Canny', 70, 255, nothing)
         cv2.createTrackbar("Box Size", 'Canny', 800, 1000, nothing)
 
     def image_callback(self, msg):
