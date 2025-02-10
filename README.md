@@ -10,8 +10,23 @@ Another node takes this info and outputs values in surge, sway, heave, and yaw. 
 ## Project details:
 This project is developed by Christian Lindahl Elseth and Jakob Rude Øvstaas as part of our master thesis at Marine Technology NTNU.
 
-## Connection guide:
+## Setup guide:
 Clone the repository:
 ```sh
 git clone https://github.com/jakobbbbbbb/AutonomousBlueye.git
+```
 
+## Connection guide:
+1. Power on Blueye Pioneer and tether
+2. Source the code:
+```sh
+source /opt/ros/humble/setup.bash
+```
+3. Build the code:
+```sh
+colcon build
+```
+4. Run the code:
+```sh
+ros2 launch real_blueye.launch.py
+```
