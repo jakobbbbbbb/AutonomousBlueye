@@ -7,6 +7,8 @@ The way this ROS2 control system is structured is two nodes listening for IMU da
 
 Another node takes this info and outputs values in surge, sway, heave, and yaw. These values will then be translated into thruster values by the onboard SDK which includes thrust allocation. 
 
+The code is developed for Ubuntu 22.04.5 LTS (Jammy Jellyfish). It is strongly advised to run from a native Linux computer or a dual boot.
+
 ## Project details:
 This project is developed by Christian Lindahl Elseth and Jakob Rude Øvstaas as part of our master thesis at Marine Technology NTNU.
 
@@ -16,15 +18,14 @@ Install all necessary libraries:
 pip install -r requirements.txt
 ```
 
-[Install ROS2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)
+Install [ROS2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)
 
 Clone this repository:
 ```sh
 git clone https://github.com/jakobbbbbbb/AutonomousBlueye.git
 ```
 Clone this repo which converts YOLOv5 to ROS2 messages (Note: there are two separates repos to be cloned)
-https://github.com/Ar-Ray-code/YOLOv5-ROS?tab=readme-ov-file
-
+https://github.com/Ar-Ray-code/YOLOv5-ROS.git
 
 ## Connection guide:
 1. Power on Blueye Pioneer and tether. Connect computer to Blueye's WiFi.
