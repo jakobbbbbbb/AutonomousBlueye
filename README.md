@@ -11,4 +11,7 @@ Another node takes this info and outputs values in surge, sway, heave, and yaw. 
 This project is developed by Christian Lindahl Elseth and Jakob Rude Øvstaas as part of our master thesis at Marine Technology NTNU.
 
 ## Connection guide:
-To be written...
+Clone the repository:
+```sh
+git clone https://github.com/jakobbbbbbb/AutonomousBlueye.git
+
