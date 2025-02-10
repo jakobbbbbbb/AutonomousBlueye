@@ -1,4 +1,4 @@
-# blueye_chain_follower
+# Autonomous mooring line inspection using Blueye SDK
 This is a project which continues on the work conducted by Nikolai Arntzen as part of his master thesis at NTNU.
 
 The code consists of a control system that ensures autonomous following of a mooring line chain using a Blueye Pioneer ROV. This project has an emphasis on only utilizing camera and IMU as sensors to ensure low-cost. The code is tested solely on a Blueye Pioneer, but should in theory work similarily with Blueye X3 as the thrusters dimensions are equal.
