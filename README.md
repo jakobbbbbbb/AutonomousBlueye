@@ -1,13 +1,13 @@
 # Autonomous mooring line inspection using Blueye SDK
 This is a project which continues on the work conducted by [Nikolai Arntzen](https://github.com/Nikolaiarn) as part of his master thesis at NTNU.
 
-The code consists of a control system that ensures autonomous following of a mooring line chain using a Blueye Pioneer ROV. This project has an emphasis on only utilizing camera and IMU as sensors to ensure low-cost. The code is tested solely on a Blueye Pioneer, but should in theory work satisfactory with Blueye X3 as the thrusters dimensions are equal.
+The code consists of a control system that ensures autonomous following of a mooring line chain using a Blueye ROV. This project has an emphasis on only utilizing camera and IMU as sensors to ensure low-cost. The code has been tested on a Blueye Pioneer and Blueye X3. As the thruster configuration and dimensions are equal between the two models; no issues have yet been discovered by using the two different Blueye ROVs.
 
-The way this ROS2 control system is structured is two nodes listening for IMU data and camera data. One node subscribes to the camera data and outputs angle and position to where it thinks the chain is in the camera frame. 
+The way this ROS 2 control system is structured is two nodes listening for IMU data and camera data. One node subscribes to the camera data and outputs angle and position to where it thinks the chain is in the camera frame. 
 
 Another node takes this info and outputs values in surge, sway, heave, and yaw. These values will then be translated into thruster values by the onboard SDK which includes thrust allocation. 
 
-The code is developed for Ubuntu 22.04.5 LTS (Jammy Jellyfish). It is strongly advised to run from a native Linux computer or a dual boot.
+The code is developed for Ubuntu 22.04.5 LTS (Jammy Jellyfish). It is strongly advised to run from a native Linux computer or a dual boot. 
 
 ## Project details:
 This project is developed by Christian Lindahl Elseth and Jakob Rude Øvstaas as part of our master thesis at Marine Technology NTNU.
@@ -24,7 +24,7 @@ Clone this repository:
 ```sh
 git clone https://github.com/jakobbbbbbb/AutonomousBlueye.git
 ```
-Clone this repo which converts YOLOv5 to ROS2 messages (Note: there are two separates repos to be cloned)
+Clone this repository which converts YOLOv5 to ROS2 messages: (Note: there are two separates repos to be cloned)
 https://github.com/Ar-Ray-code/YOLOv5-ROS.git
 
 ## Connection guide:
