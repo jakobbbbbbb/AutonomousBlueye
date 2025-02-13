@@ -9,10 +9,13 @@ Another node takes this info and outputs values in surge, sway, heave, and yaw. 
 
 The code is developed for Ubuntu 22.04.5 LTS (Jammy Jellyfish). It is strongly advised to run from a native Linux computer or a dual boot. 
 
-## Project details:
+## Project details
 This project is developed by Christian Lindahl Elseth and Jakob Rude Øvstaas as part of our master thesis at Marine Technology NTNU.
 
-## Setup guide:
+## Current Work
+This spring the focus is to improve the current algorithm and ensure the AUV is able to conduct its mooring line inspection both ways. By "both ways" we mean that the AUV completes a full inspection from sea surface to seabottom and then back to surface.
+
+## Setup guide
 Install [ROS2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)
 
 Clone this repository:
