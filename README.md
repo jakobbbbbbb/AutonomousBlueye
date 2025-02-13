@@ -36,7 +36,7 @@ source /opt/ros/humble/setup.bash
 ```
 3. Build the code:
 ```sh
-colcon build
+colcon build && source install/setup.bash
 ```
 4. Run the code:
 ```sh
