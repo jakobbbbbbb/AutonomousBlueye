@@ -34,11 +34,11 @@ https://github.com/Ar-Ray-code/YOLOv5-ROS.git
 ```sh
 source /opt/ros/humble/setup.bash
 ```
-3. Build the code:
+3. Build and source:
 ```sh
 colcon build && source install/setup.bash
 ```
-4. Run the code:
+4. Run the launch file (n):
 ```sh
-ros2 launch real_blueye.launch.py
+ros2 launch real_blueye_launch real_blueye.launch.py
 ```
