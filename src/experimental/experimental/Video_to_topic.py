@@ -13,20 +13,8 @@ class VideoPublisher(Node):
         self.publisher_ = self.create_publisher(Image, '/camera', 10)
         self.bridge = CvBridge()
         
+        # Add routes to video files if you want to run the topics on recorded video
         self.cap = cv2.VideoCapture('/home/nikolai/Sintef_bouy_22_03_24/autonomous_main_1.mp4') 
-        # self.cap = cv2.VideoCapture('/home/nikolai/Sintef_bouy_22_03_24/autonomous_top2.mp4') 
-        # self.cap = cv2.VideoCapture('/home/nikolai/Sintef_bouy_22_03_24/autonomous_marine_growth.mp4') 
-        # self.cap = cv2.VideoCapture('/home/nikolai/Sintef_bouy_22_03_24/autonomous_main_2.mp4') 
-        # self.cap = cv2.VideoCapture('/home/nikolai/Sintef_bouy_22_03_24/autonomous_shackle.mp4') 
-        # self.cap = cv2.VideoCapture('/home/nikolai/Sintef_bouy_22_03_24/autonomous_seafloor.mp4') 
-
-        # self.cap = cv2.VideoCapture('/home/nikolai/Sintef_bouy_22_03_24/autonomous_TBS.mp4') 
-        # self.cap = cv2.VideoCapture('/home/nikolai/Sintef_bouy_22_03_24/blender2.mp4') 
-
-        # self.cap = cv2.VideoCapture('/home/nikolai/Sintef_bouy_22_03_24/m1_AKER_BP.mp4') 
-
-        # self.cap = cv2.VideoCapture('/home/nikolai/Sintef_bouy_22_03_24/Old_inspection5.mp4') 
-
 
         if not self.cap.isOpened():
             self.get_logger().error('Unable to open video file.')
