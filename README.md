@@ -38,7 +38,7 @@ source /opt/ros/humble/setup.bash
 ```sh
 colcon build && source install/setup.bash
 ```
-4. Run the launch file (n):
+4. Run the launch file:
 ```sh
 ros2 launch real_blueye_launch real_blueye.launch.py
 ```
