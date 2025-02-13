@@ -13,17 +13,18 @@ The code is developed for Ubuntu 22.04.5 LTS (Jammy Jellyfish). It is strongly a
 This project is developed by Christian Lindahl Elseth and Jakob Rude Øvstaas as part of our master thesis at Marine Technology NTNU.
 
 ## Setup guide:
-Install all necessary libraries:
-```sh
-pip install -r requirements.txt
-```
-
 Install [ROS2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)
 
 Clone this repository:
 ```sh
 git clone https://github.com/jakobbbbbbb/AutonomousBlueye.git
 ```
+
+Install all necessary libraries:
+```sh
+pip install -r requirements.txt
+```
+
 Clone this repository which converts YOLOv5 to ROS2 messages: (Note: there are two separates repos to be cloned)
 https://github.com/Ar-Ray-code/YOLOv5-ROS.git
 
