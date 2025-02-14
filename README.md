@@ -16,7 +16,7 @@ This project is developed by Christian Lindahl Elseth and Jakob Rude Øvstaas as
 This spring the focus is to improve the current algorithm and ensure the AUV is able to conduct its mooring line inspection both ways. By "both ways" we mean that the AUV completes a full inspection from sea surface to seabottom and then back to surface.
 
 ## Setup guide
-Install [ROS2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)
+**Install [ROS2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)**
 
 Clone this repository:
 ```sh
@@ -45,3 +45,6 @@ colcon build && source install/setup.bash
 ```sh
 ros2 launch real_blueye_launch real_blueye.launch.py
 ```
+
+**Note**
+Upon making changes to the code, make sure to rebuild and source the workspace again (step 3 above).
