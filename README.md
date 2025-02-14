@@ -46,5 +46,5 @@ colcon build && source install/setup.bash
 ros2 launch real_blueye_launch real_blueye.launch.py
 ```
 
-**Note**
+**Note:**  
 Upon making changes to the code, make sure to rebuild and source the workspace again (step 3 above).
