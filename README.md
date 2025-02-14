@@ -12,8 +12,8 @@ The code is developed for Ubuntu 22.04.5 LTS (Jammy Jellyfish). It is strongly a
 ## Project details
 This project is developed by Christian Lindahl Elseth and Jakob Rude Øvstaas as part of our master thesis at Marine Technology NTNU.
 
-## Current Work
-This spring the focus is to improve the current algorithm and ensure the AUV is able to conduct its mooring line inspection both ways. By "both ways" we mean that the AUV completes a full inspection from sea surface to seabottom and then back to surface.
+## Current work
+This spring the focus is to improve the current algorithm and ensure the AUV is able to conduct its mooring line inspection both ways. By "both ways" we mean that the AUV completes a full inspection from sea surface to seabottom and then back to surface. Another focus is to improve the current algorithm for detecting the mooring line and its angle. Currently as is, the algorithm struggles as the lighting conditions change. A more dynamic algorithm is therefore being developed currently.
 
 ## Setup guide
 **Install [ROS2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)**
@@ -23,15 +23,15 @@ Clone this repository:
 git clone https://github.com/jakobbbbbbb/AutonomousBlueye.git
 ```
 
+Clone this repository which converts YOLOv5 to ROS2 messages: (Note: there are two separates repos to be cloned)
+https://github.com/Ar-Ray-code/YOLOv5-ROS.git
+
 Install all necessary libraries:
 ```sh
 pip install -r requirements.txt
 ```
 
-Clone this repository which converts YOLOv5 to ROS2 messages: (Note: there are two separates repos to be cloned)
-https://github.com/Ar-Ray-code/YOLOv5-ROS.git
-
-## Connection guide:
+## Connection guide
 1. Power on Blueye Pioneer and tether. Connect computer to Blueye's WiFi.
 2. Source the code:
 ```sh
