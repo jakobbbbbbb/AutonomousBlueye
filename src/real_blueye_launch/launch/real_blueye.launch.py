@@ -36,7 +36,8 @@ def generate_launch_description():
     Laptop_camera = Node(
         package='drone_sensors',
         executable='laptop_camera',
-        name='laptop_camera'
+        name='laptop_camera',
+        parameters=[{"video_device": "/dev/video0"}]
     )
     Chain_pos_canny = Node(
         package='image_prosessing',
@@ -151,32 +152,34 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        # The following topics can be uncommented depending on desired use
+        
         # Blueye_IMU, 
         # Blueye_pose,
         # Blueye_Force,
         # Blueye_camera,
 
-        Video_topic,
-        # Laptop_camera,
+        #Video_topic,
+        Laptop_camera,
 
         # Image_test,
-        # Chain_pos_canny,
-        # Chain_pos_thresh,
-        # Chain_pos_thresh_mean,
+        Chain_pos_canny,
+        #Chain_pos_thresh,
+        #Chain_pos_thresh_mean,
 
         # Desired_velocity_test,
         # Desired_velocity,
         # Desired_velocity_spiral,
         # Desired_velocity_compass,
 
-        # control,
+        control,
 
-        # yolov5_ros,
-        # yolo_image,
-        # yolo_chain_canny,
+        #yolov5_ros,
+        #yolo_image,
+        #yolo_chain_canny,
 
-        # Canny_inside_yolo,
-        # Thresh_inside_yolo,
-        # Median_inside_yolo,
+        #Canny_inside_yolo,
+        #Thresh_inside_yolo,
+        #Median_inside_yolo,
     ])
 
