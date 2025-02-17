@@ -60,5 +60,5 @@ Add this to bottom of file:
 source /opt/ros/humble/setup.bash
 
 # Source your workspace
-source ~/Code/AutonomousBlueye/install/setup.bash
+source ~/<your_path>/install/setup.bash
 ```
