@@ -30,7 +30,6 @@ Install all necessary libraries:
 ```sh
 pip install -r requirements.txt
 ```
-
 ## Connection guide
 1. Power on Blueye Pioneer and tether. Connect computer to Blueye's WiFi.
 2. Source the code:
@@ -48,3 +47,18 @@ ros2 launch real_blueye_launch real_blueye.launch.py
 
 **Note:**  
 Upon making changes to the code, make sure to rebuild and source the workspace again (step 3 above).
+
+## Tips and tricks
+Want to avoid sourcing workspace? Add this to your **~/.bashrc** file.
+Open the file:
+```sh
+nano ~/.bashrc
+```
+Add this to bottom of file:
+```sh
+# Source ROS 2 Humble
+source /opt/ros/humble/setup.bash
+
+# Source your workspace
+source ~/Code/AutonomousBlueye/install/setup.bash
+```
