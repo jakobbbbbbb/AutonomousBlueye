@@ -49,7 +49,7 @@ ros2 launch real_blueye_launch real_blueye.launch.py
 Upon making changes to the code, make sure to rebuild and source the workspace again (step 3 above).
 
 ## Tips and tricks
-Want to avoid sourcing workspace? Add this to your **~/.bashrc** file.
+Want to avoid sourcing workspace? Add this to your **~/.bashrc** file.  
 Open the file:
 ```sh
 nano ~/.bashrc
