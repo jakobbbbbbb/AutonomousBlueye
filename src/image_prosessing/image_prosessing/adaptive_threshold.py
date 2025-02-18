@@ -53,12 +53,15 @@ class BlueyeImage(Node):
         # Convert to Grayscale
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-        # Apply Frame Differencing for Marine Snow Removal
+        # Temporal filtering
+        alpha = 0.2
+
         if self.prev_frame is None:
-            self.prev_frame = gray.copy()
-        
-        frame_diff = cv2.absdiff(gray, self.prev_frame)
-        self.prev_frame = gray.copy()  # Update for next frame
+            self.prev_frame = gray.astype(np.float32)
+
+        cv2.accumulateWeighted(gray, self.prev_frame, alpha)
+
+        frame_diff = cv2.absdiff(gray, cv2.convertScaleAbs(self.prev_frame))
 
         # Apply Background Subtraction + Frame Differencing
         fg_mask = self.bg_subtractor.apply(gray)
