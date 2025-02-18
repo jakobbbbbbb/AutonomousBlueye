@@ -1,0 +1,54 @@
+[1.965s] Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/drone_sensors': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/drone_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build
+[2.906s] running develop
+[3.279s] Removing /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone-sensors.egg-link (link to .)
+[3.348s] Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/drone_sensors' returned '0': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/drone_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build
+[3.348s] Invoking command in '/home/ovsj/Code/AutonomousBlueye/src/drone_sensors': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/drone_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/drone_sensors build --build-base /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build install --record /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/install.log --single-version-externally-managed install_data --force
+[3.712s] running egg_info
+[3.729s] writing ../../build/drone_sensors/drone_sensors.egg-info/PKG-INFO
+[3.732s] writing dependency_links to ../../build/drone_sensors/drone_sensors.egg-info/dependency_links.txt
+[3.733s] writing entry points to ../../build/drone_sensors/drone_sensors.egg-info/entry_points.txt
+[3.733s] writing requirements to ../../build/drone_sensors/drone_sensors.egg-info/requires.txt
+[3.734s] writing top-level names to ../../build/drone_sensors/drone_sensors.egg-info/top_level.txt
+[3.771s] reading manifest file '../../build/drone_sensors/drone_sensors.egg-info/SOURCES.txt'
+[3.773s] writing manifest file '../../build/drone_sensors/drone_sensors.egg-info/SOURCES.txt'
+[3.774s] running build
+[3.774s] running build_py
+[3.776s] creating /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors
+[3.777s] copying drone_sensors/BluEye_Pose.py -> /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors
+[3.779s] copying drone_sensors/__init__.py -> /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors
+[3.783s] copying drone_sensors/IMU_to_ros2.py -> /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors
+[3.784s] copying drone_sensors/Video_to_ros2.py -> /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors
+[3.784s] copying drone_sensors/chain_pos_controller.py -> /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors
+[3.785s] copying drone_sensors/laptop_camera.py -> /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors
+[3.785s] copying drone_sensors/BluEye_Force.py -> /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors
+[3.786s] running install
+[3.794s] running install_lib
+[3.816s] creating /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors
+[3.817s] copying /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors/BluEye_Pose.py -> /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors
+[3.818s] copying /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors/__init__.py -> /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors
+[3.818s] copying /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors/IMU_to_ros2.py -> /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors
+[3.820s] copying /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors/Video_to_ros2.py -> /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors
+[3.822s] copying /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors/chain_pos_controller.py -> /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors
+[3.823s] copying /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors/laptop_camera.py -> /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors
+[3.824s] copying /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build/lib/drone_sensors/BluEye_Force.py -> /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors
+[3.825s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors/BluEye_Pose.py to BluEye_Pose.cpython-310.pyc
+[3.829s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors/__init__.py to __init__.cpython-310.pyc
+[3.833s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors/IMU_to_ros2.py to IMU_to_ros2.cpython-310.pyc
+[3.835s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors/Video_to_ros2.py to Video_to_ros2.cpython-310.pyc
+[3.839s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors/chain_pos_controller.py to chain_pos_controller.cpython-310.pyc
+[3.840s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors/laptop_camera.py to laptop_camera.cpython-310.pyc
+[3.841s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors/BluEye_Force.py to BluEye_Force.cpython-310.pyc
+[3.842s] running install_data
+[3.843s] copying resource/drone_sensors -> /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/ament_index/resource_index/packages
+[3.844s] copying package.xml -> /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/drone_sensors
+[3.846s] running install_egg_info
+[3.860s] Copying ../../build/drone_sensors/drone_sensors.egg-info to /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages/drone_sensors-0.0.0-py3.10.egg-info
+[3.867s] running install_scripts
+[3.982s] Installing BluEye_Force script to /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/drone_sensors
+[3.983s] Installing BluEye_Pose script to /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/drone_sensors
+[3.984s] Installing IMU_to_ros2 script to /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/drone_sensors
+[3.986s] Installing Video_to_ros2 script to /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/drone_sensors
+[3.988s] Installing blueye_image_simple script to /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/drone_sensors
+[3.993s] Installing laptop_camera script to /home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/drone_sensors
+[3.995s] writing list of installed files to '/home/ovsj/Code/AutonomousBlueye/build/drone_sensors/install.log'
+[4.051s] Invoked command in '/home/ovsj/Code/AutonomousBlueye/src/drone_sensors' returned '0': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/drone_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/drone_sensors build --build-base /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build install --record /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/install.log --single-version-externally-managed install_data --force

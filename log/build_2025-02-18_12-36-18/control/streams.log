@@ -1,0 +1,58 @@
+[1.618s] Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/control': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/ovsj/Code/AutonomousBlueye/build/control/build
+[2.402s] running develop
+[2.509s] Removing /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control.egg-link (link to .)
+[2.548s] Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/control' returned '0': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/ovsj/Code/AutonomousBlueye/build/control/build
+[2.549s] Invoking command in '/home/ovsj/Code/AutonomousBlueye/src/control': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/control build --build-base /home/ovsj/Code/AutonomousBlueye/build/control/build install --record /home/ovsj/Code/AutonomousBlueye/build/control/install.log --single-version-externally-managed install_data --force
+[2.993s] running egg_info
+[3.025s] writing ../../build/control/control.egg-info/PKG-INFO
+[3.027s] writing dependency_links to ../../build/control/control.egg-info/dependency_links.txt
+[3.028s] writing entry points to ../../build/control/control.egg-info/entry_points.txt
+[3.028s] writing requirements to ../../build/control/control.egg-info/requires.txt
+[3.029s] writing top-level names to ../../build/control/control.egg-info/top_level.txt
+[3.063s] reading manifest file '../../build/control/control.egg-info/SOURCES.txt'
+[3.064s] writing manifest file '../../build/control/control.egg-info/SOURCES.txt'
+[3.064s] running build
+[3.065s] running build_py
+[3.065s] creating /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control
+[3.065s] copying control/__init__.py -> /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control
+[3.066s] copying control/desired_velocity_test.py -> /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control
+[3.066s] copying control/desired_velocity_spiral_surge.py -> /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control
+[3.066s] copying control/desired_velocity.py -> /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control
+[3.067s] copying control/desired_velocity_switch.py -> /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control
+[3.067s] copying control/desired_velocity_compass.py -> /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control
+[3.067s] copying control/control.py -> /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control
+[3.067s] copying control/control_test.py -> /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control
+[3.068s] running install
+[3.079s] running install_lib
+[3.089s] creating /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control
+[3.090s] copying /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control/__init__.py -> /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control
+[3.090s] copying /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control/desired_velocity_test.py -> /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control
+[3.090s] copying /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control/desired_velocity_spiral_surge.py -> /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control
+[3.090s] copying /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control/desired_velocity.py -> /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control
+[3.090s] copying /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control/desired_velocity_switch.py -> /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control
+[3.091s] copying /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control/desired_velocity_compass.py -> /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control
+[3.092s] copying /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control/control.py -> /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control
+[3.092s] copying /home/ovsj/Code/AutonomousBlueye/build/control/build/lib/control/control_test.py -> /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control
+[3.093s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control/__init__.py to __init__.cpython-310.pyc
+[3.094s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control/desired_velocity_test.py to desired_velocity_test.cpython-310.pyc
+[3.097s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control/desired_velocity_spiral_surge.py to desired_velocity_spiral_surge.cpython-310.pyc
+[3.099s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control/desired_velocity.py to desired_velocity.cpython-310.pyc
+[3.102s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control/desired_velocity_switch.py to desired_velocity_switch.cpython-310.pyc
+[3.102s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control/desired_velocity_compass.py to desired_velocity_compass.cpython-310.pyc
+[3.103s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control/control.py to control.cpython-310.pyc
+[3.103s] byte-compiling /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control/control_test.py to control_test.cpython-310.pyc
+[3.103s] running install_data
+[3.104s] copying resource/control -> /home/ovsj/Code/AutonomousBlueye/install/control/share/ament_index/resource_index/packages
+[3.104s] copying package.xml -> /home/ovsj/Code/AutonomousBlueye/install/control/share/control
+[3.104s] running install_egg_info
+[3.148s] Copying ../../build/control/control.egg-info to /home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages/control-0.0.0-py3.10.egg-info
+[3.149s] running install_scripts
+[3.427s] Installing control script to /home/ovsj/Code/AutonomousBlueye/install/control/lib/control
+[3.427s] Installing control_test script to /home/ovsj/Code/AutonomousBlueye/install/control/lib/control
+[3.427s] Installing desired_velocity script to /home/ovsj/Code/AutonomousBlueye/install/control/lib/control
+[3.427s] Installing desired_velocity_compass script to /home/ovsj/Code/AutonomousBlueye/install/control/lib/control
+[3.427s] Installing desired_velocity_spiral_surge script to /home/ovsj/Code/AutonomousBlueye/install/control/lib/control
+[3.427s] Installing desired_velocity_switch script to /home/ovsj/Code/AutonomousBlueye/install/control/lib/control
+[3.428s] Installing desired_velocity_test script to /home/ovsj/Code/AutonomousBlueye/install/control/lib/control
+[3.437s] writing list of installed files to '/home/ovsj/Code/AutonomousBlueye/build/control/install.log'
+[4.130s] Invoked command in '/home/ovsj/Code/AutonomousBlueye/src/control' returned '0': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/control build --build-base /home/ovsj/Code/AutonomousBlueye/build/control/build install --record /home/ovsj/Code/AutonomousBlueye/build/control/install.log --single-version-externally-managed install_data --force

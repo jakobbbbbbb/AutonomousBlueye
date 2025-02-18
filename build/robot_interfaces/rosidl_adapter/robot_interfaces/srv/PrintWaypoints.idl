@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from robot_interfaces/srv/PrintWaypoints.srv
+// generated code does not contain a copyright notice
+
+
+module robot_interfaces {
+  module srv {
+    struct PrintWaypoints_Request {
+      boolean print;
+    };
+    struct PrintWaypoints_Response {
+      boolean accepted;
+    };
+  };
+};

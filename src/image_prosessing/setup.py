@@ -11,13 +11,12 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
     ],
-    install_requires=['setuptools'],
+    install_requires=['setuptools', 'pytest'],
     zip_safe=True,
     maintainer='nikolai',
     maintainer_email='nikolarn@stud.ntnu.no',
     description='TODO: Package description',
     license='TODO: License declaration',
-    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'canny_with_box = image_prosessing.canny_with_box:main',
@@ -30,6 +29,7 @@ setup(
             'Canny_inside_yolo = image_prosessing.Canny_inside_yolo:main',
             'Thresh_inside_yolo = image_prosessing.Thresh_inside_yolo:main',
             'Median_inside_yolo = image_prosessing.Median_inside_yolo:main',
+            'Adaptive_threshold = image_prosessing.Adaptive_threshold:main',
         ],
     },
 )

@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from octomap_msgs/msg/OctomapWithPose.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Pose.idl"
+#include "octomap_msgs/msg/Octomap.idl"
+#include "std_msgs/msg/Header.idl"
+
+module octomap_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "A 3D map in binary format, as Octree")
+    struct OctomapWithPose {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "The pose of the octree with respect to the header frame")
+      geometry_msgs::msg::Pose origin;
+
+      @verbatim (language="comment", text=
+        "The actual octree msg")
+      octomap_msgs::msg::Octomap octomap;
+    };
+  };
+};

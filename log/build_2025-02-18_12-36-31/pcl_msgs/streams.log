@@ -1,0 +1,192 @@
+[0.102s] Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/pcl_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/pcl_msgs -- -j6 -l6
+[1.254s] [  1%] Built target pcl_msgs__cpp
+[1.255s] [  7%] Built target ament_cmake_python_symlink_pcl_msgs
+[1.255s] [ 12%] Built target pcl_msgs__rosidl_generator_c
+[1.255s] [ 23%] Built target pcl_msgs__rosidl_typesupport_cpp
+[1.256s] [ 41%] Built target pcl_msgs__rosidl_typesupport_introspection_cpp
+[1.256s] [ 46%] Built target pcl_msgs__rosidl_typesupport_fastrtps_cpp
+[1.256s] [ 57%] Built target pcl_msgs__rosidl_typesupport_c
+[1.256s] [ 73%] Built target pcl_msgs__rosidl_typesupport_introspection_c
+[1.257s] [ 79%] Built target pcl_msgs__rosidl_typesupport_fastrtps_c
+[1.257s] [ 79%] Built target pcl_msgs
+[1.257s] [ 80%] Built target pcl_msgs__py
+[1.257s] [ 90%] Built target pcl_msgs__rosidl_generator_py
+[1.257s] [ 93%] Built target pcl_msgs__rosidl_typesupport_fastrtps_c__pyext
+[1.257s] [ 96%] Built target pcl_msgs__rosidl_typesupport_c__pyext
+[1.257s] [100%] Built target pcl_msgs__rosidl_typesupport_introspection_c__pyext
+[1.257s] running egg_info
+[1.257s] writing pcl_msgs.egg-info/PKG-INFO
+[1.257s] writing dependency_links to pcl_msgs.egg-info/dependency_links.txt
+[1.257s] writing top-level names to pcl_msgs.egg-info/top_level.txt
+[1.257s] reading manifest file 'pcl_msgs.egg-info/SOURCES.txt'
+[1.257s] writing manifest file 'pcl_msgs.egg-info/SOURCES.txt'
+[1.258s] [100%] Built target ament_cmake_python_build_pcl_msgs_egg
+[1.311s] Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/pcl_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/pcl_msgs -- -j6 -l6
+[1.311s] Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/pcl_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/pcl_msgs
+[1.333s] -- Install configuration: ""
+[1.348s] -- Execute custom install script
+[1.348s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/ament_index/resource_index/rosidl_interfaces/pcl_msgs
+[1.348s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__functions.h
+[1.348s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__struct.h
+[1.348s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__type_support.h
+[1.348s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__functions.h
+[1.348s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__struct.h
+[1.349s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__type_support.h
+[1.349s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/polygon_mesh__functions.h
+[1.349s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/polygon_mesh__struct.h
+[1.349s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/polygon_mesh__type_support.h
+[1.349s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/vertices__functions.h
+[1.349s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/vertices__struct.h
+[1.349s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/vertices__type_support.h
+[1.349s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/model_coefficients.h
+[1.349s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/point_indices.h
+[1.349s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/polygon_mesh.h
+[1.349s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/rosidl_generator_c__visibility_control.h
+[1.349s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/vertices.h
+[1.349s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/srv/detail/update_filename__functions.h
+[1.363s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/srv/detail/update_filename__struct.h
+[1.363s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/srv/detail/update_filename__type_support.h
+[1.364s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/srv/update_filename.h
+[1.364s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/environment/library_path.sh
+[1.364s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/environment/library_path.dsv
+[1.364s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__rosidl_typesupport_fastrtps_c.h
+[1.364s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__rosidl_typesupport_fastrtps_c.h
+[1.364s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/polygon_mesh__rosidl_typesupport_fastrtps_c.h
+[1.370s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/vertices__rosidl_typesupport_fastrtps_c.h
+[1.370s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[1.370s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/srv/detail/update_filename__rosidl_typesupport_fastrtps_c.h
+[1.371s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__rosidl_typesupport_introspection_c.h
+[1.371s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__rosidl_typesupport_introspection_c.h
+[1.371s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/polygon_mesh__rosidl_typesupport_introspection_c.h
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/vertices__rosidl_typesupport_introspection_c.h
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/srv/detail/update_filename__rosidl_typesupport_introspection_c.h
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__builder.hpp
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__struct.hpp
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__traits.hpp
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__type_support.hpp
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__builder.hpp
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__struct.hpp
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__traits.hpp
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__type_support.hpp
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/polygon_mesh__builder.hpp
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/polygon_mesh__struct.hpp
+[1.372s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/polygon_mesh__traits.hpp
+[1.373s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/polygon_mesh__type_support.hpp
+[1.373s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/vertices__builder.hpp
+[1.373s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/vertices__struct.hpp
+[1.374s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/vertices__traits.hpp
+[1.374s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/vertices__type_support.hpp
+[1.374s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/model_coefficients.hpp
+[1.377s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/point_indices.hpp
+[1.377s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/polygon_mesh.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/vertices.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/srv/detail/update_filename__builder.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/srv/detail/update_filename__struct.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/srv/detail/update_filename__traits.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/srv/detail/update_filename__type_support.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/srv/update_filename.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__rosidl_typesupport_fastrtps_cpp.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__rosidl_typesupport_fastrtps_cpp.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/polygon_mesh__rosidl_typesupport_fastrtps_cpp.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/vertices__rosidl_typesupport_fastrtps_cpp.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/srv/detail/update_filename__rosidl_typesupport_fastrtps_cpp.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__rosidl_typesupport_introspection_cpp.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__rosidl_typesupport_introspection_cpp.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/polygon_mesh__rosidl_typesupport_introspection_cpp.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/msg/detail/vertices__rosidl_typesupport_introspection_cpp.hpp
+[1.395s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/include/pcl_msgs/pcl_msgs/srv/detail/update_filename__rosidl_typesupport_introspection_cpp.hpp
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/environment/pythonpath.sh
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/environment/pythonpath.dsv
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs-1.0.0-py3.10.egg-info/PKG-INFO
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs-1.0.0-py3.10.egg-info/SOURCES.txt
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs-1.0.0-py3.10.egg-info/dependency_links.txt
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs-1.0.0-py3.10.egg-info/top_level.txt
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/__init__.py
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/_pcl_msgs_s.ep.rosidl_typesupport_c.c
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/_pcl_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/_pcl_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/libpcl_msgs__rosidl_generator_py.so
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/msg/__init__.py
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/msg/_model_coefficients.py
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/msg/_model_coefficients_s.c
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/msg/_point_indices.py
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/msg/_point_indices_s.c
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/msg/_polygon_mesh.py
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/msg/_polygon_mesh_s.c
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/msg/_vertices.py
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/msg/_vertices_s.c
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/pcl_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/pcl_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/pcl_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/srv/__init__.py
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/srv/_update_filename.py
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/srv/_update_filename_s.c
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/pcl_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/pcl_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/pcl_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/msg/ModelCoefficients.idl
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/msg/PointIndices.idl
+[1.396s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/msg/PolygonMesh.idl
+[1.397s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/msg/Vertices.idl
+[1.397s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/srv/UpdateFilename.idl
+[1.397s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/msg/ModelCoefficients.msg
+[1.397s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/msg/PointIndices.msg
+[1.397s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/msg/PolygonMesh.msg
+[1.397s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/msg/Vertices.msg
+[1.397s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/srv/UpdateFilename.srv
+[1.400s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/srv/UpdateFilename_Request.msg
+[1.400s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/srv/UpdateFilename_Response.msg
+[1.400s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/ament_index/resource_index/package_run_dependencies/pcl_msgs
+[1.400s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/ament_index/resource_index/parent_prefix_path/pcl_msgs
+[1.401s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/environment/ament_prefix_path.sh
+[1.418s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/environment/ament_prefix_path.dsv
+[1.419s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/environment/path.sh
+[1.419s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/environment/path.dsv
+[1.419s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/local_setup.bash
+[1.419s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/local_setup.sh
+[1.419s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/local_setup.zsh
+[1.419s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/local_setup.dsv
+[1.419s] -- Symlinking: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/package.dsv
+[1.426s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/ament_index/resource_index/packages/pcl_msgs
+[1.426s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/rosidl_cmake-extras.cmake
+[1.427s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.428s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.428s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[1.429s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[1.429s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[1.429s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[1.430s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/pcl_msgsConfig.cmake
+[1.430s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/pcl_msgsConfig-version.cmake
+[1.444s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/package.xml
+[1.444s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib/libpcl_msgs__rosidl_generator_c.so
+[1.444s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib/libpcl_msgs__rosidl_typesupport_fastrtps_c.so
+[1.444s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib/libpcl_msgs__rosidl_typesupport_introspection_c.so
+[1.444s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib/libpcl_msgs__rosidl_typesupport_c.so
+[1.444s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib/libpcl_msgs__rosidl_typesupport_fastrtps_cpp.so
+[1.445s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib/libpcl_msgs__rosidl_typesupport_introspection_cpp.so
+[1.445s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib/libpcl_msgs__rosidl_typesupport_cpp.so
+[1.563s] Listing '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs'...
+[1.563s] Listing '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/msg'...
+[1.563s] Listing '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/local/lib/python3.10/dist-packages/pcl_msgs/srv'...
+[1.564s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib/libpcl_msgs__rosidl_generator_py.so
+[1.564s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/export_pcl_msgs__rosidl_generator_cExport.cmake
+[1.564s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/export_pcl_msgs__rosidl_generator_cExport-noconfig.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/export_pcl_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/export_pcl_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/pcl_msgs__rosidl_typesupport_introspection_cExport.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/pcl_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/pcl_msgs__rosidl_typesupport_cExport.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/pcl_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/export_pcl_msgs__rosidl_generator_cppExport.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/export_pcl_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/export_pcl_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/pcl_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/pcl_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/pcl_msgs__rosidl_typesupport_cppExport.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/pcl_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/export_pcl_msgs__rosidl_generator_pyExport.cmake
+[1.565s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/cmake/export_pcl_msgs__rosidl_generator_pyExport-noconfig.cmake
+[1.687s] Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/pcl_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/pcl_msgs

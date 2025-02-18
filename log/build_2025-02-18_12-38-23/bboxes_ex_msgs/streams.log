@@ -1,0 +1,137 @@
+[0.045s] Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs -- -j6 -l6
+[0.495s] [ 10%] Built target bboxes_ex_msgs__rosidl_generator_c
+[0.495s] [ 12%] Built target ament_cmake_python_symlink_bboxes_ex_msgs
+[0.495s] [ 12%] Built target bboxes_ex_msgs__cpp
+[0.495s] [ 23%] Built target bboxes_ex_msgs__rosidl_typesupport_fastrtps_c
+[0.495s] [ 35%] Built target bboxes_ex_msgs__rosidl_typesupport_introspection_cpp
+[0.495s] [ 43%] Built target bboxes_ex_msgs__rosidl_typesupport_c
+[0.495s] [ 56%] Built target bboxes_ex_msgs__rosidl_typesupport_cpp
+[0.495s] [ 64%] Built target bboxes_ex_msgs__rosidl_typesupport_introspection_c
+[0.495s] [ 74%] Built target bboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp
+[0.496s] [ 74%] Built target bboxes_ex_msgs
+[0.579s] [ 76%] Built target bboxes_ex_msgs__py
+[0.732s] [ 84%] Built target bboxes_ex_msgs__rosidl_generator_py
+[0.887s] [ 89%] Built target bboxes_ex_msgs__rosidl_typesupport_fastrtps_c__pyext
+[0.897s] [ 94%] Built target bboxes_ex_msgs__rosidl_typesupport_introspection_c__pyext
+[0.923s] [100%] Built target bboxes_ex_msgs__rosidl_typesupport_c__pyext
+[1.143s] running egg_info
+[1.177s] writing bboxes_ex_msgs.egg-info/PKG-INFO
+[1.184s] writing dependency_links to bboxes_ex_msgs.egg-info/dependency_links.txt
+[1.186s] writing top-level names to bboxes_ex_msgs.egg-info/top_level.txt
+[1.353s] reading manifest file 'bboxes_ex_msgs.egg-info/SOURCES.txt'
+[1.354s] writing manifest file 'bboxes_ex_msgs.egg-info/SOURCES.txt'
+[1.479s] [100%] Built target ament_cmake_python_build_bboxes_ex_msgs_egg
+[1.763s] Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs -- -j6 -l6
+[1.778s] Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs
+[1.791s] -- Install configuration: ""
+[1.791s] -- Execute custom install script
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/ament_index/resource_index/rosidl_interfaces/bboxes_ex_msgs
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/bounding_box.h
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/bounding_boxes.h
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_box__functions.h
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_box__struct.h
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_box__type_support.h
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_boxes__functions.h
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_boxes__struct.h
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_boxes__type_support.h
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/rosidl_generator_c__visibility_control.h
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/library_path.sh
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/library_path.dsv
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_box__rosidl_typesupport_fastrtps_c.h
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_boxes__rosidl_typesupport_fastrtps_c.h
+[1.791s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[1.792s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/bounding_box.hpp
+[1.792s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/bounding_boxes.hpp
+[1.792s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_box__builder.hpp
+[1.792s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_box__struct.hpp
+[1.794s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_box__traits.hpp
+[1.799s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_box__type_support.hpp
+[1.806s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_boxes__builder.hpp
+[1.807s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_boxes__struct.hpp
+[1.807s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_boxes__traits.hpp
+[1.807s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_boxes__type_support.hpp
+[1.807s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[1.807s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_box__rosidl_typesupport_fastrtps_cpp.hpp
+[1.808s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_boxes__rosidl_typesupport_fastrtps_cpp.hpp
+[1.808s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[1.808s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_box__rosidl_typesupport_introspection_c.h
+[1.808s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_boxes__rosidl_typesupport_introspection_c.h
+[1.808s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[1.809s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_box__rosidl_typesupport_introspection_cpp.hpp
+[1.809s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/include/bboxes_ex_msgs/bboxes_ex_msgs/msg/detail/bounding_boxes__rosidl_typesupport_introspection_cpp.hpp
+[1.810s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/pythonpath.sh
+[1.811s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/pythonpath.dsv
+[1.813s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[1.813s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[1.816s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[1.819s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[1.827s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/__init__.py
+[1.827s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/_bboxes_ex_msgs_s.ep.rosidl_typesupport_c.c
+[1.828s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/_bboxes_ex_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[1.828s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/_bboxes_ex_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[1.828s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[1.828s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[1.828s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[1.828s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/libbboxes_ex_msgs__rosidl_generator_py.so
+[1.828s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/msg/__init__.py
+[1.828s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/msg/_bounding_box.py
+[1.838s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/msg/_bounding_box_s.c
+[1.838s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/msg/_bounding_boxes.py
+[1.838s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/msg/_bounding_boxes_s.c
+[1.838s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[1.838s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[1.838s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[1.838s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/msg/BoundingBox.idl
+[1.838s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/msg/BoundingBoxes.idl
+[1.838s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/msg/BoundingBox.msg
+[1.838s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/msg/BoundingBoxes.msg
+[1.838s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/ament_index/resource_index/package_run_dependencies/bboxes_ex_msgs
+[1.838s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/ament_index/resource_index/parent_prefix_path/bboxes_ex_msgs
+[1.838s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/ament_prefix_path.sh
+[1.839s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/ament_prefix_path.dsv
+[1.839s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/path.sh
+[1.839s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/path.dsv
+[1.839s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/local_setup.bash
+[1.839s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/local_setup.sh
+[1.839s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/local_setup.zsh
+[1.839s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/local_setup.dsv
+[1.839s] -- Symlinking: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.dsv
+[1.883s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/ament_index/resource_index/packages/bboxes_ex_msgs
+[1.883s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/rosidl_cmake-extras.cmake
+[1.883s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.884s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.884s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[1.884s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[1.884s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[1.884s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[1.885s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgsConfig.cmake
+[1.885s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgsConfig-version.cmake
+[1.885s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.xml
+[1.885s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_generator_c.so
+[1.886s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_fastrtps_c.so
+[1.886s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp.so
+[1.886s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_introspection_c.so
+[1.886s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_c.so
+[1.886s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_introspection_cpp.so
+[1.886s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_cpp.so
+[1.984s] Listing '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs'...
+[1.984s] Listing '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/local/lib/python3.10/dist-packages/bboxes_ex_msgs/msg'...
+[1.992s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_generator_py.so
+[1.992s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/export_bboxes_ex_msgs__rosidl_generator_cExport.cmake
+[1.992s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/export_bboxes_ex_msgs__rosidl_generator_cExport-noconfig.cmake
+[1.993s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/export_bboxes_ex_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[1.994s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/export_bboxes_ex_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[1.994s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/export_bboxes_ex_msgs__rosidl_generator_cppExport.cmake
+[1.994s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/export_bboxes_ex_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[1.994s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/export_bboxes_ex_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[1.994s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_introspection_cExport.cmake
+[1.994s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[1.995s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_cExport.cmake
+[1.995s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[1.995s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[1.995s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[1.999s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_cppExport.cmake
+[1.999s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[2.000s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/export_bboxes_ex_msgs__rosidl_generator_pyExport.cmake
+[2.000s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/export_bboxes_ex_msgs__rosidl_generator_pyExport-noconfig.cmake
+[2.649s] Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs

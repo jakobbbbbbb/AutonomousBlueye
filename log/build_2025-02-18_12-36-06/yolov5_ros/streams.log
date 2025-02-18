@@ -1,0 +1,19 @@
+[1.515s] Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/yolov5_ros': CMAKE_PREFIX_PATH=/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2:/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs LD_LIBRARY_PATH=/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib:/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build --no-deps symlink_data
+[1.662s] /home/ovsj/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:270: UserWarning: Unknown distribution option: 'tests_require'
+[1.662s]   warnings.warn(msg)
+[1.799s] running develop
+[1.933s] running egg_info
+[1.944s] writing yolov5_ros.egg-info/PKG-INFO
+[1.945s] writing dependency_links to yolov5_ros.egg-info/dependency_links.txt
+[1.945s] writing entry points to yolov5_ros.egg-info/entry_points.txt
+[1.945s] writing requirements to yolov5_ros.egg-info/requires.txt
+[1.946s] writing top-level names to yolov5_ros.egg-info/top_level.txt
+[1.966s] reading manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+[1.967s] writing manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+[1.977s] running build_ext
+[1.978s] Creating /home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib/python3.10/site-packages/yolov5-ros.egg-link (link to .)
+[1.979s] Installing yolov5_ros script to /home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib/yolov5_ros
+[1.979s] 
+[1.979s] Installed /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros
+[1.979s] running symlink_data
+[2.004s] Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/yolov5_ros' returned '0': CMAKE_PREFIX_PATH=/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2:/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs LD_LIBRARY_PATH=/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib:/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build --no-deps symlink_data

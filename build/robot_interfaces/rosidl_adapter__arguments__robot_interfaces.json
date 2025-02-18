@@ -1,0 +1,22 @@
+{
+  "package_name": "robot_interfaces",
+  "non_idl_tuples": [
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:msg/DVL.msg",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:msg/DesiredVelocity.msg",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:msg/ChainPos.msg",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:msg/YoloChainPose.msg",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:msg/YoloBox.msg",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:msg/YoloCannyChainPose.msg",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:msg/YoloThreshChainPose.msg",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:msg/YoloMedianChainPose.msg",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:msg/ThreshChainPos.msg",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:msg/MedianChainPos.msg",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:msg/CannyChainPos.msg",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:msg/DesiredForces.msg",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:srv/AddWaypoint.srv",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:srv/ClearWaypoints.srv",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:srv/PrintWaypoints.srv",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:srv/RemoveWaypoint.srv",
+    "/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces:srv/SetState.srv"
+  ]
+}

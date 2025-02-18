@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing experimental.egg-info/PKG-INFO
+writing dependency_links to experimental.egg-info/dependency_links.txt
+writing entry points to experimental.egg-info/entry_points.txt
+writing requirements to experimental.egg-info/requires.txt
+writing top-level names to experimental.egg-info/top_level.txt
+reading manifest file 'experimental.egg-info/SOURCES.txt'
+writing manifest file 'experimental.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ovsj/Code/AutonomousBlueye/install/experimental/lib/python3.10/site-packages/experimental.egg-link (link to .)
+Installing Video_to_topic script to /home/ovsj/Code/AutonomousBlueye/install/experimental/lib/experimental
+Installing Video_to_topic_no_trackbar script to /home/ovsj/Code/AutonomousBlueye/install/experimental/lib/experimental
+Installing control_test script to /home/ovsj/Code/AutonomousBlueye/install/experimental/lib/experimental
+
+Installed /home/ovsj/Code/AutonomousBlueye/build/experimental
+running symlink_data

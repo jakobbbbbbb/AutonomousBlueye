@@ -1,0 +1,191 @@
+[0.045s] Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/octomap_msgs -- -j6 -l6
+[0.913s] [35m[1mConsolidate compiler generated dependencies of target octomap_msgs__rosidl_generator_c[0m
+[0.913s] [  1%] Built target octomap_msgs__cpp
+[0.913s] [ 12%] Built target octomap_msgs__rosidl_generator_c
+[0.913s] [35m[1mConsolidate compiler generated dependencies of target octomap_msgs__rosidl_typesupport_cpp[0m
+[0.913s] [ 12%] Built target ament_cmake_python_symlink_octomap_msgs
+[0.913s] [35m[1mConsolidate compiler generated dependencies of target octomap_msgs__rosidl_typesupport_introspection_c[0m
+[0.913s] [35m[1mConsolidate compiler generated dependencies of target octomap_msgs__rosidl_typesupport_fastrtps_cpp[0m
+[0.913s] [ 23%] Built target octomap_msgs__rosidl_typesupport_cpp
+[0.913s] [35m[1mConsolidate compiler generated dependencies of target octomap_msgs__rosidl_typesupport_fastrtps_c[0m
+[0.913s] [35m[1mConsolidate compiler generated dependencies of target octomap_msgs__rosidl_typesupport_introspection_cpp[0m
+[0.913s] [35m[1mConsolidate compiler generated dependencies of target octomap_msgs__rosidl_typesupport_c[0m
+[0.913s] [ 34%] Built target octomap_msgs__rosidl_typesupport_fastrtps_c
+[0.913s] [ 45%] Built target octomap_msgs__rosidl_typesupport_fastrtps_cpp
+[0.913s] [ 56%] Built target octomap_msgs__rosidl_typesupport_introspection_cpp
+[0.913s] [ 67%] Built target octomap_msgs__rosidl_typesupport_c
+[0.913s] [ 78%] Built target octomap_msgs__rosidl_typesupport_introspection_c
+[0.914s] [ 78%] Built target octomap_msgs
+[0.914s] [ 80%] Built target octomap_msgs__py
+[0.914s] [35m[1mConsolidate compiler generated dependencies of target octomap_msgs__rosidl_generator_py[0m
+[0.914s] [ 89%] Built target octomap_msgs__rosidl_generator_py
+[0.914s] [35m[1mConsolidate compiler generated dependencies of target octomap_msgs__rosidl_typesupport_fastrtps_c__pyext[0m
+[0.914s] [35m[1mConsolidate compiler generated dependencies of target octomap_msgs__rosidl_typesupport_c__pyext[0m
+[0.914s] [35m[1mConsolidate compiler generated dependencies of target octomap_msgs__rosidl_typesupport_introspection_c__pyext[0m
+[0.914s] [ 94%] Built target octomap_msgs__rosidl_typesupport_introspection_c__pyext
+[0.914s] [ 96%] Built target octomap_msgs__rosidl_typesupport_c__pyext
+[0.914s] [100%] Built target octomap_msgs__rosidl_typesupport_fastrtps_c__pyext
+[1.066s] running egg_info
+[1.095s] writing octomap_msgs.egg-info/PKG-INFO
+[1.098s] writing dependency_links to octomap_msgs.egg-info/dependency_links.txt
+[1.102s] writing top-level names to octomap_msgs.egg-info/top_level.txt
+[1.219s] reading manifest file 'octomap_msgs.egg-info/SOURCES.txt'
+[1.219s] writing manifest file 'octomap_msgs.egg-info/SOURCES.txt'
+[1.285s] [100%] Built target ament_cmake_python_build_octomap_msgs_egg
+[1.528s] Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/octomap_msgs -- -j6 -l6
+[1.528s] Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/octomap_msgs
+[1.564s] -- Install configuration: ""
+[1.564s] -- Execute custom install script
+[1.564s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/ament_index/resource_index/rosidl_interfaces/octomap_msgs
+[1.564s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap__functions.h
+[1.564s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap__struct.h
+[1.564s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap__type_support.h
+[1.564s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__functions.h
+[1.564s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__struct.h
+[1.564s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__type_support.h
+[1.564s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/octomap.h
+[1.564s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/octomap_with_pose.h
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/rosidl_generator_c__visibility_control.h
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/bounding_box_query.h
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/bounding_box_query__functions.h
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/bounding_box_query__struct.h
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/bounding_box_query__type_support.h
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/get_octomap__functions.h
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/get_octomap__struct.h
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/get_octomap__type_support.h
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/get_octomap.h
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/environment/library_path.sh
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/environment/library_path.dsv
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap__rosidl_typesupport_fastrtps_c.h
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__rosidl_typesupport_fastrtps_c.h
+[1.565s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[1.566s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/bounding_box_query__rosidl_typesupport_fastrtps_c.h
+[1.566s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/get_octomap__rosidl_typesupport_fastrtps_c.h
+[1.566s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap__rosidl_typesupport_introspection_c.h
+[1.566s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__rosidl_typesupport_introspection_c.h
+[1.566s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[1.566s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/bounding_box_query__rosidl_typesupport_introspection_c.h
+[1.567s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/get_octomap__rosidl_typesupport_introspection_c.h
+[1.567s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap__builder.hpp
+[1.567s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap__struct.hpp
+[1.567s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap__traits.hpp
+[1.567s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap__type_support.hpp
+[1.567s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__builder.hpp
+[1.567s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__struct.hpp
+[1.567s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__traits.hpp
+[1.567s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__type_support.hpp
+[1.567s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/octomap.hpp
+[1.567s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/octomap_with_pose.hpp
+[1.568s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[1.568s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/bounding_box_query.hpp
+[1.569s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/bounding_box_query__builder.hpp
+[1.569s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/bounding_box_query__struct.hpp
+[1.569s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/bounding_box_query__traits.hpp
+[1.569s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/bounding_box_query__type_support.hpp
+[1.570s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/get_octomap__builder.hpp
+[1.570s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/get_octomap__struct.hpp
+[1.570s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/get_octomap__traits.hpp
+[1.570s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/get_octomap__type_support.hpp
+[1.570s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/get_octomap.hpp
+[1.570s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap__rosidl_typesupport_fastrtps_cpp.hpp
+[1.570s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__rosidl_typesupport_fastrtps_cpp.hpp
+[1.570s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[1.571s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/bounding_box_query__rosidl_typesupport_fastrtps_cpp.hpp
+[1.571s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/get_octomap__rosidl_typesupport_fastrtps_cpp.hpp
+[1.571s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap__rosidl_typesupport_introspection_cpp.hpp
+[1.571s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__rosidl_typesupport_introspection_cpp.hpp
+[1.571s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/bounding_box_query__rosidl_typesupport_introspection_cpp.hpp
+[1.571s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/srv/detail/get_octomap__rosidl_typesupport_introspection_cpp.hpp
+[1.571s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/environment/pythonpath.sh
+[1.572s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/environment/pythonpath.dsv
+[1.579s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs-2.0.0-py3.10.egg-info/PKG-INFO
+[1.579s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs-2.0.0-py3.10.egg-info/SOURCES.txt
+[1.579s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs-2.0.0-py3.10.egg-info/dependency_links.txt
+[1.579s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs-2.0.0-py3.10.egg-info/top_level.txt
+[1.580s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/__init__.py
+[1.581s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/_octomap_msgs_s.ep.rosidl_typesupport_c.c
+[1.581s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/_octomap_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[1.581s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/_octomap_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[1.581s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/liboctomap_msgs__rosidl_generator_py.so
+[1.582s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/msg/__init__.py
+[1.582s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/msg/_octomap.py
+[1.582s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/msg/_octomap_s.c
+[1.582s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/msg/_octomap_with_pose.py
+[1.582s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/msg/_octomap_with_pose_s.c
+[1.582s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/octomap_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[1.582s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/octomap_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[1.582s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/octomap_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[1.582s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/srv/__init__.py
+[1.582s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/srv/_bounding_box_query.py
+[1.613s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/srv/_bounding_box_query_s.c
+[1.614s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/srv/_get_octomap.py
+[1.614s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/srv/_get_octomap_s.c
+[1.615s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/octomap_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[1.615s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/octomap_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[1.615s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/octomap_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[1.616s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/msg/Octomap.idl
+[1.616s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/msg/OctomapWithPose.idl
+[1.616s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/srv/BoundingBoxQuery.idl
+[1.617s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/srv/GetOctomap.idl
+[1.617s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/msg/Octomap.msg
+[1.618s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/msg/OctomapWithPose.msg
+[1.618s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/srv/BoundingBoxQuery.srv
+[1.618s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/srv/BoundingBoxQuery_Request.msg
+[1.618s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/srv/BoundingBoxQuery_Response.msg
+[1.618s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/srv/GetOctomap.srv
+[1.618s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/srv/GetOctomap_Request.msg
+[1.618s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/srv/GetOctomap_Response.msg
+[1.618s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/ament_index/resource_index/package_run_dependencies/octomap_msgs
+[1.618s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/ament_index/resource_index/parent_prefix_path/octomap_msgs
+[1.618s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/environment/ament_prefix_path.sh
+[1.618s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/environment/ament_prefix_path.dsv
+[1.618s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/environment/path.sh
+[1.618s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/environment/path.dsv
+[1.619s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/local_setup.bash
+[1.619s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/local_setup.sh
+[1.619s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/local_setup.zsh
+[1.619s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/local_setup.dsv
+[1.619s] -- Symlinking: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/package.dsv
+[1.664s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/ament_index/resource_index/packages/octomap_msgs
+[1.664s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/rosidl_cmake-extras.cmake
+[1.664s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.665s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.665s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[1.665s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[1.665s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[1.665s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[1.665s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/octomap_msgsConfig.cmake
+[1.665s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/octomap_msgsConfig-version.cmake
+[1.665s] -- Up-to-date symlink: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/package.xml
+[1.665s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib/liboctomap_msgs__rosidl_generator_c.so
+[1.666s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib/liboctomap_msgs__rosidl_typesupport_fastrtps_c.so
+[1.666s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib/liboctomap_msgs__rosidl_typesupport_introspection_c.so
+[1.667s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib/liboctomap_msgs__rosidl_typesupport_c.so
+[1.667s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib/liboctomap_msgs__rosidl_typesupport_fastrtps_cpp.so
+[1.668s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib/liboctomap_msgs__rosidl_typesupport_introspection_cpp.so
+[1.668s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib/liboctomap_msgs__rosidl_typesupport_cpp.so
+[1.725s] Listing '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs'...
+[1.725s] Listing '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/msg'...
+[1.725s] Listing '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/local/lib/python3.10/dist-packages/octomap_msgs/srv'...
+[1.737s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib/liboctomap_msgs__rosidl_generator_py.so
+[1.738s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs
+[1.738s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs
+[1.738s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/include/octomap_msgs/octomap_msgs/conversions.h
+[1.738s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/export_octomap_msgs__rosidl_generator_cExport.cmake
+[1.738s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/export_octomap_msgs__rosidl_generator_cExport-noconfig.cmake
+[1.739s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/export_octomap_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/export_octomap_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/octomap_msgs__rosidl_typesupport_introspection_cExport.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/octomap_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/octomap_msgs__rosidl_typesupport_cExport.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/octomap_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/export_octomap_msgs__rosidl_generator_cppExport.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/export_octomap_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/export_octomap_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/octomap_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/octomap_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/octomap_msgs__rosidl_typesupport_cppExport.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/octomap_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/export_octomap_msgs__rosidl_generator_pyExport.cmake
+[1.740s] -- Up-to-date: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/cmake/export_octomap_msgs__rosidl_generator_pyExport-noconfig.cmake
+[1.825s] Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/octomap_msgs

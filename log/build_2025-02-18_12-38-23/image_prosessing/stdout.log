@@ -1,0 +1,44 @@
+running egg_info
+writing ../../build/image_prosessing/image_prosessing.egg-info/PKG-INFO
+writing dependency_links to ../../build/image_prosessing/image_prosessing.egg-info/dependency_links.txt
+writing entry points to ../../build/image_prosessing/image_prosessing.egg-info/entry_points.txt
+writing requirements to ../../build/image_prosessing/image_prosessing.egg-info/requires.txt
+writing top-level names to ../../build/image_prosessing/image_prosessing.egg-info/top_level.txt
+reading manifest file '../../build/image_prosessing/image_prosessing.egg-info/SOURCES.txt'
+writing manifest file '../../build/image_prosessing/image_prosessing.egg-info/SOURCES.txt'
+running build
+running build_py
+copying image_prosessing/__init__.py -> /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build/lib/image_prosessing
+copying image_prosessing/blueye_image_simple.py -> /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build/lib/image_prosessing
+copying image_prosessing/Image_test.py -> /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build/lib/image_prosessing
+copying image_prosessing/yolo_chain_value.py -> /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build/lib/image_prosessing
+copying image_prosessing/canny_with_box_original.py -> /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build/lib/image_prosessing
+copying image_prosessing/threshold_with_box.py -> /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build/lib/image_prosessing
+copying image_prosessing/Median_inside_yolo.py -> /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build/lib/image_prosessing
+copying image_prosessing/blueye_image_yolo.py -> /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build/lib/image_prosessing
+copying image_prosessing/Thresh_inside_yolo.py -> /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build/lib/image_prosessing
+copying image_prosessing/threshold_median_mean.py -> /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build/lib/image_prosessing
+copying image_prosessing/Canny_inside_yolo.py -> /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build/lib/image_prosessing
+copying image_prosessing/Adaptive_thresholding.py -> /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build/lib/image_prosessing
+copying image_prosessing/canny_with_box.py -> /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build/lib/image_prosessing
+running install
+running install_lib
+running install_data
+copying resource/image_prosessing -> /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/ament_index/resource_index/packages
+copying package.xml -> /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/image_prosessing
+running install_egg_info
+removing '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/python3.10/site-packages/image_prosessing-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/image_prosessing/image_prosessing.egg-info to /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/python3.10/site-packages/image_prosessing-0.0.0-py3.10.egg-info
+running install_scripts
+Installing Adaptive_threshold script to /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/image_prosessing
+Installing Canny_inside_yolo script to /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/image_prosessing
+Installing Image_test script to /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/image_prosessing
+Installing Median_inside_yolo script to /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/image_prosessing
+Installing Thresh_inside_yolo script to /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/image_prosessing
+Installing blueye_image_yolo script to /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/image_prosessing
+Installing canny_with_box script to /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/image_prosessing
+Installing canny_with_box_original script to /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/image_prosessing
+Installing threshold_median_mean script to /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/image_prosessing
+Installing threshold_with_box script to /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/image_prosessing
+Installing yolo_chain_value script to /home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/image_prosessing
+writing list of installed files to '/home/ovsj/Code/AutonomousBlueye/build/image_prosessing/install.log'

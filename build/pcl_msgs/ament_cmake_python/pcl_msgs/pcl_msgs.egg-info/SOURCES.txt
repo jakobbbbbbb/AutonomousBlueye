@@ -1,0 +1,13 @@
+setup.py
+pcl_msgs/__init__.py
+pcl_msgs.egg-info/PKG-INFO
+pcl_msgs.egg-info/SOURCES.txt
+pcl_msgs.egg-info/dependency_links.txt
+pcl_msgs.egg-info/top_level.txt
+pcl_msgs/msg/__init__.py
+pcl_msgs/msg/_model_coefficients.py
+pcl_msgs/msg/_point_indices.py
+pcl_msgs/msg/_polygon_mesh.py
+pcl_msgs/msg/_vertices.py
+pcl_msgs/srv/__init__.py
+pcl_msgs/srv/_update_filename.py

@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from octomap_msgs/msg/Octomap.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module octomap_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "A 3D map in binary format, as Octree")
+    struct Octomap {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "Flag to denote a binary (only free/occupied) or full occupancy octree (.bt/.ot file)")
+      boolean binary;
+
+      @verbatim (language="comment", text=
+        "Class id of the contained octree")
+      string id;
+
+      @verbatim (language="comment", text=
+        "Resolution (in m) of the smallest octree nodes")
+      double resolution;
+
+      @verbatim (language="comment", text=
+        "binary serialization of octree, use conversions.h to read and write octrees")
+      sequence<int8> data;
+    };
+  };
+};

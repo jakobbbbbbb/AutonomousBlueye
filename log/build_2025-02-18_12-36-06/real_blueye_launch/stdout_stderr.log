@@ -1,0 +1,13 @@
+running develop
+running egg_info
+writing real_blueye_launch.egg-info/PKG-INFO
+writing dependency_links to real_blueye_launch.egg-info/dependency_links.txt
+writing requirements to real_blueye_launch.egg-info/requires.txt
+writing top-level names to real_blueye_launch.egg-info/top_level.txt
+reading manifest file 'real_blueye_launch.egg-info/SOURCES.txt'
+writing manifest file 'real_blueye_launch.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/lib/python3.10/site-packages/real-blueye-launch.egg-link (link to .)
+
+Installed /home/ovsj/Code/AutonomousBlueye/build/real_blueye_launch
+running symlink_data

@@ -1,0 +1,51 @@
+running egg_info
+writing ../../../build/yolov5_ros/yolov5_ros.egg-info/PKG-INFO
+writing dependency_links to ../../../build/yolov5_ros/yolov5_ros.egg-info/dependency_links.txt
+writing entry points to ../../../build/yolov5_ros/yolov5_ros.egg-info/entry_points.txt
+writing requirements to ../../../build/yolov5_ros/yolov5_ros.egg-info/requires.txt
+writing top-level names to ../../../build/yolov5_ros/yolov5_ros.egg-info/top_level.txt
+reading manifest file '../../../build/yolov5_ros/yolov5_ros.egg-info/SOURCES.txt'
+writing manifest file '../../../build/yolov5_ros/yolov5_ros.egg-info/SOURCES.txt'
+running build
+running build_py
+copying yolov5_ros/__init__.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros
+copying yolov5_ros/export.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros
+copying yolov5_ros/main.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros
+copying yolov5_ros/utils/metrics.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/utils/__init__.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/utils/torch_utils.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/utils/callbacks.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/utils/augmentations.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/utils/activations.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/utils/loss.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/utils/datasets.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/utils/downloads.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/utils/general.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/utils/benchmarks.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/utils/autobatch.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/utils/plots.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/utils/autoanchor.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils
+copying yolov5_ros/models/common.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/models
+copying yolov5_ros/models/__init__.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/models
+copying yolov5_ros/models/yolo.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/models
+copying yolov5_ros/models/experimental.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/models
+copying yolov5_ros/models/tf.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/models
+copying yolov5_ros/utils/loggers/__init__.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils/loggers
+copying yolov5_ros/utils/aws/__init__.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils/aws
+copying yolov5_ros/utils/aws/resume.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils/aws
+copying yolov5_ros/utils/loggers/wandb/__init__.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils/loggers/wandb
+copying yolov5_ros/utils/loggers/wandb/wandb_utils.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils/loggers/wandb
+copying yolov5_ros/utils/loggers/wandb/log_dataset.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils/loggers/wandb
+copying yolov5_ros/utils/loggers/wandb/sweep.py -> /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build/lib/yolov5_ros/utils/loggers/wandb
+running install
+running install_lib
+running install_data
+copying resource/yolov5_ros -> /home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/ament_index/resource_index/packages
+copying package.xml -> /home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros
+copying launch/yolov5s_simple.launch.py -> /home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros
+running install_egg_info
+removing '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib/python3.10/site-packages/yolov5_ros-0.2.0-py3.10.egg-info' (and everything under it)
+Copying ../../../build/yolov5_ros/yolov5_ros.egg-info to /home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib/python3.10/site-packages/yolov5_ros-0.2.0-py3.10.egg-info
+running install_scripts
+Installing yolov5_ros script to /home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib/yolov5_ros
+writing list of installed files to '/home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/install.log'

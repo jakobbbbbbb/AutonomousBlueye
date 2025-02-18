@@ -1,0 +1,12 @@
+[console_scripts]
+Adaptive_threshold = image_prosessing.Adaptive_threshold:main
+Canny_inside_yolo = image_prosessing.Canny_inside_yolo:main
+Image_test = image_prosessing.Image_test:main
+Median_inside_yolo = image_prosessing.Median_inside_yolo:main
+Thresh_inside_yolo = image_prosessing.Thresh_inside_yolo:main
+blueye_image_yolo = image_prosessing.blueye_image_yolo:main
+canny_with_box = image_prosessing.canny_with_box:main
+canny_with_box_original = image_prosessing.canny_with_box_original:main
+threshold_median_mean = image_prosessing.threshold_median_mean:main
+threshold_with_box = image_prosessing.threshold_with_box:main
+yolo_chain_value = image_prosessing.yolo_chain_value:main

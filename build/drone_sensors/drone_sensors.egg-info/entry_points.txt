@@ -1,0 +1,7 @@
+[console_scripts]
+BluEye_Force = drone_sensors.BluEye_Force:main
+BluEye_Pose = drone_sensors.BluEye_Pose:main
+IMU_to_ros2 = drone_sensors.IMU_to_ros2:main
+Video_to_ros2 = drone_sensors.Video_to_ros2:main
+blueye_image_simple = drone_sensors.blueye_image_simple:main
+laptop_camera = drone_sensors.laptop_camera:main

@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-faf7808fb63b97fe7747.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "bboxes_ex_msgs__py",
+					"jsonFile" : "directory-bboxes_ex_msgs__py-ef840365aa128817a259.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs/bboxes_ex_msgs__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "bboxes_ex_msgs",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_bboxes_ex_msgs_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_bboxes_ex_msgs_egg-7be40d5bc19c89f2cba0.json",
+					"name" : "ament_cmake_python_build_bboxes_ex_msgs_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_bboxes_ex_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_bboxes_ex_msgs-863f4245aa3b5aa462a9.json",
+					"name" : "ament_cmake_python_symlink_bboxes_ex_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs-01876f0d2ce7e99d0a14.json",
+					"name" : "bboxes_ex_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs__cpp-162180fd5c059ede3e87.json",
+					"name" : "bboxes_ex_msgs__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "bboxes_ex_msgs__py::@bac3caa757efa836e032",
+					"jsonFile" : "target-bboxes_ex_msgs__py-52c4686534d477b2abf9.json",
+					"name" : "bboxes_ex_msgs__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs__rosidl_generator_c-ae6b682b80f71ca956f4.json",
+					"name" : "bboxes_ex_msgs__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs__rosidl_generator_py-426e2e7fc2fc969ba16a.json",
+					"name" : "bboxes_ex_msgs__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs__rosidl_typesupport_c-ae838ac1f0e35b578a51.json",
+					"name" : "bboxes_ex_msgs__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs__rosidl_typesupport_c__pyext-908777c41f47f693a45a.json",
+					"name" : "bboxes_ex_msgs__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs__rosidl_typesupport_cpp-264a708c32dcdd07d018.json",
+					"name" : "bboxes_ex_msgs__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs__rosidl_typesupport_fastrtps_c-6cad44b0a9963a4b04ef.json",
+					"name" : "bboxes_ex_msgs__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs__rosidl_typesupport_fastrtps_c__pyext-67a6539acf319cd963f0.json",
+					"name" : "bboxes_ex_msgs__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp-c0caafd2455f572e213a.json",
+					"name" : "bboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs__rosidl_typesupport_introspection_c-c2a3e53c3605f8f82a1a.json",
+					"name" : "bboxes_ex_msgs__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs__rosidl_typesupport_introspection_c__pyext-9b4a24680e3f0002971b.json",
+					"name" : "bboxes_ex_msgs__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs__rosidl_typesupport_introspection_cpp-d978442e1c0d069cb811.json",
+					"name" : "bboxes_ex_msgs__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bboxes_ex_msgs_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bboxes_ex_msgs_uninstall-701afdbd76e5dbbb7bc1.json",
+					"name" : "bboxes_ex_msgs_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-9088bd09dd9bd3182a9e.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs",
+		"source" : "/home/ovsj/Code/AutonomousBlueye/src/bbox_ex_msgs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

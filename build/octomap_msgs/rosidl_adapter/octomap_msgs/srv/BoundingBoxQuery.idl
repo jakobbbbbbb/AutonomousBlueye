@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from octomap_msgs/srv/BoundingBoxQuery.srv
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Point.idl"
+
+module octomap_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "Clear a region specified by a global axis-aligned bounding box in stored OctoMap")
+    struct BoundingBoxQuery_Request {
+      @verbatim (language="comment", text=
+        "minimum corner point of axis-aligned bounding box in global frame")
+      geometry_msgs::msg::Point min;
+
+      @verbatim (language="comment", text=
+        "maximum corner point of axis-aligned bounding box in global frame")
+      geometry_msgs::msg::Point max;
+    };
+    struct BoundingBoxQuery_Response {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};

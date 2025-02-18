@@ -1,0 +1,4 @@
+[console_scripts]
+Video_to_topic = experimental.Video_to_topic:main
+Video_to_topic_no_trackbar = experimental.Video_to_topic_no_trackbar:main
+control_test = experimental.control_test:main

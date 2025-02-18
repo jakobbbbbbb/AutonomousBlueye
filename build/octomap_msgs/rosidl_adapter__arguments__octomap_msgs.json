@@ -1,0 +1,9 @@
+{
+  "package_name": "octomap_msgs",
+  "non_idl_tuples": [
+    "/home/ovsj/Code/AutonomousBlueye/octomap_msgs:msg/Octomap.msg",
+    "/home/ovsj/Code/AutonomousBlueye/octomap_msgs:msg/OctomapWithPose.msg",
+    "/home/ovsj/Code/AutonomousBlueye/octomap_msgs:srv/BoundingBoxQuery.srv",
+    "/home/ovsj/Code/AutonomousBlueye/octomap_msgs:srv/GetOctomap.srv"
+  ]
+}

@@ -1,0 +1,23 @@
+/home/ovsj/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:270: UserWarning: Unknown distribution option: 'tests_require'
+  warnings.warn(msg)
+running develop
+running egg_info
+creating yolov5_ros.egg-info
+writing yolov5_ros.egg-info/PKG-INFO
+writing dependency_links to yolov5_ros.egg-info/dependency_links.txt
+writing entry points to yolov5_ros.egg-info/entry_points.txt
+writing requirements to yolov5_ros.egg-info/requires.txt
+writing top-level names to yolov5_ros.egg-info/top_level.txt
+writing manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+reading manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+writing manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib/python3.10/site-packages/yolov5-ros.egg-link (link to .)
+Installing yolov5_ros script to /home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib/yolov5_ros
+
+Installed /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros
+running symlink_data
+creating /home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/ament_index/resource_index/packages
+symbolically linking /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/resource/yolov5_ros -> /home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/ament_index/resource_index/packages
+symbolically linking /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/package.xml -> /home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros
+symbolically linking /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/launch/yolov5s_simple.launch.py -> /home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros

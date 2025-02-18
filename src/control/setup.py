@@ -11,13 +11,12 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
     ],
-    install_requires=['setuptools'],
+    install_requires=['setuptools', 'pytest'],
     zip_safe=True,
     maintainer='nikolai',
     maintainer_email='nikolarn@stud.ntnu.no',
     description='TODO: Package description',
     license='TODO: License declaration',
-    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'control = control.control:main',

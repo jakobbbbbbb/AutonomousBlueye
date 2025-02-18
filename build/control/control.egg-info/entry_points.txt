@@ -1,0 +1,8 @@
+[console_scripts]
+control = control.control:main
+control_test = control.control_test:main
+desired_velocity = control.desired_velocity:main
+desired_velocity_compass = control.desired_velocity_compass:main
+desired_velocity_spiral_surge = control.desired_velocity_spiral_surge:main
+desired_velocity_switch = control.desired_velocity_switch:main
+desired_velocity_test = control.desired_velocity_test:main

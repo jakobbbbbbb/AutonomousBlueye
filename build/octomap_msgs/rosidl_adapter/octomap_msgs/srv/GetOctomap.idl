@@ -1,0 +1,18 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from octomap_msgs/srv/GetOctomap.srv
+// generated code does not contain a copyright notice
+
+#include "octomap_msgs/msg/Octomap.idl"
+
+module octomap_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "Get the map as a octomap")
+    struct GetOctomap_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct GetOctomap_Response {
+      octomap_msgs::msg::Octomap map;
+    };
+  };
+};

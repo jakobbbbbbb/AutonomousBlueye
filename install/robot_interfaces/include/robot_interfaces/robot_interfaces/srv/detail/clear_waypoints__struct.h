@@ -1,0 +1,1 @@
+/home/ovsj/Code/AutonomousBlueye/build/robot_interfaces/rosidl_generator_c/robot_interfaces/srv/detail/clear_waypoints__struct.h

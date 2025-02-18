@@ -1,0 +1,761 @@
+[0.083s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.083s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=6, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffffb72b36d0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffb7411300>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffb7411300>>)
+[0.116s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.116s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.116s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.116s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.116s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.116s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.116s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/ovsj/Code/AutonomousBlueye'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(octomap_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(octomap_msgs) by extension 'ignore'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(octomap_msgs) by extension 'ignore_ament_install'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(octomap_msgs) by extensions ['colcon_pkg']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(octomap_msgs) by extension 'colcon_pkg'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(octomap_msgs) by extensions ['colcon_meta']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(octomap_msgs) by extension 'colcon_meta'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(octomap_msgs) by extensions ['ros']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(octomap_msgs) by extension 'ros'
+[0.129s] DEBUG:colcon.colcon_core.package_identification:Package 'octomap_msgs' with type 'ros.ament_cmake' and name 'octomap_msgs'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(pcl_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(pcl_msgs) by extension 'ignore'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(pcl_msgs) by extension 'ignore_ament_install'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(pcl_msgs) by extensions ['colcon_pkg']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(pcl_msgs) by extension 'colcon_pkg'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(pcl_msgs) by extensions ['colcon_meta']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(pcl_msgs) by extension 'colcon_meta'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(pcl_msgs) by extensions ['ros']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(pcl_msgs) by extension 'ros'
+[0.130s] DEBUG:colcon.colcon_core.package_identification:Package 'pcl_msgs' with type 'ros.ament_cmake' and name 'pcl_msgs'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extensions ['ignore', 'ignore_ament_install']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extension 'ignore'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extension 'ignore_ament_install'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extensions ['colcon_pkg']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extension 'colcon_pkg'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extensions ['colcon_meta']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extension 'colcon_meta'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extensions ['ros']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extension 'ros'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extensions ['cmake', 'python']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extension 'cmake'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extension 'python'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extensions ['python_setup_py']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS) by extension 'python_setup_py'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS/yolov5_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS/yolov5_ros) by extension 'ignore'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS/yolov5_ros) by extension 'ignore_ament_install'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS/yolov5_ros) by extensions ['colcon_pkg']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS/yolov5_ros) by extension 'colcon_pkg'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS/yolov5_ros) by extensions ['colcon_meta']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS/yolov5_ros) by extension 'colcon_meta'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS/yolov5_ros) by extensions ['ros']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/YOLOv5-ROS/yolov5_ros) by extension 'ros'
+[0.131s] DEBUG:colcon.colcon_core.package_identification:Package 'src/YOLOv5-ROS/yolov5_ros' with type 'ros.ament_python' and name 'yolov5_ros'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/bbox_ex_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/bbox_ex_msgs) by extension 'ignore'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/bbox_ex_msgs) by extension 'ignore_ament_install'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/bbox_ex_msgs) by extensions ['colcon_pkg']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/bbox_ex_msgs) by extension 'colcon_pkg'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/bbox_ex_msgs) by extensions ['colcon_meta']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/bbox_ex_msgs) by extension 'colcon_meta'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/bbox_ex_msgs) by extensions ['ros']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/bbox_ex_msgs) by extension 'ros'
+[0.132s] DEBUG:colcon.colcon_core.package_identification:Package 'src/bbox_ex_msgs' with type 'ros.ament_cmake' and name 'bboxes_ex_msgs'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['ignore', 'ignore_ament_install']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'ignore'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'ignore_ament_install'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['colcon_pkg']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'colcon_pkg'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['colcon_meta']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'colcon_meta'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['ros']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'ros'
+[0.133s] DEBUG:colcon.colcon_core.package_identification:Package 'src/control' with type 'ros.ament_python' and name 'control'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_sensors) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_sensors) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_sensors) by extension 'ignore_ament_install'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_sensors) by extensions ['colcon_pkg']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_sensors) by extension 'colcon_pkg'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_sensors) by extensions ['colcon_meta']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_sensors) by extension 'colcon_meta'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_sensors) by extensions ['ros']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_sensors) by extension 'ros'
+[0.133s] DEBUG:colcon.colcon_core.package_identification:Package 'src/drone_sensors' with type 'ros.ament_python' and name 'drone_sensors'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/experimental) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/experimental) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/experimental) by extension 'ignore_ament_install'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/experimental) by extensions ['colcon_pkg']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/experimental) by extension 'colcon_pkg'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/experimental) by extensions ['colcon_meta']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/experimental) by extension 'colcon_meta'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/experimental) by extensions ['ros']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/experimental) by extension 'ros'
+[0.134s] DEBUG:colcon.colcon_core.package_identification:Package 'src/experimental' with type 'ros.ament_python' and name 'experimental'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/image_prosessing) by extensions ['ignore', 'ignore_ament_install']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/image_prosessing) by extension 'ignore'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/image_prosessing) by extension 'ignore_ament_install'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/image_prosessing) by extensions ['colcon_pkg']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/image_prosessing) by extension 'colcon_pkg'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/image_prosessing) by extensions ['colcon_meta']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/image_prosessing) by extension 'colcon_meta'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/image_prosessing) by extensions ['ros']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/image_prosessing) by extension 'ros'
+[0.134s] DEBUG:colcon.colcon_core.package_identification:Package 'src/image_prosessing' with type 'ros.ament_python' and name 'image_prosessing'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extensions ['ignore', 'ignore_ament_install']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extension 'ignore'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extension 'ignore_ament_install'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extensions ['colcon_pkg']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extension 'colcon_pkg'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extensions ['colcon_meta']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extension 'colcon_meta'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extensions ['ros']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extension 'ros'
+[0.135s] DEBUG:colcon.colcon_core.package_identification:Package 'src/octomap_server2' with type 'ros.ament_cmake' and name 'octomap_server2'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/real_blueye_launch) by extensions ['ignore', 'ignore_ament_install']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/real_blueye_launch) by extension 'ignore'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/real_blueye_launch) by extension 'ignore_ament_install'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/real_blueye_launch) by extensions ['colcon_pkg']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/real_blueye_launch) by extension 'colcon_pkg'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/real_blueye_launch) by extensions ['colcon_meta']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/real_blueye_launch) by extension 'colcon_meta'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/real_blueye_launch) by extensions ['ros']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/real_blueye_launch) by extension 'ros'
+[0.135s] DEBUG:colcon.colcon_core.package_identification:Package 'src/real_blueye_launch' with type 'ros.ament_python' and name 'real_blueye_launch'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_interfaces) by extension 'ignore'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_interfaces) by extension 'ignore_ament_install'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_interfaces) by extensions ['colcon_pkg']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_interfaces) by extension 'colcon_pkg'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_interfaces) by extensions ['colcon_meta']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_interfaces) by extension 'colcon_meta'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_interfaces) by extensions ['ros']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_interfaces) by extension 'ros'
+[0.136s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_interfaces' with type 'ros.ament_cmake' and name 'robot_interfaces'
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.150s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.150s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.151s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 11 installed packages in /home/ovsj/Code/AutonomousBlueye/install
+[0.152s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 274 installed packages in /opt/ros/humble
+[0.153s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.176s] WARNING:colcon.colcon_core.package_selection:Some selected packages are already built in one or more underlay workspaces:
+	'pcl_msgs' is in: /home/ovsj/Code/AutonomousBlueye/install/pcl_msgs, /opt/ros/humble
+	'octomap_msgs' is in: /home/ovsj/Code/AutonomousBlueye/install/octomap_msgs, /opt/ros/humble
+If a package in a merged underlay workspace is overridden and it installs headers, then all packages in the overlay must sort their include directories by workspace order. Failure to do so may result in build failures or undefined behavior at run time.
+If the overridden package is used by another package in any underlay, then the overriding package in the overlay must be API and ABI compatible or undefined behavior at run time may occur.
+
+If you understand the risks and want to override a package anyways, add the following to the command line:
+	--allow-overriding octomap_msgs pcl_msgs
+
+This may be promoted to an error in a future release of colcon-override-check.
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'cmake_args' from command line to 'None'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'cmake_target' from command line to 'None'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.177s] DEBUG:colcon.colcon_core.verb:Building package 'bboxes_ex_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs', 'merge_install': False, 'path': '/home/ovsj/Code/AutonomousBlueye/src/bbox_ex_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_args' from command line to 'None'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_target' from command line to 'None'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_clean_first' from command line to 'False'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_force_configure' from command line to 'False'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'ament_cmake_args' from command line to 'None'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.177s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.177s] DEBUG:colcon.colcon_core.verb:Building package 'control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ovsj/Code/AutonomousBlueye/build/control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ovsj/Code/AutonomousBlueye/install/control', 'merge_install': False, 'path': '/home/ovsj/Code/AutonomousBlueye/src/control', 'symlink_install': False, 'test_result_base': None}
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'experimental' build argument 'cmake_args' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'experimental' build argument 'cmake_target' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'experimental' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'experimental' build argument 'cmake_clean_cache' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'experimental' build argument 'cmake_clean_first' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'experimental' build argument 'cmake_force_configure' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'experimental' build argument 'ament_cmake_args' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'experimental' build argument 'catkin_cmake_args' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'experimental' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.178s] DEBUG:colcon.colcon_core.verb:Building package 'experimental' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ovsj/Code/AutonomousBlueye/build/experimental', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ovsj/Code/AutonomousBlueye/install/experimental', 'merge_install': False, 'path': '/home/ovsj/Code/AutonomousBlueye/src/experimental', 'symlink_install': False, 'test_result_base': None}
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'image_prosessing' build argument 'cmake_args' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'image_prosessing' build argument 'cmake_target' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'image_prosessing' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'image_prosessing' build argument 'cmake_clean_cache' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'image_prosessing' build argument 'cmake_clean_first' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'image_prosessing' build argument 'cmake_force_configure' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'image_prosessing' build argument 'ament_cmake_args' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'image_prosessing' build argument 'catkin_cmake_args' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'image_prosessing' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.178s] DEBUG:colcon.colcon_core.verb:Building package 'image_prosessing' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ovsj/Code/AutonomousBlueye/build/image_prosessing', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing', 'merge_install': False, 'path': '/home/ovsj/Code/AutonomousBlueye/src/image_prosessing', 'symlink_install': False, 'test_result_base': None}
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'octomap_msgs' build argument 'cmake_args' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'octomap_msgs' build argument 'cmake_target' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'octomap_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'octomap_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'octomap_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'octomap_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'octomap_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'octomap_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'octomap_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.178s] DEBUG:colcon.colcon_core.verb:Building package 'octomap_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs', 'merge_install': False, 'path': '/home/ovsj/Code/AutonomousBlueye/octomap_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'pcl_msgs' build argument 'cmake_args' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'pcl_msgs' build argument 'cmake_target' from command line to 'None'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'pcl_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'pcl_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'pcl_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'pcl_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.178s] Level 5:colcon.colcon_core.verb:set package 'pcl_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'pcl_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'pcl_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.179s] DEBUG:colcon.colcon_core.verb:Building package 'pcl_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ovsj/Code/AutonomousBlueye/build/pcl_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs', 'merge_install': False, 'path': '/home/ovsj/Code/AutonomousBlueye/pcl_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'real_blueye_launch' build argument 'cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'real_blueye_launch' build argument 'cmake_target' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'real_blueye_launch' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'real_blueye_launch' build argument 'cmake_clean_cache' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'real_blueye_launch' build argument 'cmake_clean_first' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'real_blueye_launch' build argument 'cmake_force_configure' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'real_blueye_launch' build argument 'ament_cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'real_blueye_launch' build argument 'catkin_cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'real_blueye_launch' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.179s] DEBUG:colcon.colcon_core.verb:Building package 'real_blueye_launch' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ovsj/Code/AutonomousBlueye/build/real_blueye_launch', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch', 'merge_install': False, 'path': '/home/ovsj/Code/AutonomousBlueye/src/real_blueye_launch', 'symlink_install': False, 'test_result_base': None}
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.179s] DEBUG:colcon.colcon_core.verb:Building package 'robot_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ovsj/Code/AutonomousBlueye/build/robot_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces', 'merge_install': False, 'path': '/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'drone_sensors' build argument 'cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'drone_sensors' build argument 'cmake_target' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'drone_sensors' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'drone_sensors' build argument 'cmake_clean_cache' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'drone_sensors' build argument 'cmake_clean_first' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'drone_sensors' build argument 'cmake_force_configure' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'drone_sensors' build argument 'ament_cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'drone_sensors' build argument 'catkin_cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'drone_sensors' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.179s] DEBUG:colcon.colcon_core.verb:Building package 'drone_sensors' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ovsj/Code/AutonomousBlueye/build/drone_sensors', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors', 'merge_install': False, 'path': '/home/ovsj/Code/AutonomousBlueye/src/drone_sensors', 'symlink_install': False, 'test_result_base': None}
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'cmake_args' from command line to 'None'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'cmake_target' from command line to 'None'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'cmake_clean_cache' from command line to 'False'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'cmake_clean_first' from command line to 'False'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'cmake_force_configure' from command line to 'False'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'ament_cmake_args' from command line to 'None'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'catkin_cmake_args' from command line to 'None'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.180s] DEBUG:colcon.colcon_core.verb:Building package 'octomap_server2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ovsj/Code/AutonomousBlueye/build/octomap_server2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2', 'merge_install': False, 'path': '/home/ovsj/Code/AutonomousBlueye/src/octomap_server2', 'symlink_install': False, 'test_result_base': None}
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'cmake_args' from command line to 'None'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'cmake_target' from command line to 'None'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'cmake_clean_cache' from command line to 'False'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'cmake_clean_first' from command line to 'False'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'cmake_force_configure' from command line to 'False'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'ament_cmake_args' from command line to 'None'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'catkin_cmake_args' from command line to 'None'
+[0.180s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.180s] DEBUG:colcon.colcon_core.verb:Building package 'yolov5_ros' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ovsj/Code/AutonomousBlueye/build/yolov5_ros', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros', 'merge_install': False, 'path': '/home/ovsj/Code/AutonomousBlueye/src/YOLOv5-ROS/yolov5_ros', 'symlink_install': False, 'test_result_base': None}
+[0.180s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.181s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.181s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ovsj/Code/AutonomousBlueye/src/bbox_ex_msgs' with build type 'ament_cmake'
+[0.181s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ovsj/Code/AutonomousBlueye/src/bbox_ex_msgs'
+[0.183s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.183s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.183s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.186s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ovsj/Code/AutonomousBlueye/octomap_msgs' with build type 'ament_cmake'
+[0.187s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ovsj/Code/AutonomousBlueye/octomap_msgs'
+[0.187s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.187s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.190s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ovsj/Code/AutonomousBlueye/pcl_msgs' with build type 'ament_cmake'
+[0.190s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ovsj/Code/AutonomousBlueye/pcl_msgs'
+[0.191s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.191s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.195s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces' with build type 'ament_cmake'
+[0.196s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces'
+[0.196s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.196s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.201s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/ovsj/Code/AutonomousBlueye/src/control' with build type 'ament_python'
+[0.201s] Level 1:colcon.colcon_core.shell:create_environment_hook('control', 'ament_prefix_path')
+[0.201s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/control/share/control/hook/ament_prefix_path.ps1'
+[0.202s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/control/share/control/hook/ament_prefix_path.dsv'
+[0.203s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/control/share/control/hook/ament_prefix_path.sh'
+[0.204s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.204s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.207s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/ovsj/Code/AutonomousBlueye/src/experimental' with build type 'ament_python'
+[0.207s] Level 1:colcon.colcon_core.shell:create_environment_hook('experimental', 'ament_prefix_path')
+[0.207s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/experimental/share/experimental/hook/ament_prefix_path.ps1'
+[0.208s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/experimental/share/experimental/hook/ament_prefix_path.dsv'
+[0.209s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/experimental/share/experimental/hook/ament_prefix_path.sh'
+[0.209s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.209s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.223s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs -- -j6 -l6
+[0.229s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/octomap_msgs -- -j6 -l6
+[0.234s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/pcl_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/pcl_msgs -- -j6 -l6
+[0.242s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/robot_interfaces -- -j6 -l6
+[0.693s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/ovsj/Code/AutonomousBlueye/src/control'
+[0.694s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.694s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.145s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/ovsj/Code/AutonomousBlueye/src/experimental'
+[1.145s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.146s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.159s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/robot_interfaces -- -j6 -l6
+[1.179s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/robot_interfaces
+[1.185s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs -- -j6 -l6
+[1.186s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs
+[1.195s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/pcl_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/pcl_msgs -- -j6 -l6
+[1.196s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/pcl_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/pcl_msgs
+[1.353s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bboxes_ex_msgs)
+[1.359s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs' for CMake module files
+[1.360s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs' for CMake config files
+[1.361s] Level 1:colcon.colcon_core.shell:create_environment_hook('bboxes_ex_msgs', 'cmake_prefix_path')
+[1.361s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/cmake_prefix_path.ps1'
+[1.361s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/cmake_prefix_path.dsv'
+[1.371s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/cmake_prefix_path.sh'
+[1.373s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib'
+[1.374s] Level 1:colcon.colcon_core.shell:create_environment_hook('bboxes_ex_msgs', 'ld_library_path_lib')
+[1.374s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/ld_library_path_lib.ps1'
+[1.375s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/ld_library_path_lib.dsv'
+[1.375s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/ld_library_path_lib.sh'
+[1.376s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/bin'
+[1.376s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib/pkgconfig/bboxes_ex_msgs.pc'
+[1.377s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib/python3.10/site-packages'
+[1.378s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/bin'
+[1.380s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.ps1'
+[1.381s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.dsv'
+[1.382s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.sh'
+[1.398s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs
+[1.400s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.bash'
+[1.402s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.zsh'
+[1.403s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/colcon-core/packages/bboxes_ex_msgs)
+[1.403s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bboxes_ex_msgs)
+[1.403s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs' for CMake module files
+[1.404s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs' for CMake config files
+[1.404s] Level 1:colcon.colcon_core.shell:create_environment_hook('bboxes_ex_msgs', 'cmake_prefix_path')
+[1.404s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/cmake_prefix_path.ps1'
+[1.405s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/cmake_prefix_path.dsv'
+[1.411s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/cmake_prefix_path.sh'
+[1.412s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib'
+[1.412s] Level 1:colcon.colcon_core.shell:create_environment_hook('bboxes_ex_msgs', 'ld_library_path_lib')
+[1.413s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/ld_library_path_lib.ps1'
+[1.420s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/ld_library_path_lib.dsv'
+[1.421s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/ld_library_path_lib.sh'
+[1.422s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/bin'
+[1.423s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib/pkgconfig/bboxes_ex_msgs.pc'
+[1.423s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib/python3.10/site-packages'
+[1.423s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/bin'
+[1.425s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.ps1'
+[1.428s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.dsv'
+[1.438s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.sh'
+[1.440s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.bash'
+[1.441s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.zsh'
+[1.441s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/share/colcon-core/packages/bboxes_ex_msgs)
+[1.445s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/ovsj/Code/AutonomousBlueye/src/image_prosessing' with build type 'ament_python'
+[1.445s] Level 1:colcon.colcon_core.shell:create_environment_hook('image_prosessing', 'ament_prefix_path')
+[1.446s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/image_prosessing/hook/ament_prefix_path.ps1'
+[1.446s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/image_prosessing/hook/ament_prefix_path.dsv'
+[1.446s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/image_prosessing/hook/ament_prefix_path.sh'
+[1.448s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.448s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.468s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/octomap_msgs -- -j6 -l6
+[1.469s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/octomap_msgs
+[1.860s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/ovsj/Code/AutonomousBlueye/src/image_prosessing'
+[1.861s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.861s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.883s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pcl_msgs)
+[1.883s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs' for CMake module files
+[1.883s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs' for CMake config files
+[1.884s] Level 1:colcon.colcon_core.shell:create_environment_hook('pcl_msgs', 'cmake_prefix_path')
+[1.884s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/hook/cmake_prefix_path.ps1'
+[1.884s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/hook/cmake_prefix_path.dsv'
+[1.884s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/hook/cmake_prefix_path.sh'
+[1.885s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib'
+[1.885s] Level 1:colcon.colcon_core.shell:create_environment_hook('pcl_msgs', 'ld_library_path_lib')
+[1.885s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/hook/ld_library_path_lib.ps1'
+[1.887s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/pcl_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/pcl_msgs
+[1.888s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/hook/ld_library_path_lib.dsv'
+[1.894s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/hook/ld_library_path_lib.sh'
+[1.895s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/bin'
+[1.895s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib/pkgconfig/pcl_msgs.pc'
+[1.896s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib/python3.10/site-packages'
+[1.897s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/bin'
+[1.897s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/package.ps1'
+[1.897s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/package.dsv'
+[1.898s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/package.sh'
+[1.898s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/package.bash'
+[1.899s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/package.zsh'
+[1.899s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/colcon-core/packages/pcl_msgs)
+[1.901s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pcl_msgs)
+[1.901s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs' for CMake module files
+[1.908s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs' for CMake config files
+[1.910s] Level 1:colcon.colcon_core.shell:create_environment_hook('pcl_msgs', 'cmake_prefix_path')
+[1.910s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/hook/cmake_prefix_path.ps1'
+[1.910s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/hook/cmake_prefix_path.dsv'
+[1.910s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/hook/cmake_prefix_path.sh'
+[1.912s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib'
+[1.912s] Level 1:colcon.colcon_core.shell:create_environment_hook('pcl_msgs', 'ld_library_path_lib')
+[1.913s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/hook/ld_library_path_lib.ps1'
+[1.913s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/hook/ld_library_path_lib.dsv'
+[1.913s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/hook/ld_library_path_lib.sh'
+[1.914s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/bin'
+[1.914s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib/pkgconfig/pcl_msgs.pc'
+[1.914s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib/python3.10/site-packages'
+[1.915s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/bin'
+[1.916s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/package.ps1'
+[1.917s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/package.dsv'
+[1.925s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/package.sh'
+[1.926s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/package.bash'
+[1.926s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/pcl_msgs/package.zsh'
+[1.926s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/share/colcon-core/packages/pcl_msgs)
+[1.930s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_interfaces)
+[1.932s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/robot_interfaces
+[1.933s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces' for CMake module files
+[1.936s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces' for CMake config files
+[1.937s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_interfaces', 'cmake_prefix_path')
+[1.938s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/hook/cmake_prefix_path.ps1'
+[1.939s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/hook/cmake_prefix_path.dsv'
+[1.940s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/hook/cmake_prefix_path.sh'
+[1.941s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib'
+[1.941s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_interfaces', 'ld_library_path_lib')
+[1.941s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/hook/ld_library_path_lib.ps1'
+[1.944s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/hook/ld_library_path_lib.dsv'
+[1.950s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/hook/ld_library_path_lib.sh'
+[1.952s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/bin'
+[1.952s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib/pkgconfig/robot_interfaces.pc'
+[1.952s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib/python3.10/site-packages'
+[1.952s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/bin'
+[1.953s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/package.ps1'
+[1.953s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/package.dsv'
+[1.954s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/package.sh'
+[1.956s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/package.bash'
+[1.958s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/package.zsh'
+[1.962s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/colcon-core/packages/robot_interfaces)
+[1.968s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_interfaces)
+[1.968s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces' for CMake module files
+[1.970s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces' for CMake config files
+[1.971s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_interfaces', 'cmake_prefix_path')
+[1.971s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/hook/cmake_prefix_path.ps1'
+[1.971s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/hook/cmake_prefix_path.dsv'
+[1.972s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/hook/cmake_prefix_path.sh'
+[1.973s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib'
+[1.973s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_interfaces', 'ld_library_path_lib')
+[1.973s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/hook/ld_library_path_lib.ps1'
+[1.974s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/hook/ld_library_path_lib.dsv'
+[1.975s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/hook/ld_library_path_lib.sh'
+[1.980s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/bin'
+[1.980s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib/pkgconfig/robot_interfaces.pc'
+[1.981s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib/python3.10/site-packages'
+[1.981s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/bin'
+[1.981s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/package.ps1'
+[1.984s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/package.dsv'
+[1.988s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/package.sh'
+[1.988s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/package.bash'
+[1.989s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/robot_interfaces/package.zsh'
+[1.989s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/share/colcon-core/packages/robot_interfaces)
+[1.995s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/ovsj/Code/AutonomousBlueye/src/real_blueye_launch' with build type 'ament_python'
+[1.996s] Level 1:colcon.colcon_core.shell:create_environment_hook('real_blueye_launch', 'ament_prefix_path')
+[2.002s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/share/real_blueye_launch/hook/ament_prefix_path.ps1'
+[2.002s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/share/real_blueye_launch/hook/ament_prefix_path.dsv'
+[2.003s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/share/real_blueye_launch/hook/ament_prefix_path.sh'
+[2.003s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.003s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.032s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/ovsj/Code/AutonomousBlueye/src/drone_sensors' with build type 'ament_python'
+[2.032s] Level 1:colcon.colcon_core.shell:create_environment_hook('drone_sensors', 'ament_prefix_path')
+[2.032s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/drone_sensors/hook/ament_prefix_path.ps1'
+[2.034s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/drone_sensors/hook/ament_prefix_path.dsv'
+[2.035s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/drone_sensors/hook/ament_prefix_path.sh'
+[2.035s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.036s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.051s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(octomap_msgs)
+[2.052s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/octomap_msgs
+[2.053s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs' for CMake module files
+[2.054s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs' for CMake config files
+[2.054s] Level 1:colcon.colcon_core.shell:create_environment_hook('octomap_msgs', 'cmake_prefix_path')
+[2.055s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/hook/cmake_prefix_path.ps1'
+[2.055s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/hook/cmake_prefix_path.dsv'
+[2.056s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/hook/cmake_prefix_path.sh'
+[2.057s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib'
+[2.057s] Level 1:colcon.colcon_core.shell:create_environment_hook('octomap_msgs', 'ld_library_path_lib')
+[2.057s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/hook/ld_library_path_lib.ps1'
+[2.059s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/hook/ld_library_path_lib.dsv'
+[2.059s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/hook/ld_library_path_lib.sh'
+[2.061s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/bin'
+[2.061s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib/pkgconfig/octomap_msgs.pc'
+[2.062s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib/python3.10/site-packages'
+[2.062s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/bin'
+[2.063s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/package.ps1'
+[2.063s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/package.dsv'
+[2.064s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/package.sh'
+[2.065s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/package.bash'
+[2.066s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/package.zsh'
+[2.066s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/colcon-core/packages/octomap_msgs)
+[2.068s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(octomap_msgs)
+[2.068s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs' for CMake module files
+[2.070s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs' for CMake config files
+[2.070s] Level 1:colcon.colcon_core.shell:create_environment_hook('octomap_msgs', 'cmake_prefix_path')
+[2.071s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/hook/cmake_prefix_path.ps1'
+[2.073s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/hook/cmake_prefix_path.dsv'
+[2.074s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/hook/cmake_prefix_path.sh'
+[2.077s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib'
+[2.077s] Level 1:colcon.colcon_core.shell:create_environment_hook('octomap_msgs', 'ld_library_path_lib')
+[2.077s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/hook/ld_library_path_lib.ps1'
+[2.077s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/hook/ld_library_path_lib.dsv'
+[2.078s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/hook/ld_library_path_lib.sh'
+[2.080s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/bin'
+[2.080s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib/pkgconfig/octomap_msgs.pc'
+[2.081s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib/python3.10/site-packages'
+[2.081s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/bin'
+[2.081s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/package.ps1'
+[2.082s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/package.dsv'
+[2.083s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/package.sh'
+[2.084s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/package.bash'
+[2.085s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/octomap_msgs/package.zsh'
+[2.086s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/share/colcon-core/packages/octomap_msgs)
+[2.100s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/src/experimental': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/experimental/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/experimental/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/experimental build --build-base /home/ovsj/Code/AutonomousBlueye/build/experimental/build install --record /home/ovsj/Code/AutonomousBlueye/build/experimental/install.log --single-version-externally-managed install_data
+[2.108s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ovsj/Code/AutonomousBlueye/src/octomap_server2' with build type 'ament_cmake'
+[2.109s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ovsj/Code/AutonomousBlueye/src/octomap_server2'
+[2.109s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.109s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.521s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/ovsj/Code/AutonomousBlueye/src/real_blueye_launch'
+[2.521s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.521s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.953s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/ovsj/Code/AutonomousBlueye/src/drone_sensors'
+[2.953s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.953s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.984s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/src/control': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/control build --build-base /home/ovsj/Code/AutonomousBlueye/build/control/build install --record /home/ovsj/Code/AutonomousBlueye/build/control/install.log --single-version-externally-managed install_data
+[3.009s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/octomap_server2': CMAKE_PREFIX_PATH=/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2:/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble LD_LIBRARY_PATH=/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib:/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/octomap_server2 -- -j6 -l6
+[3.043s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/experimental' for CMake module files
+[3.043s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/src/experimental' returned '0': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/experimental/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/experimental/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/experimental build --build-base /home/ovsj/Code/AutonomousBlueye/build/experimental/build install --record /home/ovsj/Code/AutonomousBlueye/build/experimental/install.log --single-version-externally-managed install_data
+[3.044s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/experimental' for CMake config files
+[3.045s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/experimental/lib'
+[3.045s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/experimental/bin'
+[3.045s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/experimental/lib/pkgconfig/experimental.pc'
+[3.045s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/experimental/lib/python3.10/site-packages'
+[3.045s] Level 1:colcon.colcon_core.shell:create_environment_hook('experimental', 'pythonpath')
+[3.045s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/experimental/share/experimental/hook/pythonpath.ps1'
+[3.046s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/experimental/share/experimental/hook/pythonpath.dsv'
+[3.049s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/experimental/share/experimental/hook/pythonpath.sh'
+[3.050s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/experimental/bin'
+[3.051s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(experimental)
+[3.052s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/experimental/share/experimental/package.ps1'
+[3.052s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/experimental/share/experimental/package.dsv'
+[3.052s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/experimental/share/experimental/package.sh'
+[3.059s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/experimental/share/experimental/package.bash'
+[3.060s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/experimental/share/experimental/package.zsh'
+[3.062s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/experimental/share/colcon-core/packages/experimental)
+[3.065s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/ovsj/Code/AutonomousBlueye/src/YOLOv5-ROS/yolov5_ros' with build type 'ament_python'
+[3.066s] Level 1:colcon.colcon_core.shell:create_environment_hook('yolov5_ros', 'ament_prefix_path')
+[3.066s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros/hook/ament_prefix_path.ps1'
+[3.066s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros/hook/ament_prefix_path.dsv'
+[3.067s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros/hook/ament_prefix_path.sh'
+[3.067s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.068s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.093s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/src/image_prosessing': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/image_prosessing/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/image_prosessing build --build-base /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build install --record /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/install.log --single-version-externally-managed install_data
+[3.817s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/ovsj/Code/AutonomousBlueye/src/YOLOv5-ROS/yolov5_ros'
+[3.818s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.818s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.834s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/control' for CMake module files
+[3.834s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/control' for CMake config files
+[3.834s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/control/lib'
+[3.835s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/control/bin'
+[3.835s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/control/lib/pkgconfig/control.pc'
+[3.835s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages'
+[3.835s] Level 1:colcon.colcon_core.shell:create_environment_hook('control', 'pythonpath')
+[3.835s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/control/share/control/hook/pythonpath.ps1'
+[3.835s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/control/share/control/hook/pythonpath.dsv'
+[3.836s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/src/control' returned '0': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/control/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/control build --build-base /home/ovsj/Code/AutonomousBlueye/build/control/build install --record /home/ovsj/Code/AutonomousBlueye/build/control/install.log --single-version-externally-managed install_data
+[3.840s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/control/share/control/hook/pythonpath.sh'
+[3.842s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/control/bin'
+[3.842s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(control)
+[3.843s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/control/share/control/package.ps1'
+[3.844s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/control/share/control/package.dsv'
+[3.845s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/control/share/control/package.sh'
+[3.850s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/control/share/control/package.bash'
+[3.852s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/control/share/control/package.zsh'
+[3.854s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/control/share/colcon-core/packages/control)
+[3.856s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/octomap_server2' returned '0': CMAKE_PREFIX_PATH=/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2:/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble LD_LIBRARY_PATH=/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib:/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/ovsj/Code/AutonomousBlueye/build/octomap_server2 -- -j6 -l6
+[3.857s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/build/octomap_server2': CMAKE_PREFIX_PATH=/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2:/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble LD_LIBRARY_PATH=/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib:/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/octomap_server2
+[3.964s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(octomap_server2)
+[3.965s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2' for CMake module files
+[3.966s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2' for CMake config files
+[3.967s] Level 1:colcon.colcon_core.shell:create_environment_hook('octomap_server2', 'cmake_prefix_path')
+[3.967s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/hook/cmake_prefix_path.ps1'
+[3.967s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/hook/cmake_prefix_path.dsv'
+[3.968s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/hook/cmake_prefix_path.sh'
+[3.968s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib'
+[3.968s] Level 1:colcon.colcon_core.shell:create_environment_hook('octomap_server2', 'ld_library_path_lib')
+[3.969s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/hook/ld_library_path_lib.ps1'
+[3.969s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/hook/ld_library_path_lib.dsv'
+[3.971s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/build/octomap_server2' returned '0': CMAKE_PREFIX_PATH=/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2:/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing:/home/ovsj/Code/AutonomousBlueye/install/experimental:/home/ovsj/Code/AutonomousBlueye/install/control:/opt/ros/humble LD_LIBRARY_PATH=/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib:/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --install /home/ovsj/Code/AutonomousBlueye/build/octomap_server2
+[3.974s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/hook/ld_library_path_lib.sh'
+[3.975s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/bin'
+[3.975s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib/pkgconfig/octomap_server2.pc'
+[3.976s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib/python3.10/site-packages'
+[3.976s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/bin'
+[3.976s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/package.ps1'
+[3.977s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/package.dsv'
+[3.977s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/package.sh'
+[3.977s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/package.bash'
+[3.978s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/package.zsh'
+[3.984s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/colcon-core/packages/octomap_server2)
+[3.986s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(octomap_server2)
+[3.986s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2' for CMake module files
+[3.986s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2' for CMake config files
+[3.987s] Level 1:colcon.colcon_core.shell:create_environment_hook('octomap_server2', 'cmake_prefix_path')
+[3.987s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/hook/cmake_prefix_path.ps1'
+[3.991s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/hook/cmake_prefix_path.dsv'
+[3.993s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/hook/cmake_prefix_path.sh'
+[3.994s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib'
+[3.994s] Level 1:colcon.colcon_core.shell:create_environment_hook('octomap_server2', 'ld_library_path_lib')
+[3.995s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/hook/ld_library_path_lib.ps1'
+[3.995s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/hook/ld_library_path_lib.dsv'
+[3.997s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/hook/ld_library_path_lib.sh'
+[3.998s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/bin'
+[3.998s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib/pkgconfig/octomap_server2.pc'
+[3.999s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib/python3.10/site-packages'
+[4.000s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/bin'
+[4.000s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/package.ps1'
+[4.006s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/package.dsv'
+[4.007s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/package.sh'
+[4.009s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/package.bash'
+[4.012s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/octomap_server2/package.zsh'
+[4.016s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/share/colcon-core/packages/octomap_server2)
+[4.208s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/src/drone_sensors': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/drone_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/drone_sensors build --build-base /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build install --record /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/install.log --single-version-externally-managed install_data
+[4.322s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/src/real_blueye_launch': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/real_blueye_launch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/real_blueye_launch build --build-base /home/ovsj/Code/AutonomousBlueye/build/real_blueye_launch/build install --record /home/ovsj/Code/AutonomousBlueye/build/real_blueye_launch/install.log --single-version-externally-managed install_data
+[4.534s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing' for CMake module files
+[4.535s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing' for CMake config files
+[4.535s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib'
+[4.535s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/bin'
+[4.535s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/pkgconfig/image_prosessing.pc'
+[4.535s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/python3.10/site-packages'
+[4.535s] Level 1:colcon.colcon_core.shell:create_environment_hook('image_prosessing', 'pythonpath')
+[4.536s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/image_prosessing/hook/pythonpath.ps1'
+[4.536s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/image_prosessing/hook/pythonpath.dsv'
+[4.536s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/image_prosessing/hook/pythonpath.sh'
+[4.536s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/bin'
+[4.536s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(image_prosessing)
+[4.537s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/image_prosessing/package.ps1'
+[4.537s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/image_prosessing/package.dsv'
+[4.541s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/src/image_prosessing' returned '0': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/image_prosessing/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/image_prosessing build --build-base /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/build install --record /home/ovsj/Code/AutonomousBlueye/build/image_prosessing/install.log --single-version-externally-managed install_data
+[4.551s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/image_prosessing/package.sh'
+[4.551s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/image_prosessing/package.bash'
+[4.552s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/image_prosessing/package.zsh'
+[4.559s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/image_prosessing/share/colcon-core/packages/image_prosessing)
+[4.765s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ovsj/Code/AutonomousBlueye/src/YOLOv5-ROS/yolov5_ros': CMAKE_PREFIX_PATH=/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2:/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs LD_LIBRARY_PATH=/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib:/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/yolov5_ros build --build-base /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build install --record /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/install.log --single-version-externally-managed install_data
+[5.433s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch' for CMake module files
+[5.433s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch' for CMake config files
+[5.434s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/lib'
+[5.435s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/bin'
+[5.435s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/lib/pkgconfig/real_blueye_launch.pc'
+[5.435s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/lib/python3.10/site-packages'
+[5.435s] Level 1:colcon.colcon_core.shell:create_environment_hook('real_blueye_launch', 'pythonpath')
+[5.435s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/share/real_blueye_launch/hook/pythonpath.ps1'
+[5.435s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/share/real_blueye_launch/hook/pythonpath.dsv'
+[5.436s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/share/real_blueye_launch/hook/pythonpath.sh'
+[5.436s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/bin'
+[5.436s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(real_blueye_launch)
+[5.436s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/share/real_blueye_launch/package.ps1'
+[5.437s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/src/real_blueye_launch' returned '0': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/real_blueye_launch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/real_blueye_launch build --build-base /home/ovsj/Code/AutonomousBlueye/build/real_blueye_launch/build install --record /home/ovsj/Code/AutonomousBlueye/build/real_blueye_launch/install.log --single-version-externally-managed install_data
+[5.439s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/share/real_blueye_launch/package.dsv'
+[5.441s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/share/real_blueye_launch/package.sh'
+[5.443s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/share/real_blueye_launch/package.bash'
+[5.444s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/share/real_blueye_launch/package.zsh'
+[5.445s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/real_blueye_launch/share/colcon-core/packages/real_blueye_launch)
+[5.505s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros' for CMake module files
+[5.506s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/src/YOLOv5-ROS/yolov5_ros' returned '0': CMAKE_PREFIX_PATH=/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2:/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs LD_LIBRARY_PATH=/home/ovsj/Code/AutonomousBlueye/install/bboxes_ex_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/robot_interfaces/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_server2/lib:/home/ovsj/Code/AutonomousBlueye/install/pcl_msgs/lib:/home/ovsj/Code/AutonomousBlueye/install/octomap_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/yolov5_ros build --build-base /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/build install --record /home/ovsj/Code/AutonomousBlueye/build/yolov5_ros/install.log --single-version-externally-managed install_data
+[5.507s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros' for CMake config files
+[5.508s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib'
+[5.508s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/bin'
+[5.508s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib/pkgconfig/yolov5_ros.pc'
+[5.508s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/lib/python3.10/site-packages'
+[5.508s] Level 1:colcon.colcon_core.shell:create_environment_hook('yolov5_ros', 'pythonpath')
+[5.508s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros/hook/pythonpath.ps1'
+[5.509s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros/hook/pythonpath.dsv'
+[5.510s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros/hook/pythonpath.sh'
+[5.511s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/bin'
+[5.511s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(yolov5_ros)
+[5.512s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros/package.ps1'
+[5.515s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros/package.dsv'
+[5.516s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros/package.sh'
+[5.517s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros/package.bash'
+[5.518s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/yolov5_ros/package.zsh'
+[5.519s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/yolov5_ros/share/colcon-core/packages/yolov5_ros)
+[5.635s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors' for CMake module files
+[5.635s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors' for CMake config files
+[5.636s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib'
+[5.636s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/bin'
+[5.636s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/pkgconfig/drone_sensors.pc'
+[5.636s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages'
+[5.636s] Level 1:colcon.colcon_core.shell:create_environment_hook('drone_sensors', 'pythonpath')
+[5.636s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/drone_sensors/hook/pythonpath.ps1'
+[5.636s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/drone_sensors/hook/pythonpath.dsv'
+[5.637s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/drone_sensors/hook/pythonpath.sh'
+[5.639s] Level 1:colcon.colcon_core.environment:checking '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/bin'
+[5.639s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ovsj/Code/AutonomousBlueye/src/drone_sensors' returned '0': PYTHONPATH=/home/ovsj/Code/AutonomousBlueye/build/drone_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/drone_sensors build --build-base /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/build install --record /home/ovsj/Code/AutonomousBlueye/build/drone_sensors/install.log --single-version-externally-managed install_data
+[5.640s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(drone_sensors)
+[5.640s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/drone_sensors/package.ps1'
+[5.641s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/drone_sensors/package.dsv'
+[5.641s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/drone_sensors/package.sh'
+[5.643s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/drone_sensors/package.bash'
+[5.643s] INFO:colcon.colcon_core.shell:Creating package script '/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/drone_sensors/package.zsh'
+[5.644s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ovsj/Code/AutonomousBlueye/install/drone_sensors/share/colcon-core/packages/drone_sensors)
+[5.645s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.646s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.646s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[5.647s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[5.664s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[5.664s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[5.664s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[5.693s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[5.694s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ovsj/Code/AutonomousBlueye/install/local_setup.ps1'
+[5.702s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ovsj/Code/AutonomousBlueye/install/_local_setup_util_ps1.py'
+[5.704s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ovsj/Code/AutonomousBlueye/install/setup.ps1'
+[5.707s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ovsj/Code/AutonomousBlueye/install/local_setup.sh'
+[5.708s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ovsj/Code/AutonomousBlueye/install/_local_setup_util_sh.py'
+[5.712s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ovsj/Code/AutonomousBlueye/install/setup.sh'
+[5.721s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ovsj/Code/AutonomousBlueye/install/local_setup.bash'
+[5.732s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ovsj/Code/AutonomousBlueye/install/setup.bash'
+[5.734s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ovsj/Code/AutonomousBlueye/install/local_setup.zsh'
+[5.738s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ovsj/Code/AutonomousBlueye/install/setup.zsh'

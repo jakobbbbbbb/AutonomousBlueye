@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "bboxes_ex_msgs__py",
+		"source" : "/home/ovsj/Code/AutonomousBlueye/build/bboxes_ex_msgs/bboxes_ex_msgs__py"
+	}
+}
