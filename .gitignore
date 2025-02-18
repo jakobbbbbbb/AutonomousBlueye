@@ -18,3 +18,7 @@ __pycache__/
 
 # VS Code settings
 .vscode/
+
+# Embedded repos
+src/YOLOv5-ROS
+src/bbox_ex_msgs

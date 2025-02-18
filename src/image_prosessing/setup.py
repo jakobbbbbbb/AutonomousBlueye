@@ -29,7 +29,7 @@ setup(
             'Canny_inside_yolo = image_prosessing.Canny_inside_yolo:main',
             'Thresh_inside_yolo = image_prosessing.Thresh_inside_yolo:main',
             'Median_inside_yolo = image_prosessing.Median_inside_yolo:main',
-            'Adaptive_threshold = image_prosessing.Adaptive_threshold:main',
+            'Adaptive_threshold = image_prosessing.adaptive_threshold:main',
         ],
     },
 )
