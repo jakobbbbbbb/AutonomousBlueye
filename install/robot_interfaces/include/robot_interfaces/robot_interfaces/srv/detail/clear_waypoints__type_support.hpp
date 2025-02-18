@@ -1,1 +1,0 @@
-/home/ovsj/Code/AutonomousBlueye/build/robot_interfaces/rosidl_generator_cpp/robot_interfaces/srv/detail/clear_waypoints__type_support.hpp

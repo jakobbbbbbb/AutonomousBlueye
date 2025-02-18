@@ -1,2 +1,0 @@
-[console_scripts]
-yolov5_ros = yolov5_ros.main:ros_main

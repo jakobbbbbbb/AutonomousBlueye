@@ -1,1 +1,0 @@
-/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs/rosidl_generator_c/octomap_msgs/srv/detail/bounding_box_query__functions.h

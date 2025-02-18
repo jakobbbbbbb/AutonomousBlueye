@@ -1,7 +1,0 @@
-{
-  "package_name": "bboxes_ex_msgs",
-  "non_idl_tuples": [
-    "/home/ovsj/Code/AutonomousBlueye/src/bbox_ex_msgs:msg/BoundingBox.msg",
-    "/home/ovsj/Code/AutonomousBlueye/src/bbox_ex_msgs:msg/BoundingBoxes.msg"
-  ]
-}

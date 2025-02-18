@@ -1,4 +1,0 @@
-/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs/rosidl_adapter/octomap_msgs:msg/Octomap.idl
-/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs/rosidl_adapter/octomap_msgs:msg/OctomapWithPose.idl
-/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs/rosidl_adapter/octomap_msgs:srv/BoundingBoxQuery.idl
-/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs/rosidl_adapter/octomap_msgs:srv/GetOctomap.idl

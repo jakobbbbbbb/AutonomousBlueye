@@ -1,1 +1,0 @@
-/home/ovsj/Code/AutonomousBlueye/build/robot_interfaces/rosidl_typesupport_fastrtps_cpp/robot_interfaces/msg/detail/yolo_canny_chain_pose__rosidl_typesupport_fastrtps_cpp.hpp

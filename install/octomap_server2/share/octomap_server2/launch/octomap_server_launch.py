@@ -1,1 +1,0 @@
-/home/ovsj/Code/AutonomousBlueye/src/octomap_server2/launch/octomap_server_launch.py

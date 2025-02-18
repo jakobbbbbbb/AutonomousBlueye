@@ -1,1 +1,0 @@
-/home/ovsj/Code/AutonomousBlueye/build/robot_interfaces/rosidl_typesupport_fastrtps_c/robot_interfaces/srv/detail/add_waypoint__rosidl_typesupport_fastrtps_c.h

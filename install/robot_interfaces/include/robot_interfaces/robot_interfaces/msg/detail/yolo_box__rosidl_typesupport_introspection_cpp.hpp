@@ -1,1 +1,0 @@
-/home/ovsj/Code/AutonomousBlueye/build/robot_interfaces/rosidl_typesupport_introspection_cpp/robot_interfaces/msg/detail/yolo_box__rosidl_typesupport_introspection_cpp.hpp

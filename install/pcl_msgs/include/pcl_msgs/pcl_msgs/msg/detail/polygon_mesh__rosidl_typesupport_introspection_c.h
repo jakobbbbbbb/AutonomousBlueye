@@ -1,1 +1,0 @@
-/home/ovsj/Code/AutonomousBlueye/build/pcl_msgs/rosidl_typesupport_introspection_c/pcl_msgs/msg/detail/polygon_mesh__rosidl_typesupport_introspection_c.h

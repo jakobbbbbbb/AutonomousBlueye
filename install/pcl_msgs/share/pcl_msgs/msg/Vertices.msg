@@ -1,1 +1,0 @@
-/home/ovsj/Code/AutonomousBlueye/pcl_msgs/msg/Vertices.msg

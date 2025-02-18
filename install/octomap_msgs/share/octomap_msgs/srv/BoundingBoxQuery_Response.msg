@@ -1,1 +1,0 @@
-/home/ovsj/Code/AutonomousBlueye/build/octomap_msgs/rosidl_cmake/srv/BoundingBoxQuery_Response.msg

@@ -1,1 +1,0 @@
-/home/ovsj/Code/AutonomousBlueye/build/robot_interfaces/rosidl_generator_c/robot_interfaces/srv/remove_waypoint.h

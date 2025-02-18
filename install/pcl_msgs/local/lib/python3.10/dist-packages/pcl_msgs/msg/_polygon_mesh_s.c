@@ -1,1 +1,0 @@
-/home/ovsj/Code/AutonomousBlueye/build/pcl_msgs/rosidl_generator_py/pcl_msgs/msg/_polygon_mesh_s.c

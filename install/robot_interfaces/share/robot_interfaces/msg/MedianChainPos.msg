@@ -1,1 +1,0 @@
-/home/ovsj/Code/AutonomousBlueye/src/robot_interfaces/msg/MedianChainPos.msg
