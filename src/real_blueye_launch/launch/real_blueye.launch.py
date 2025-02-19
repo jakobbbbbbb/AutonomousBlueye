@@ -113,7 +113,6 @@ def generate_launch_description():
         name = 'SSC_adaptive_thresh'
     )
 
-
     Video_topic = Node(
         package='experimental',
         # executable='Video_to_topic_no_trackbar',
@@ -194,7 +193,7 @@ def generate_launch_description():
         # Desired_velocity_spiral,
         # Desired_velocity_compass,
 
-        control,
+        #control,
 
         #yolov5_ros,
         #yolo_image,
