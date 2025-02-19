@@ -101,6 +101,19 @@ def generate_launch_description():
         name = 'Adaptive_threshold'
     )
 
+    Hybrid_approach = Node(
+        package='image_prosessing',
+        executable='Hybrid_approach',
+        name = 'Hybrid_approach'
+    )
+
+    SSC_adaptive_threshold = Node(
+        package= 'image_prosessing',
+        executable = 'SSC_adaptive_thresh',
+        name = 'SSC_adaptive_thresh'
+    )
+
+
     Video_topic = Node(
         package='experimental',
         # executable='Video_to_topic_no_trackbar',
@@ -169,8 +182,10 @@ def generate_launch_description():
         #Laptop_camera,
 
         # Image_test,
-        Chain_pos_canny,
-        Adaptive_threshold,
+        #Chain_pos_canny,
+        #Adaptive_threshold,
+        #Hybrid_approach,
+        SSC_adaptive_threshold,
         #Chain_pos_thresh,
         #Chain_pos_thresh_mean,
 

@@ -54,7 +54,7 @@ class BlueyeImage(Node):
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
         # Temporal filtering
-        alpha = 0.2
+        alpha = 0.1
 
         if self.prev_frame is None:
             self.prev_frame = gray.astype(np.float32)

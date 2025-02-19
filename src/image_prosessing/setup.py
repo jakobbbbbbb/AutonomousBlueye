@@ -30,6 +30,8 @@ setup(
             'Thresh_inside_yolo = image_prosessing.Thresh_inside_yolo:main',
             'Median_inside_yolo = image_prosessing.Median_inside_yolo:main',
             'Adaptive_threshold = image_prosessing.adaptive_threshold:main',
+            'Hybrid_approach = image_prosessing.hybrid_approach:main',
+            'SSC_adaptive_thres = image_prosessing.ssc_adaptive_thres:main',
         ],
     },
 )
