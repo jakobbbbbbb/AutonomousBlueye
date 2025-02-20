@@ -21,8 +21,8 @@ class BlueyeImage(Node):
         # Setup OpenCV Window
         cv2.namedWindow('Filtered', cv2.WINDOW_NORMAL)
         cv2.resizeWindow('Filtered', 960, 600)
-        cv2.createTrackbar("Lower Threshold", 'Filtered', 2, 255, nothing)
-        cv2.createTrackbar("Upper Threshold", 'Filtered', 14, 255, nothing)
+        cv2.createTrackbar("Lower Threshold", 'Filtered', 5, 255, nothing)
+        cv2.createTrackbar("Upper Threshold", 'Filtered', 20, 255, nothing)
         cv2.createTrackbar("Box Size", 'Filtered', 800, 1000, lambda x: None)
 
     def image_callback(self, msg):
@@ -43,12 +43,11 @@ class BlueyeImage(Node):
         # Convert to grayscale
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-        # Apply strong bilateral filtering (better edge preservation)
+        # Apply strong bilateral filtering (for edge conservation)
         denoised = cv2.bilateralFilter(gray, 20, 100, 100)
 
-        # Canny Edge Detection (tuned for more detail)
+        # Canny Edge Detection (tuned from GUI input)
         edges = cv2.Canny(denoised, lower_thresh, upper_thresh)
-
 
         # Applying morphological closing
         kernel_close = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 10))
@@ -70,6 +69,7 @@ class BlueyeImage(Node):
         bottom_right_x = top_left_x + box_width
         bottom_right_y = top_left_y + box_height
 
+        # Drawing rectangle / focus area
         cv2.rectangle(edges_bgr, (top_left_x, top_left_y), (bottom_right_x, bottom_right_y), (0, 0, 255), 4)
 
         # Find white pixels within the box in the edge-detected image
