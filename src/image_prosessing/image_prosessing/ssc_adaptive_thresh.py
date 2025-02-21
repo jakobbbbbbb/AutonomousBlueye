@@ -17,6 +17,7 @@ class BlueyeImage(Node):
         self.subscription = self.create_subscription(Image, "/camera", self.image_callback, 10)
         self.publisher = self.create_publisher(CannyChainPos, "/CannyChainPos", 10)
         self.bridge = CvBridge()
+        self.prev_gray = None
 
         # Setup OpenCV Window
         cv2.namedWindow('Filtered', cv2.WINDOW_NORMAL)
@@ -59,6 +60,7 @@ class BlueyeImage(Node):
             area = cv2.contourArea(cnt)
             if area < 100:
                 cv2.drawContours(edges, [cnt], -1, 0, 1)
+
 
         # Convert edges to BGR
         edges_bgr = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)
