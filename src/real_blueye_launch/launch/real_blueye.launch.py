@@ -172,19 +172,19 @@ def generate_launch_description():
     return LaunchDescription([
         # The following topics can be uncommented depending on desired use
         
-        # Blueye_IMU, 
-        # Blueye_pose,
-        # Blueye_Force,
-        # Blueye_camera,
+        #Blueye_IMU, 
+        #Blueye_pose,
+        #Blueye_Force,
+        #Blueye_camera,
 
         Video_topic,
         #Laptop_camera,
 
-        # Image_test,
+        #Image_test,
         #Chain_pos_canny,
         #Adaptive_threshold,
         #Hybrid_approach,
-        SSC_adaptive_threshold,
+        #SSC_adaptive_threshold,
         #Chain_pos_thresh,
         #Chain_pos_thresh_mean,
 
@@ -192,10 +192,11 @@ def generate_launch_description():
         # Desired_velocity,
         # Desired_velocity_spiral,
         # Desired_velocity_compass,
+        #Desired_velocity_switch
 
         #control,
 
-        #yolov5_ros,
+        yolov5_ros,
         #yolo_image,
         #yolo_chain_canny,
 

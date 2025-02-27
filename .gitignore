@@ -22,3 +22,7 @@ __pycache__/
 # Embedded repos
 src/YOLOv5-ROS
 src/bbox_ex_msgs
+src/yolov5
+
+# Random stuff
+datasets

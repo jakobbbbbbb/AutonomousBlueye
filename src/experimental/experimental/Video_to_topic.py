@@ -16,7 +16,8 @@ class VideoPublisher(Node):
         
         # Add routes to video files if you want to run the topics on recorded video
         #self.cap = cv2.VideoCapture('/home/ovsj/Code/Video/10m.mp4')
-        self.cap = cv2.VideoCapture('/home/ovsj/Code/Video/upward.mp4')
+        self.cap = cv2.VideoCapture('/home/ovsj/Code/Video/autonomous_main_2.mp4')
+        #self.cap = cv2.VideoCapture('/home/ovsj/Code/Video/autonomous_seafloor.mp4')
 
         if not self.cap.isOpened():
             self.get_logger().error('Unable to open video file.')
