@@ -11,7 +11,7 @@ def nothing(x):
 class VideoPublisher(Node):
     def __init__(self):
         super().__init__('video_publisher_node')
-        self.publisher_ = self.create_publisher(Image, '/camera', 10)
+        self.publisher_ = self.create_publisher(Image, '/image_raw', 10)
         self.bridge = CvBridge()
         
         # Add routes to video files if you want to run the topics on recorded video

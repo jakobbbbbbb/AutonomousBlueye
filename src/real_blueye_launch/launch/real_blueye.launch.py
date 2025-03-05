@@ -161,12 +161,28 @@ def generate_launch_description():
     )
 
     yolov5_ros = launch_ros.actions.Node(
-        package="yolov5_ros", 
+        package="yolov5_ros",
         executable="yolov5_ros",
         parameters=[
             {"view_img": True},
-            {"camera_topic": "/camera"},
-            {"classes": ["Chain", "Wire", "Rope"]}  # Sørg for at disse er med
+            {"conf_thres": 0.2},  # Juster terskelverdi om nødvendig
+            {"iou_thres": 0.45},  # Juster IoU terskel om nødvendig
+            #{"classes": [0]}  # Indeksen til "Mooring line", sjekk at dette stemmer
+        ],
+    )
+
+    yolov5_ros_webcam = launch_ros.actions.Node(
+        package="yolov5_ros", executable="yolov5_ros",
+        parameters=[
+            {"view_img":True},
+        ],
+
+    )
+
+    webcam = launch_ros.actions.Node(
+        package="v4l2_camera", executable="v4l2_camera_node",
+        parameters=[
+            {"image_size": [640,480]},
         ],
     )
 
@@ -179,10 +195,10 @@ def generate_launch_description():
         #Blueye_pose,
         #Blueye_Force,
         #Blueye_camera,
-
-        Video_topic,
+        
+        #Video_topic,
         #Laptop_camera,
-
+        webcam,
         #Image_test,
         #Chain_pos_canny,
         #Adaptive_threshold,
@@ -199,12 +215,13 @@ def generate_launch_description():
 
         #control,
 
-        yolov5_ros,
-        yolo_image,
-        yolo_chain_canny,
+        #yolov5_ros,
+        yolov5_ros_webcam,
+        #yolo_image,
+        #yolo_chain_canny,
 
-        Canny_inside_yolo,
-        Thresh_inside_yolo,
-        Median_inside_yolo,
+        #Canny_inside_yolo,
+        #Thresh_inside_yolo,
+        #Median_inside_yolo,
     ])
 
