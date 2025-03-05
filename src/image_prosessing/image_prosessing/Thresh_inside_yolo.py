@@ -29,12 +29,18 @@ class BlueyeImage(Node):
         image_center_x, image_center_y = image.shape[1] // 2, image.shape[0] // 2
 
         if self.bounding_boxes:
-            for box in self.bounding_boxes:
+             for box in self.bounding_boxes:
+                print(f"Detected object: {box.class_id}")  # Debugging
+             for box in self.bounding_boxes:
                 if box.class_id in ["Chain", "Wire", "Rope"]:
                     roi = image[box.ymin:box.ymax, box.xmin:box.xmax]
                     gray_roi = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
                     threshold_value = cv2.getTrackbarPos("Threshold", "Yolov5 Threshold")
                     _, binary_roi = cv2.threshold(gray_roi, threshold_value, 255, cv2.THRESH_BINARY)
+
+                    print(f"Threshold value: {threshold_value}")
+                    print(f"White pixels in ROI: {np.sum(binary_roi == 255)}")
+
 
                     # Calculate the average width of the white pixels in the ROI
                     row_white_pixel_counts = np.sum(binary_roi == 255, axis=1)

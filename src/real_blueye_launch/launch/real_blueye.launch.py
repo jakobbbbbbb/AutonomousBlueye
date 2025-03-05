@@ -165,9 +165,12 @@ def generate_launch_description():
         executable="yolov5_ros",
         parameters=[
             {"view_img": True},
-            {"camera_topic": "/camera"}  
+            {"camera_topic": "/camera"},
+            {"classes": ["Chain", "Wire", "Rope"]}  # Sørg for at disse er med
         ],
     )
+
+
 
     return LaunchDescription([
         # The following topics can be uncommented depending on desired use
@@ -184,7 +187,7 @@ def generate_launch_description():
         #Chain_pos_canny,
         #Adaptive_threshold,
         #Hybrid_approach,
-        #SSC_adaptive_threshold,
+        # SSC_adaptive_threshold,
         #Chain_pos_thresh,
         #Chain_pos_thresh_mean,
 
@@ -197,11 +200,11 @@ def generate_launch_description():
         #control,
 
         yolov5_ros,
-        #yolo_image,
-        #yolo_chain_canny,
+        yolo_image,
+        yolo_chain_canny,
 
-        #Canny_inside_yolo,
-        #Thresh_inside_yolo,
-        #Median_inside_yolo,
+        Canny_inside_yolo,
+        Thresh_inside_yolo,
+        Median_inside_yolo,
     ])
 
