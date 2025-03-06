@@ -15,9 +15,15 @@ class BlueyeImage(Node):
     def __init__(self):
         super().__init__("blueye_image")
         self.subscription = self.create_subscription(Image, "/camera", self.image_callback, 10)
-        self.publisher = self.create_publisher(CannyChainPos, "/CannyChainPos", 10)
+        #self.publisher = self.create_publisher(CannyChainPos, "/CannyChainPos", 10)
+
+        #tilpasset yolov5
+        self.publisher = self.create_publisher(Image, "/filtered_image", 10)
         self.bridge = CvBridge()
         self.prev_gray = None
+
+
+
 
         # Setup OpenCV Window
         cv2.namedWindow('Filtered', cv2.WINDOW_NORMAL)
@@ -27,7 +33,12 @@ class BlueyeImage(Node):
         cv2.createTrackbar("Box Size", 'Filtered', 800, 1000, lambda x: None)
 
     def image_callback(self, msg):
-        frame = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+        #frame = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+
+
+        # Modify the image_callback function:
+        frame = self.bridge.cv2_to_imgmsg(msg, "bgr8")  # Convert processed image
+        self.publisher.publish(frame)  # Publish the filtered image
 
         # Check if window is closed
         if cv2.getWindowProperty('Filtered', cv2.WND_PROP_VISIBLE) < 1:

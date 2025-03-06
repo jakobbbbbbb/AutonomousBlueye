@@ -107,10 +107,16 @@ def generate_launch_description():
         name = 'Hybrid_approach'
     )
 
-    SSC_adaptive_threshold = Node(
+    Canny_edge_new = Node(
         package= 'image_prosessing',
-        executable = 'SSC_adaptive_thresh',
-        name = 'SSC_adaptive_thresh'
+        executable = 'Canny_edge_new',
+        name = 'Canny_edge_new'
+    )
+
+    MarineSnowRemoval = Node(
+        package= 'image_prosessing',
+        executable = 'MarineSnowRemoval',
+        name = 'MarineSnowRemoval' 
     )
 
     Video_topic = Node(
@@ -165,27 +171,13 @@ def generate_launch_description():
         executable="yolov5_ros",
         parameters=[
             {"view_img": True},
-            {"conf_thres": 0.2},  # Juster terskelverdi om nødvendig
-            {"iou_thres": 0.45},  # Juster IoU terskel om nødvendig
-            #{"classes": [0]}  # Indeksen til "Mooring line", sjekk at dette stemmer
+            {"input_topic": "/image_raw"},  # Explicitly setting the input topic
+            #{"weights": "/home/ovsj/Code/AutonomousBlueye/ws_yolov5/src/YOLOv5-ROS/yolov5_ros/yolov5_ros/config/mooring.pt"},
+            #{"data": "/home/ovsj/Code/AutonomousBlueye/ws_yolov5/src/YOLOv5-ROS/yolov5_ros/yolov5_ros/data/mooring.yaml"},
+            #{"conf_thres": 0.1},  # Lower confidence threshold
+            #{"iou_thres": 0.45},  # Intersection Over Union threshold
         ],
     )
-
-    yolov5_ros_webcam = launch_ros.actions.Node(
-        package="yolov5_ros", executable="yolov5_ros",
-        parameters=[
-            {"view_img":True},
-        ],
-
-    )
-
-    webcam = launch_ros.actions.Node(
-        package="v4l2_camera", executable="v4l2_camera_node",
-        parameters=[
-            {"image_size": [640,480]},
-        ],
-    )
-
 
 
     return LaunchDescription([
@@ -195,15 +187,16 @@ def generate_launch_description():
         #Blueye_pose,
         #Blueye_Force,
         #Blueye_camera,
-        
-        #Video_topic,
+
+        Video_topic,
         #Laptop_camera,
-        webcam,
+
         #Image_test,
         #Chain_pos_canny,
         #Adaptive_threshold,
         #Hybrid_approach,
-        # SSC_adaptive_threshold,
+        #Canny_edge_new,
+        MarineSnowRemoval
         #Chain_pos_thresh,
         #Chain_pos_thresh_mean,
 
@@ -216,7 +209,6 @@ def generate_launch_description():
         #control,
 
         #yolov5_ros,
-        yolov5_ros_webcam,
         #yolo_image,
         #yolo_chain_canny,
 
@@ -224,4 +216,3 @@ def generate_launch_description():
         #Thresh_inside_yolo,
         #Median_inside_yolo,
     ])
-
