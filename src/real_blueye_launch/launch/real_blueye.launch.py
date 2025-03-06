@@ -113,6 +113,12 @@ def generate_launch_description():
         name = 'Canny_edge_new'
     )
 
+    MarineSnowRemoval = Node(
+        package= 'image_prosessing',
+        executable = 'MarineSnowRemoval',
+        name = 'MarineSnowRemoval' 
+    )
+
     Video_topic = Node(
         package='experimental',
         # executable='Video_to_topic_no_trackbar',
@@ -189,7 +195,8 @@ def generate_launch_description():
         #Chain_pos_canny,
         #Adaptive_threshold,
         #Hybrid_approach,
-        Canny_edge_new,
+        #Canny_edge_new,
+        MarineSnowRemoval
         #Chain_pos_thresh,
         #Chain_pos_thresh_mean,
 

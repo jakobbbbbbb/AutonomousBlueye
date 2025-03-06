@@ -51,7 +51,7 @@ class BlueyeImage(Node):
         edges = cv2.Canny(denoised, lower_thresh, upper_thresh)
 
         # Applying morphological closing
-        kernel_close = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 10))
+        kernel_close = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (15, 20))
         edges = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel_close)
 
         # Removing contours/marine snow
