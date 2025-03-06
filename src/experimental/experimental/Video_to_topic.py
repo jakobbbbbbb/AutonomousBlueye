@@ -29,11 +29,14 @@ class VideoPublisher(Node):
         self.paused = False # Play/Pause button
         self.last_frame_time = time.time()
 
+        
         self.timer = self.create_timer(1.0 / self.video_fps, self.timer_callback)
+        # Use timer below if you want to manually set framerate
+        #self.timer = self.create_timer(1, self.timer_callback)
 
         # Initialize OpenCV window and trackbar
         cv2.namedWindow('Video', cv2.WINDOW_NORMAL)
-        cv2.resizeWindow('Video', 1000, 700)
+        cv2.resizeWindow('Video', 700, 500)
 
         self.total_frames = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))
         cv2.createTrackbar('Frames', 'Video', 0, self.total_frames, nothing)
@@ -56,7 +59,7 @@ class VideoPublisher(Node):
             if ret:
                 # Update the trackbar position based on the current video frame
                 cv2.setTrackbarPos('Frames', 'Video', int(self.cap.get(cv2.CAP_PROP_POS_FRAMES)))
-                resized_frame = cv2.resize(frame, (self.width, self.height))
+                resized_frame = cv2.resize(frame, (self.width, self.height), interpolation=cv2.INTER_AREA)
                 cv2.imshow('Video', resized_frame)
                 msg = self.bridge.cv2_to_imgmsg(resized_frame, 'bgr8')
                 self.publisher_.publish(msg)

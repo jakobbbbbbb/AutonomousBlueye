@@ -107,10 +107,10 @@ def generate_launch_description():
         name = 'Hybrid_approach'
     )
 
-    SSC_adaptive_threshold = Node(
+    Canny_edge_new = Node(
         package= 'image_prosessing',
-        executable = 'SSC_adaptive_thresh',
-        name = 'SSC_adaptive_thresh'
+        executable = 'Canny_edge_new',
+        name = 'Canny_edge_new'
     )
 
     Video_topic = Node(
@@ -161,13 +161,18 @@ def generate_launch_description():
     )
 
     yolov5_ros = launch_ros.actions.Node(
-        package="yolov5_ros", 
+        package="yolov5_ros",
         executable="yolov5_ros",
         parameters=[
             {"view_img": True},
-            {"camera_topic": "/camera"}  
+            {"input_topic": "/image_raw"},  # Explicitly setting the input topic
+            #{"weights": "/home/ovsj/Code/AutonomousBlueye/ws_yolov5/src/YOLOv5-ROS/yolov5_ros/yolov5_ros/config/mooring.pt"},
+            #{"data": "/home/ovsj/Code/AutonomousBlueye/ws_yolov5/src/YOLOv5-ROS/yolov5_ros/yolov5_ros/data/mooring.yaml"},
+            #{"conf_thres": 0.1},  # Lower confidence threshold
+            #{"iou_thres": 0.45},  # Intersection Over Union threshold
         ],
     )
+
 
     return LaunchDescription([
         # The following topics can be uncommented depending on desired use
@@ -184,7 +189,7 @@ def generate_launch_description():
         #Chain_pos_canny,
         #Adaptive_threshold,
         #Hybrid_approach,
-        #SSC_adaptive_threshold,
+        Canny_edge_new,
         #Chain_pos_thresh,
         #Chain_pos_thresh_mean,
 
@@ -196,7 +201,7 @@ def generate_launch_description():
 
         #control,
 
-        yolov5_ros,
+        #yolov5_ros,
         #yolo_image,
         #yolo_chain_canny,
 
