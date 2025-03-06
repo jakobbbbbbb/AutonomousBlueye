@@ -1,0 +1,11 @@
+train: /home/ovsj/Code/AutonomousBlueye/ws_yolov5/src/YOLOv5-ROS/yolov5_ros/yolov5_ros/data/train/images
+val: /home/ovsj/Code/AutonomousBlueye/ws_yolov5/src/YOLOv5-ROS/yolov5_ros/yolov5_ros/data/valid/images
+nc: 1
+names: ['Mooring line']
+
+roboflow:
+  workspace: blueyeauv
+  project: custom-workflow-object-detection-jdlax
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/blueyeauv/custom-workflow-object-detection-jdlax/dataset/1
