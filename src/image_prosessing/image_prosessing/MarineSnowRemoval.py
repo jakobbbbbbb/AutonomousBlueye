@@ -7,6 +7,7 @@ import cv2
 from experimental.Guided_Filter import guided_filter
 import math
 import numpy as np
+from std_msgs.msg import Float32
 
 def nothing(x):
     pass
@@ -18,6 +19,14 @@ class BlueyeImage(Node):
         self.publisher = self.create_publisher(CannyChainPos, "/CannyChainPos", 10)
         self.bridge = CvBridge()
         self.prev_gray = None
+        self.desired_width = 0
+        self.desired_width_sub = self.create_subscription(
+            Float32,
+            '/desired_width',
+            self.width_callback,
+            10
+        )
+
 
         # Setup OpenCV Window
         cv2.namedWindow('Canny Edge Detection', cv2.WINDOW_NORMAL)
@@ -27,8 +36,8 @@ class BlueyeImage(Node):
         #cv2.resizeWindow('Unfiltered', 960, 600)
 
         # Creating trackbars for adjusting thresholds
-        cv2.createTrackbar("Lower Threshold", 'Canny Edge Detection', 5, 255, nothing)
-        cv2.createTrackbar("Upper Threshold", 'Canny Edge Detection', 14, 255, nothing)
+        cv2.createTrackbar("Lower Threshold", 'Canny Edge Detection', 6, 255, nothing)
+        cv2.createTrackbar("Upper Threshold", 'Canny Edge Detection', 9, 255, nothing)
         cv2.createTrackbar("Box Size", 'Canny Edge Detection', 800, 1000, lambda x: None)    
 
     def image_callback(self, msg):
@@ -72,7 +81,6 @@ class BlueyeImage(Node):
 
         # Drawing rectangle / focus area
         cv2.rectangle(edges_bgr, (top_left_x, top_left_y), (bottom_right_x, bottom_right_y), (0, 0, 255), 4)
-
         # Find white pixels within the box in the edge-detected image
         white_pixels = np.column_stack(np.where(edges[top_left_y:bottom_right_y, top_left_x:bottom_right_x]))
         if white_pixels.size > 0:
@@ -108,10 +116,28 @@ class BlueyeImage(Node):
             cv2.putText(edges_bgr, f"Coords(X,Y): ({centered_x}, {centered_y})", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
             cv2.putText(edges_bgr, width_text, (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
+        # Drawing line with desired width of mooring line
+        if self.desired_width > 0:
+            center_x = edges_bgr.shape[1] // 2
+            center_y = edges_bgr.shape[0] - 20  # Near bottom of image
+            half_width = int(self.desired_width / 2)
 
+            start_point = (center_x - half_width, center_y)
+            end_point = (center_x + half_width, center_y)
+
+            # Draw desired width line near bottom
+            cv2.line(edges_bgr, start_point, end_point, (0, 255, 0), 2)
+            # Text below the existing info (Angle, Coords, Width)
+            cv2.putText(edges_bgr, f"Desired Width: {self.desired_width:.0f}px",
+                        (10, 120), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            
         cv2.imshow('Canny Edge Detection', edges_bgr)
         #cv2.imshow('Unfiltered', YCrCb_bgr)
         cv2.waitKey(1)
+
+    def width_callback(self, msg):
+        self.desired_width = msg.data
+        
 
 def main(args=None):
     rclpy.init(args=args)

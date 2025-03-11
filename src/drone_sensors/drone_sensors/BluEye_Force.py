@@ -14,16 +14,16 @@ class DroneForcePublisher(Node):
 
     def publish_drone_forces(self):
         # Fetch force data from drone
-        surge_force = self.drone.surge
-        sway_force = self.drone.sway
-        heave_force = self.drone.heave
-        # Yaw force can be considered as torque, which is not included in Vector3
+        surge_force = self.drone.motion.surge
+        sway_force = self.drone.motion.sway
+        heave_force = self.drone.motion.heave
+        # Yaw force can be considheaveered as torque, which is not included in Vector3
         
         # Create a Vector3 message to carry surge, sway, and heave forces
         force_msg = Vector3()
-        force_msg.x = surge_force  # Surge force
-        force_msg.y = sway_force   # Sway force
-        force_msg.z = heave_force  # Heave force
+        force_msg.x = float(surge_force) # Surge force
+        force_msg.y = float(sway_force)   # Sway force
+        force_msg.z = float(heave_force)  # Heave force
         
         # Publish the force data
         self.force_publisher.publish(force_msg)
