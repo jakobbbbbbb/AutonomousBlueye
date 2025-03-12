@@ -175,8 +175,14 @@ class ChainPosController(Node):
             if self.end == False:               
                 heave = float(self.heave_gain)
                 self.get_logger().info(f"Reached depth {current_depth:.2f} ≥ {desired_depth}m → Ascending.")
+            if not self.reached_target_depth:
+                heave = self.heave_gain
+                if current_depth >= desired_depth:
+                    self.reached_target_depth = True
             else:
                 heave = -float(self.heave_gain)
+                heave = -self.heave_gain
+
 
         else:
             # If the object is out of view, set yaw based on the last known side
