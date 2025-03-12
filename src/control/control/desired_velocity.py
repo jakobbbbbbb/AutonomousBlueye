@@ -25,8 +25,7 @@ class ChainPosController(Node):
         self.log_file = "pid_log.csv"
         self.write_header()
 
-        self.end = False
-        self.counter_end = 0
+        self.reached_target_depth = False
 
         # Adding depth from BluEye_Pose.py
         self.depth_sub = self.create_subscription(
@@ -170,19 +169,13 @@ class ChainPosController(Node):
             sway = normalized_mid_x * self.sway_gain
             surge = (1 - width / width_threshhold) * self.surge_gain if width <= width_threshhold else -((width - width_threshhold) / 200.0) * self.surge_gain
             yaw = self.yaw_gain * normalized_mid_x
-            if current_depth >= desired_depth:
-                self.end = True
-            if self.end == False:               
-                heave = float(self.heave_gain)
-                self.get_logger().info(f"Reached depth {current_depth:.2f} ≥ {desired_depth}m → Ascending.")
             if not self.reached_target_depth:
                 heave = self.heave_gain
                 if current_depth >= desired_depth:
                     self.reached_target_depth = True
+                    self.get_logger().info(f"Reached desired depth {current_depth:.2f}m → Switching to ascent.")
             else:
-                heave = -float(self.heave_gain)
                 heave = -self.heave_gain
-
 
         else:
             # If the object is out of view, set yaw based on the last known side
