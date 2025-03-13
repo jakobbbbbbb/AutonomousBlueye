@@ -17,15 +17,25 @@ class ChainPosController(Node):
         super().__init__('chain_pos_controller')
         self.vel_publisher = self.create_publisher(DesiredVelocity, '/desired_velocity', 10)
         self.desired_width_publisher = self.create_publisher(Float32, '/desired_width', 10)
+        self.led_publisher = self.create_publisher(Float32, '/led_brightness', 10)
+        self.frame_brightness_pub = self.create_publisher(Float32, '/frame_brightness', 10)
         self.current_subscription = None  # Initialized as None to handle the zero output state.
         self.current_topic = 'ZERO_OUTPUT'  # No topic is initially selected.
         self.desired_vel = DesiredVelocity()
         self.last_normalized_mid_x = 0  # Initialize to 0, assuming the object starts centered.
         self.current_depth = 0.0
+        self.reached_target_depth = False
+
+        # Initial values for LED and frame
+        self.current_brightness = 0.0 
+        self.frame_brightness = 128.0 # dummy value, will be updated upon running code
+        self.last_led_brightness = None
+
+        # Logging stuff
         self.log_file = "pid_log.csv"
         self.write_header()
 
-        self.reached_target_depth = False
+        
 
         # Adding depth from BluEye_Pose.py
         self.depth_sub = self.create_subscription(
@@ -33,7 +43,23 @@ class ChainPosController(Node):
             'BlueyePose',
             self.depth_callback,
             10
-)
+        )
+
+        # Adding LED brightness from Blueye_LED.py
+        self.led_brightness_sub = self.create_subscription(
+            Float32,
+            '/led_brightness',
+            self.led_callback,
+            10
+        )
+
+        # Adding mean frame brightness from MarineSnowRemoval.py
+        self.frame_brightness_sub = self.create_subscription(
+            Float32,
+            '/frame_brightness',
+            self.frame_brightness_callback,
+            10
+        )
         
         self.surge_gain = 1.0
         self.sway_gain = 1.0
@@ -146,6 +172,9 @@ class ChainPosController(Node):
             cv2.putText(canvas, f"Yaw: {self.desired_vel.yaw:.2f}", (10, start_y + 4 * line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
             cv2.putText(canvas, f"Yaw Gain: {self.yaw_gain:.1f}", (300, start_y + 4 * line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
 
+            cv2.putText(canvas, f"LED Brightness: {self.current_brightness:.2f}", (10, start_y + 5 * line_space),
+            cv2.FONT_HERSHEY_SIMPLEX, font_scale, (0, 255, 255), 2)
+
             cv2.imshow('Gain', canvas)
             if cv2.waitKey(50) == 27:  # Exit on ESC
                 break
@@ -181,6 +210,21 @@ class ChainPosController(Node):
             # If the object is out of view, set yaw based on the last known side
             yaw = 0.1 if self.last_normalized_mid_x > 0 else -0.1
             heave = 0.0 # ROV stays put in heave if mooring line disappears
+
+        # Adding logic for enabling LED based on pixel data
+        frame_brightness = self.frame_brightness
+        if frame_brightness < 100:
+            brightness = 1.0
+        elif frame_brightness < 130:
+            brightness = 0.6
+        else:
+            brightness = 0.0
+
+        if brightness != self.last_led_brightness:
+            led_msg = Float32()
+            led_msg.data = brightness
+            self.led_publisher.publish(led_msg)
+            self.last_led_brightness = brightness
        
         self.publish_velocity(surge, sway, yaw, heave)
 
@@ -204,6 +248,12 @@ class ChainPosController(Node):
     def depth_callback(self, msg):
         self.current_depth = msg.w  # Extract depth from the subscription
 
+    def led_callback(self, msg):
+        self.current_brightness = msg.data # Extract LED brightness from subscription
+
+    def frame_brightness_callback(self, msg):
+        self.frame_brightness = msg.data
+
     def publish_desired_width(self, msg): # Publish desired depth
         self.desired_width_publisher.publish(msg)
 
@@ -218,8 +268,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
-#Controlling both Sway and yaw to put line in middle of camera.
-#If line goes ourtside box a constand sway is set depending on side it dissapres on
-#Controlling surge to be within with threshold at 70 
-#Heave is controlled with gain values where negative -> down 

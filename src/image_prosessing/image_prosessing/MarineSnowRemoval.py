@@ -19,13 +19,18 @@ class BlueyeImage(Node):
         self.publisher = self.create_publisher(CannyChainPos, "/CannyChainPos", 10)
         self.bridge = CvBridge()
         self.prev_gray = None
-        self.desired_width = 0
+        self.desired_width = 0.0
         self.desired_width_sub = self.create_subscription(
             Float32,
             '/desired_width',
             self.width_callback,
             10
         )
+
+        self.frame_brightness_pub = self.create_publisher(
+            Float32, 
+            '/frame_brightness', 
+            10)
 
 
         # Setup OpenCV Window
@@ -59,6 +64,7 @@ class BlueyeImage(Node):
         YCrCb = cv2.cvtColor(frame, cv2.COLOR_BGR2YCrCb)
         # Splitting YCrCb image components
         Y, Cr, Cb = cv2.split(YCrCb)
+        frame_brightness = np.mean(Y)
         # Applying guided filtering to luminance (Y) component
         Y_guided = guided_filter(Y, Y, radius = 32, eps = 0.1)
         # Remove small spots (marine snow)
@@ -116,6 +122,11 @@ class BlueyeImage(Node):
             cv2.putText(edges_bgr, f"Coords(X,Y): ({centered_x}, {centered_y})", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
             cv2.putText(edges_bgr, width_text, (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
+        # Publishing frame brightness
+        frame_brightness_msg = Float32()
+        frame_brightness_msg.data = frame_brightness
+        self.frame_brightness_pub.publish(frame_brightness_msg)
+
         # Drawing line with desired width of mooring line
         if self.desired_width > 0:
             center_x = edges_bgr.shape[1] // 2
@@ -137,6 +148,9 @@ class BlueyeImage(Node):
 
     def width_callback(self, msg):
         self.desired_width = msg.data
+    
+    def frame_brightness_callback(self, msg):
+        self.frame_brightness = msg.data
         
 
 def main(args=None):
