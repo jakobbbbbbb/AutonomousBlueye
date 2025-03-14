@@ -8,6 +8,7 @@ from geometry_msgs.msg import Quaternion
 from std_msgs.msg import Float32
 import csv
 import os
+import time
 
 def nothing(x):
     pass
@@ -26,16 +27,18 @@ class ChainPosController(Node):
         self.current_depth = 0.0
         self.reached_target_depth = False
 
+        self.line_lost_time = None
+        self.failsafe_triggered = False
+        self.failsafe_timeout = 20 # time until failsafe is activated
+
         # Initial values for LED and frame
         self.current_brightness = 0.0 
-        self.frame_brightness = 128.0 # dummy value, will be updated upon running code
+        self.frame_brightness = 128.0 # dummy value
         self.last_led_brightness = None
 
         # Logging stuff
         self.log_file = "pid_log.csv"
         self.write_header()
-
-        
 
         # Adding depth from BluEye_Pose.py
         self.depth_sub = self.create_subscription(
@@ -194,6 +197,8 @@ class ChainPosController(Node):
         
         # Update last known position if the object is visible
         if width > 20:  # Assuming 20 is the threshold below which the object is considered out of view
+            self.line_lost_time = None
+            self.failsafe_triggered = False
             self.last_normalized_mid_x = normalized_mid_x
             sway = normalized_mid_x * self.sway_gain
             surge = (1 - width / width_threshhold) * self.surge_gain if width <= width_threshhold else -((width - width_threshhold) / 200.0) * self.surge_gain
@@ -207,11 +212,16 @@ class ChainPosController(Node):
                 heave = -self.heave_gain
 
         else:
-            # If the object is out of view, set yaw based on the last known side
-            yaw = 0.1 if self.last_normalized_mid_x > 0 else -0.1
-            heave = 0.0 # ROV stays put in heave if mooring line disappears
+            now = time.time()
+            if self.line_lost_time is None:
+                self.line_lost_time = now
+            
+            if (now - self.line_lost_time) > self.failsafe_timeout and not self.failsafe_triggered:
+                self.failsafe_triggered = True
+                self.failsafe_mode()
 
         # Adding logic for enabling LED based on pixel data
+        # NOTE: led will power on based on the mean brightness of input frame
         frame_brightness = self.frame_brightness
         if frame_brightness < 100:
             brightness = 1.0
@@ -225,6 +235,7 @@ class ChainPosController(Node):
             led_msg.data = brightness
             self.led_publisher.publish(led_msg)
             self.last_led_brightness = brightness
+
        
         self.publish_velocity(surge, sway, yaw, heave)
 
@@ -235,7 +246,7 @@ class ChainPosController(Node):
         self.desired_vel.yaw = yaw
         self.vel_publisher.publish(self.desired_vel)
         
-        # Log PID-data til CSV-fil
+        # Log PID-data to CSV-file
         current_time = self.get_clock().now().to_msg().sec
         depth = self.current_depth
         yaw_angle = self.pose["yaw"] if hasattr(self, "pose") else None
@@ -244,6 +255,14 @@ class ChainPosController(Node):
             writer = csv.writer(file)
             writer.writerow([current_time, surge, sway, heave, yaw, depth, yaw_angle, self.desired_depth])
 
+    def failsafe_mode(self):
+        self.get_logger().warn("Failsafe Activated: Aborting mission")
+        surge = 0.0
+        sway = 0.0
+        # If the object is out of view, set yaw based on the last known side
+        yaw = 0.1 if self.last_normalized_mid_x > 0 else -0.1
+        heave = 0.3 # starting ascent
+        self.publish_velocity(surge, sway, yaw, heave)
 
     def depth_callback(self, msg):
         self.current_depth = msg.w  # Extract depth from the subscription
