@@ -236,7 +236,6 @@ class ChainPosController(Node):
             self.led_publisher.publish(led_msg)
             self.last_led_brightness = brightness
 
-       
         self.publish_velocity(surge, sway, yaw, heave)
 
     def publish_velocity(self, surge, sway, yaw, heave):
@@ -245,8 +244,8 @@ class ChainPosController(Node):
         self.desired_vel.heave = heave
         self.desired_vel.yaw = yaw
         self.vel_publisher.publish(self.desired_vel)
-        
-        # Log PID-data to CSV-file
+
+        # Log PID-data to CSV-fil
         current_time = self.get_clock().now().to_msg().sec
         depth = self.current_depth
         yaw_angle = self.pose["yaw"] if hasattr(self, "pose") else None

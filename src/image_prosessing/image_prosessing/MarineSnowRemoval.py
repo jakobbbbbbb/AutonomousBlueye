@@ -64,15 +64,22 @@ class BlueyeImage(Node):
         YCrCb = cv2.cvtColor(frame, cv2.COLOR_BGR2YCrCb)
         # Splitting YCrCb image components
         Y, Cr, Cb = cv2.split(YCrCb)
+        # Storing the average frame brightness
         frame_brightness = np.mean(Y)
+
+        # Applying CLAHE
+        clahe = cv2.createCLAHE(clipLimit = 1.5, tileGridSize = (8, 8))
+        Y_clahe = clahe.apply(Y)
+
         # Applying guided filtering to luminance (Y) component
-        Y_guided = guided_filter(Y, Y, radius = 32, eps = 0.1)
-        # Remove small spots (marine snow)
+        Y_guided = guided_filter(Y_clahe, Y_clahe, radius = 32, eps = 0.6)
+
+        # Remove small spots (marine snow) using kernel
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
         Y_eroded = cv2.erode(Y_guided, kernel, iterations = 1)
-        Y_cleaned = cv2.morphologyEx(Y_eroded, cv2.MORPH_CLOSE, kernel)
-        # Merging filtered component with unfiltered components
 
+        # Merging filtered component with unfiltered components
+        Y_cleaned = cv2.morphologyEx(Y_eroded, cv2.MORPH_CLOSE, kernel)
 
         # Applying Canny Edge Detection
         edges = cv2.Canny(Y_cleaned, lower_thresh, upper_thresh)
