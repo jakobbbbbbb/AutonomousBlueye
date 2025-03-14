@@ -11,6 +11,8 @@ The code is developed for Ubuntu 22.04.5 LTS (Jammy Jellyfish). It is strongly a
 
 ## Project details
 This project is developed by Christian Lindahl Elseth and Jakob Rude Øvstaas as part of our master thesis at Marine Technology NTNU.
+![Mooring line](Photos/Unfiltered.png)
+![Canny Edge Detection](Photos/Filtered.png)
 
 ## Current work
 This spring the focus is to improve the current algorithm and ensure the ROV is able to conduct its mooring line inspection both ways. By "both ways" we mean that the ROV completes a full inspection from sea surface to sea bottom and then back to surface. Another focus is to improve the current algorithm for detecting the mooring line and its angle. Currently as is, the algorithm struggles as the lighting conditions change. A more dynamic algorithm is therefore being developed currently.
