@@ -183,12 +183,12 @@ def generate_launch_description():
     return LaunchDescription([
         # The following topics can be uncommented depending on desired use
         
-        Blueye_IMU, 
-        Blueye_pose,
-        Blueye_Force,
-        Blueye_camera,
+        #Blueye_IMU, 
+        #Blueye_pose,
+        #Blueye_Force,
+        #Blueye_camera,
 
-        #Video_topic,
+        Video_topic,
         #Laptop_camera,
 
         #Image_test,
@@ -206,7 +206,7 @@ def generate_launch_description():
         # Desired_velocity_compass,
         # Desired_velocity_switch,
 
-        control,
+        #control,
 
         #yolov5_ros,
         #yolo_image,
