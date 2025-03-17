@@ -32,6 +32,11 @@ class BlueyeImage(Node):
             '/frame_brightness', 
             10)
 
+        self.line_angle_pub = self.create_publisher(
+            Float32,
+            '/line_angle',
+            10
+        )
 
         # Setup OpenCV Window
         cv2.namedWindow('Canny Edge Detection', cv2.WINDOW_NORMAL)
@@ -128,11 +133,18 @@ class BlueyeImage(Node):
             cv2.putText(edges_bgr, f"Angle: {angle_deg:.2f} degrees", (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
             cv2.putText(edges_bgr, f"Coords(X,Y): ({centered_x}, {centered_y})", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
             cv2.putText(edges_bgr, width_text, (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            
+            # Publishing line angle
+            line_angle_msg = Float32()
+            line_angle_msg.data = angle_rad
+            self.line_angle_pub.publish(line_angle_msg)
 
         # Publishing frame brightness
         frame_brightness_msg = Float32()
         frame_brightness_msg.data = frame_brightness
         self.frame_brightness_pub.publish(frame_brightness_msg)
+
+
 
         # Drawing line with desired width of mooring line
         if self.desired_width > 0:
