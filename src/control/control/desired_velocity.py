@@ -26,6 +26,7 @@ class ChainPosController(Node):
         self.last_normalized_mid_x = 0  # Initialize to 0, assuming the object starts centered.
         self.current_depth = 0.0
         self.reached_target_depth = False
+        self.angle_rad = 0.0
 
         self.line_lost_time = None
         self.failsafe_triggered = False
@@ -57,10 +58,18 @@ class ChainPosController(Node):
         )
 
         # Adding mean frame brightness from MarineSnowRemoval.py
-        self.frame_brightness_sub = self.create_subscription(
+        self.frame_brightness = self.create_subscription(
             Float32,
             '/frame_brightness',
             self.frame_brightness_callback,
+            10
+        )
+
+        # Adding mooring line angle
+        self.line_angle = self.create_subscription(
+            Float32,
+            '/line_angle',
+            self.line_angle_callback,
             10
         )
         
@@ -183,58 +192,11 @@ class ChainPosController(Node):
                 break
 
     def chain_pos_callback(self, msg):
-        # Directly use the gain attributes
-        normalized_mid_x = (msg.data[0] / 960)
-        width = msg.data[3]
-        width_threshhold = max(self.desired_width, 1)  # Prevent divide-by-zero   
-        desired_depth = self.desired_depth
-        current_depth = self.current_depth # This is the depth the ROV will stop and reverse inspection at
-        # Set default values
-        surge = 0.0
-        sway = 0.0
-        # heave = self.heave_gain
-        yaw = 0.0
-        
-        # Update last known position if the object is visible
-        if width > 20:  # Assuming 20 is the threshold below which the object is considered out of view
-            self.line_lost_time = None
-            self.failsafe_triggered = False
-            self.last_normalized_mid_x = normalized_mid_x
-            sway = normalized_mid_x * self.sway_gain
-            surge = (1 - width / width_threshhold) * self.surge_gain if width <= width_threshhold else -((width - width_threshhold) / 200.0) * self.surge_gain
-            yaw = self.yaw_gain * normalized_mid_x
-            if not self.reached_target_depth:
-                heave = self.heave_gain
-                if current_depth >= desired_depth:
-                    self.reached_target_depth = True
-                    self.get_logger().info(f"Reached desired depth {current_depth:.2f}m → Switching to ascent.")
-            else:
-                heave = -self.heave_gain
-
-        else:
-            now = time.time()
-            if self.line_lost_time is None:
-                self.line_lost_time = now
-            
-            if (now - self.line_lost_time) > self.failsafe_timeout and not self.failsafe_triggered:
-                self.failsafe_triggered = True
-                self.failsafe_mode()
+        # Line following control
+        surge, sway, yaw, heave = self.line_control(msg)
 
         # Adding logic for enabling LED based on pixel data
-        # NOTE: led will power on based on the mean brightness of input frame
-        frame_brightness = self.frame_brightness
-        if frame_brightness < 100:
-            brightness = 1.0
-        elif frame_brightness < 130:
-            brightness = 0.6
-        else:
-            brightness = 0.0
-
-        if brightness != self.last_led_brightness:
-            led_msg = Float32()
-            led_msg.data = brightness
-            self.led_publisher.publish(led_msg)
-            self.last_led_brightness = brightness
+        self.led_control()
 
         self.publish_velocity(surge, sway, yaw, heave)
 
@@ -254,6 +216,46 @@ class ChainPosController(Node):
             writer = csv.writer(file)
             writer.writerow([current_time, surge, sway, heave, yaw, depth, yaw_angle, self.desired_depth])
 
+    def line_control(self, msg):
+        # Directly use the gain attributes
+        normalized_mid_x = (msg.data[0] / 960)
+        width = msg.data[3]
+        width_threshhold = max(self.desired_width, 1)  # Prevent divide-by-zero   
+        desired_depth = self.desired_depth
+        current_depth = self.current_depth # This is the depth the ROV will stop and reverse inspection at
+        # Set default values
+        surge = 0.0
+        sway = 0.0
+        heave = 0.0
+        yaw = 0.0
+        
+        # Update last known position if the object is visible
+        if width > 20:  # Assuming 20 is the threshold below which the object is considered out of view
+            self.line_lost_time = None
+            self.failsafe_triggered = False
+            self.last_normalized_mid_x = normalized_mid_x
+            sway = normalized_mid_x * self.sway_gain
+            surge = (1 - width / width_threshhold) * self.surge_gain if width <= width_threshhold else -((width - width_threshhold) / 200.0) * self.surge_gain
+            yaw = self.yaw_gain * normalized_mid_x
+            if not self.reached_target_depth:
+                heave = self.heave_gain * np.sin(np.abs(self.angle_rad))
+                print(self.angle_rad)
+                if current_depth >= desired_depth:
+                    self.reached_target_depth = True
+                    self.get_logger().info(f"Reached desired depth {current_depth:.2f}m → Switching to ascent.")
+            else:
+                heave = -self.heave_gain * np.sin(np.abs(self.angle_rad))
+
+        else:
+            now = time.time()
+            if self.line_lost_time is None:
+                self.line_lost_time = now
+            
+            if (now - self.line_lost_time) > self.failsafe_timeout and not self.failsafe_triggered:
+                self.failsafe_triggered = True
+                self.failsafe_mode()
+        return surge, sway, yaw, heave
+
     def failsafe_mode(self):
         self.get_logger().warn("Failsafe Activated: Aborting mission")
         surge = 0.0
@@ -263,6 +265,22 @@ class ChainPosController(Node):
         heave = 0.3 # starting ascent
         self.publish_velocity(surge, sway, yaw, heave)
 
+    def led_control(self):
+        # NOTE: LED will power on based on the mean brightness of input frame
+        frame_brightness = self.frame_brightness
+        if frame_brightness < 100:
+            brightness = 1.0
+        elif frame_brightness < 130:
+            brightness = 0.6
+        else:
+            brightness = 0.0
+
+        if brightness != self.last_led_brightness:
+            led_msg = Float32()
+            led_msg.data = brightness
+            self.led_publisher.publish(led_msg)
+            self.last_led_brightness = brightness
+
     def depth_callback(self, msg):
         self.current_depth = msg.w  # Extract depth from the subscription
 
@@ -271,6 +289,9 @@ class ChainPosController(Node):
 
     def frame_brightness_callback(self, msg):
         self.frame_brightness = msg.data
+
+    def line_angle_callback(self, msg):
+        self.angle_rad = msg.data
 
     def publish_desired_width(self, msg): # Publish desired depth
         self.desired_width_publisher.publish(msg)
