@@ -77,7 +77,7 @@ class BlueyeImage(Node):
         Y_clahe = clahe.apply(Y)
 
         # Applying guided filtering to luminance (Y) component
-        Y_guided = guided_filter(Y_clahe, Y_clahe, radius = 32, eps = 0.6)
+        Y_guided = guided_filter(Y_clahe, radius = 32, eps = 0.6)
 
         # Remove small spots (marine snow) using kernel
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
