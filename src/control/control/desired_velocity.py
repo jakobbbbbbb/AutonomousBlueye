@@ -16,23 +16,30 @@ def nothing(x):
 class ChainPosController(Node):
     def __init__(self):
         super().__init__('chain_pos_controller')
+        
+        # Publishers
         self.vel_publisher = self.create_publisher(DesiredVelocity, '/desired_velocity', 10)
         self.desired_width_publisher = self.create_publisher(Float32, '/desired_width', 10)
         self.led_publisher = self.create_publisher(Float32, '/led_brightness', 10)
         self.frame_brightness_pub = self.create_publisher(Float32, '/frame_brightness', 10)
+
+        # Subscribers
         self.current_subscription = None  # Initialized as None to handle the zero output state.
         self.current_topic = 'ZERO_OUTPUT'  # No topic is initially selected.
         self.desired_vel = DesiredVelocity()
-        self.last_normalized_mid_x = 0  # Initialize to 0, assuming the object starts centered.
+
+        # Initializations
+        self.last_normalized_mid_x = 0
         self.current_depth = 0.0
         self.reached_target_depth = False
         self.angle_rad = 0.0
 
+        # Failsafe initialization
         self.line_lost_time = None
         self.failsafe_triggered = False
-        self.failsafe_timeout = 20 # time until failsafe is activated
+        self.failsafe_timeout = 20
 
-        # Initial values for LED and frame
+        # LED and frame brightness initialization
         self.current_brightness = 0.0 
         self.frame_brightness = 128.0 # dummy value
         self.last_led_brightness = None
@@ -87,6 +94,7 @@ class ChainPosController(Node):
                     writer = csv.writer(file)
                     writer.writerow(["Time", "Surge", "Sway", "Heave", "Yaw", "Depth", "Yaw Angle", "Desired Depth"])
     
+    
     def switch_subscription(self, index):
         topic_options = {0: 'ZERO_OUTPUT', 1: '/CannyChainPos', 2: '/ThreshChainPos', 3: '/YoloChainPose'}
         topic = topic_options.get(index, 'ZERO_OUTPUT')  # Default to ZERO_OUTPUT if not specified.
@@ -106,6 +114,7 @@ class ChainPosController(Node):
                 self.destroy_subscription(self.current_subscription)
                 self.create_new_subscription(topic)
 
+
     def create_new_subscription(self, topic):
         # Creates a new subscription based on the topic.
         if topic == '/CannyChainPos':
@@ -116,11 +125,12 @@ class ChainPosController(Node):
             self.current_subscription = self.create_subscription(YoloChainPose, topic, self.chain_pos_callback, 10)
         self.current_topic = topic
 
+
     def update_gains_from_trackbars(self):
         #between 0 and 2
         self.surge_gain = cv2.getTrackbarPos("Surge Gain", 'Gain') / 10.0
         self.sway_gain = cv2.getTrackbarPos("Sway Gain", 'Gain') / 10.0
-        # self.heave_gain = cv2.getTrackbarPos("Heave Gain", 'Gain') / 10.0
+        self.heave_gain = cv2.getTrackbarPos("Heave Gain", 'Gain') / 10.0   
         self.yaw_gain = cv2.getTrackbarPos("Yaw Gain", 'Gain') / 10.0
         self.desired_width = cv2.getTrackbarPos("Desired Line Width", 'Gain') * 10
         self.desired_depth = cv2.getTrackbarPos("Depth Rating", 'Gain')
@@ -128,14 +138,10 @@ class ChainPosController(Node):
         width_msg.data = float(self.desired_width)
         self.publish_desired_width(width_msg)
 
-        #Between -1 and 1
-        # self.surge_gain = (cv2.getTrackbarPos("Surge Gain", 'Gain') - 10) / 10.0
-        # self.sway_gain = (cv2.getTrackbarPos("Sway Gain", 'Gain') - 10) / 10.0
-        self.heave_gain = cv2.getTrackbarPos("Heave Gain", 'Gain') / 10.0        
-        # self.yaw_gain = (cv2.getTrackbarPos("Yaw Gain", 'Gain') - 10) / 10.0
 
     def start_gui(self):
         threading.Thread(target=self.setup_gui, daemon=True).start()
+
 
     def setup_gui(self):
         cv2.namedWindow('Gain', cv2.WINDOW_NORMAL)
@@ -216,6 +222,8 @@ class ChainPosController(Node):
             writer = csv.writer(file)
             writer.writerow([current_time, surge, sway, heave, yaw, depth, yaw_angle, self.desired_depth])
 
+
+    # Supplementary functions
     def line_control(self, msg):
         # Directly use the gain attributes
         normalized_mid_x = (msg.data[0] / 960)
@@ -239,13 +247,12 @@ class ChainPosController(Node):
             yaw = self.yaw_gain * normalized_mid_x
             if not self.reached_target_depth:
                 heave = self.heave_gain * np.sin(np.abs(self.angle_rad))
-                print(self.angle_rad)
                 if current_depth >= desired_depth:
                     self.reached_target_depth = True
                     self.get_logger().info(f"Reached desired depth {current_depth:.2f}m → Switching to ascent.")
             else:
                 heave = -self.heave_gain * np.sin(np.abs(self.angle_rad))
-
+            heave = np.clip(heave, -1.0, 1.0)
         else:
             now = time.time()
             if self.line_lost_time is None:
@@ -281,6 +288,8 @@ class ChainPosController(Node):
             self.led_publisher.publish(led_msg)
             self.last_led_brightness = brightness
 
+
+    # Callback functions
     def depth_callback(self, msg):
         self.current_depth = msg.w  # Extract depth from the subscription
 
