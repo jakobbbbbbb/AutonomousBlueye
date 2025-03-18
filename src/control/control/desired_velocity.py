@@ -20,7 +20,7 @@ class ChainPosController(Node):
         # Publishers
         self.vel_publisher = self.create_publisher(DesiredVelocity, '/desired_velocity', 10)
         self.desired_width_publisher = self.create_publisher(Float32, '/desired_width', 10)
-        self.led_publisher = self.create_publisher(Float32, '/led_brightness', 10)
+        self.led_publisher = self.create_publisher(Float32, '/set_led_brightness', 10)
         self.frame_brightness_pub = self.create_publisher(Float32, '/frame_brightness', 10)
 
         # Subscribers
@@ -59,13 +59,13 @@ class ChainPosController(Node):
         # Adding LED brightness from Blueye_LED.py
         self.led_brightness_sub = self.create_subscription(
             Float32,
-            '/led_brightness',
+            '/read_led_brightness',
             self.led_callback,
             10
         )
 
         # Adding mean frame brightness from MarineSnowRemoval.py
-        self.frame_brightness = self.create_subscription(
+        self.frame_brightness_sub = self.create_subscription(
             Float32,
             '/frame_brightness',
             self.frame_brightness_callback,

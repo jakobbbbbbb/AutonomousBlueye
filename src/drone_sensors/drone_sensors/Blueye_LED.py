@@ -9,13 +9,12 @@ class DroneLEDPublisher(Node):
         super().__init__('led_publisher')
         self.drone = Drone()
         # Publisher to read current brightness
-        self.led_publisher = self.create_publisher(Float32, '/led_brightness', 10)
+        self.led_publisher = self.create_publisher(Float32, '/read_led_brightness', 10)
 
         # Subscription to receive desired brightness
         self.led_subscriber = self.create_subscription(
             Float32, '/set_led_brightness', self.set_led_brightness_callback, 10
         )
-        
         # Updates with freq = 10 Hz
         self.timer = self.create_timer(0.1, self.publish_LED_brightness)
 
