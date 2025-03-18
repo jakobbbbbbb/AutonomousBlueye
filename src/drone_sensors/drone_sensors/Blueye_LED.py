@@ -7,31 +7,29 @@ from blueye.sdk import Drone
 class DroneLEDPublisher(Node):
     def __init__(self):
         super().__init__('led_publisher')
-        self.drone = Drone()
-        # Publisher to read current brightness
-        self.led_publisher = self.create_publisher(Float32, '/read_led_brightness', 10)
-
-        # Subscription to receive desired brightness
+        self.led_publisher = self.create_publisher(Float32, '/led_brightness', 10)
         self.led_subscriber = self.create_subscription(
             Float32, '/set_led_brightness', self.set_led_brightness_callback, 10
         )
-        # Updates with freq = 10 Hz
+        self.drone = Drone()
         self.timer = self.create_timer(0.1, self.publish_LED_brightness)
 
     def publish_LED_brightness(self):
-        # Fetch brightness of LED
         brightness = self.drone.lights
         if brightness is not None:
             brightness_msg = Float32()
             brightness_msg.data = brightness
             self.led_publisher.publish(brightness_msg)
+        else:
+            self.get_logger().warn("No telemetry received yet from drone.")
 
     def set_led_brightness_callback(self, msg):
-        brightness = msg.data
         try:
-            self.drone.lights = brightness
+            self.drone.lights = msg.data
+            self.get_logger().info(f"LED brightness set to {msg.data}")
         except ValueError as e:
-            self.get_logger().error(f"Invalid brightness: {e}")
+            self.get_logger().error(f"Failed to set brightness: {e}")
+
 
 def main(args = None):
     rclpy.init(args = args)

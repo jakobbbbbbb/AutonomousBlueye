@@ -27,6 +27,7 @@ class ChainPosController(Node):
         self.current_subscription = None  # Initialized as None to handle the zero output state.
         self.current_topic = 'ZERO_OUTPUT'  # No topic is initially selected.
         self.desired_vel = DesiredVelocity()
+        self.desired_led = 0.0
 
         # Initializations
         self.last_normalized_mid_x = 0
@@ -42,7 +43,7 @@ class ChainPosController(Node):
         # LED and frame brightness initialization
         self.current_brightness = 0.0 
         self.frame_brightness = 128.0 # dummy value
-        self.last_led_brightness = None
+        self.last_led_brightness = 0.0
 
         # Logging stuff
         self.log_file = "pid_log.csv"
@@ -59,7 +60,7 @@ class ChainPosController(Node):
         # Adding LED brightness from Blueye_LED.py
         self.led_brightness_sub = self.create_subscription(
             Float32,
-            '/read_led_brightness',
+            '/led_brightness',
             self.led_callback,
             10
         )
@@ -202,9 +203,10 @@ class ChainPosController(Node):
         surge, sway, yaw, heave = self.line_control(msg)
 
         # Adding logic for enabling LED based on pixel data
-        self.led_control()
+        brightness = self.led_control()
 
         self.publish_velocity(surge, sway, yaw, heave)
+        self.publish_led(brightness)
 
     def publish_velocity(self, surge, sway, yaw, heave):
         self.desired_vel.surge = surge
@@ -222,6 +224,10 @@ class ChainPosController(Node):
             writer = csv.writer(file)
             writer.writerow([current_time, surge, sway, heave, yaw, depth, yaw_angle, self.desired_depth])
 
+    def publish_led(self, brightness):
+        led_msg = Float32()
+        led_msg.data = brightness
+        self.led_publisher.publish(led_msg)
 
     # Supplementary functions
     def line_control(self, msg):
@@ -269,7 +275,7 @@ class ChainPosController(Node):
         sway = 0.0
         # If the object is out of view, set yaw based on the last known side
         yaw = 0.1 if self.last_normalized_mid_x > 0 else -0.1
-        heave = 0.3 # starting ascent
+        heave = -0.3 # starting ascent
         self.publish_velocity(surge, sway, yaw, heave)
 
     def led_control(self):
@@ -282,11 +288,7 @@ class ChainPosController(Node):
         else:
             brightness = 0.0
 
-        if brightness != self.last_led_brightness:
-            led_msg = Float32()
-            led_msg.data = brightness
-            self.led_publisher.publish(led_msg)
-            self.last_led_brightness = brightness
+        return brightness
 
 
     # Callback functions
