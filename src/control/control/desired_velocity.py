@@ -1,6 +1,7 @@
 import rclpy
 from rclpy.node import Node
 from robot_interfaces.msg import DesiredVelocity, ThreshChainPos, CannyChainPos, YoloChainPose
+from bboxes_ex_msgs.msg import BoundingBoxes
 import cv2
 import numpy as np
 import threading
@@ -20,30 +21,25 @@ class ChainPosController(Node):
         # Publishers
         self.vel_publisher = self.create_publisher(DesiredVelocity, '/desired_velocity', 10)
         self.desired_width_publisher = self.create_publisher(Float32, '/desired_width', 10)
-        self.led_publisher = self.create_publisher(Float32, '/set_led_brightness', 10)
         self.frame_brightness_pub = self.create_publisher(Float32, '/frame_brightness', 10)
 
         # Subscribers
         self.current_subscription = None  # Initialized as None to handle the zero output state.
         self.current_topic = 'ZERO_OUTPUT'  # No topic is initially selected.
         self.desired_vel = DesiredVelocity()
-        self.desired_led = 0.0
+        self.bbox_subscriber = self.create_subscription(BoundingBoxes, 'yolov5/bounding_boxes', self.bbox_callback, 10)
 
         # Initializations
         self.last_normalized_mid_x = 0
         self.current_depth = 0.0
         self.reached_target_depth = False
         self.angle_rad = 0.0
+        self.bounding_boxes = None
 
         # Failsafe initialization
         self.line_lost_time = None
         self.failsafe_triggered = False
         self.failsafe_timeout = 20
-
-        # LED and frame brightness initialization
-        self.current_brightness = 0.0 
-        self.frame_brightness = 128.0 # dummy value
-        self.last_led_brightness = 0.0
 
         # Logging stuff
         self.log_file = "pid_log.csv"
@@ -54,22 +50,6 @@ class ChainPosController(Node):
             Quaternion,
             'BlueyePose',
             self.depth_callback,
-            10
-        )
-
-        # Adding LED brightness from Blueye_LED.py
-        self.led_brightness_sub = self.create_subscription(
-            Float32,
-            '/led_brightness',
-            self.led_callback,
-            10
-        )
-
-        # Adding mean frame brightness from MarineSnowRemoval.py
-        self.frame_brightness_sub = self.create_subscription(
-            Float32,
-            '/frame_brightness',
-            self.frame_brightness_callback,
             10
         )
 
@@ -89,7 +69,7 @@ class ChainPosController(Node):
 
 
     def write_header(self):
-            """ Skriver en header til loggfilen. """
+            """ LOG data """
             if not os.path.exists(self.log_file):
                 with open(self.log_file, 'w', newline='') as file:
                     writer = csv.writer(file)
@@ -191,9 +171,6 @@ class ChainPosController(Node):
             cv2.putText(canvas, f"Yaw: {self.desired_vel.yaw:.2f}", (10, start_y + 4 * line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
             cv2.putText(canvas, f"Yaw Gain: {self.yaw_gain:.1f}", (300, start_y + 4 * line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
 
-            cv2.putText(canvas, f"LED Brightness: {self.current_brightness:.2f}", (10, start_y + 5 * line_space),
-            cv2.FONT_HERSHEY_SIMPLEX, font_scale, (0, 255, 255), 2)
-
             cv2.imshow('Gain', canvas)
             if cv2.waitKey(50) == 27:  # Exit on ESC
                 break
@@ -202,11 +179,8 @@ class ChainPosController(Node):
         # Line following control
         surge, sway, yaw, heave = self.line_control(msg)
 
-        # Adding logic for enabling LED based on pixel data
-        brightness = self.led_control()
-
         self.publish_velocity(surge, sway, yaw, heave)
-        self.publish_led(brightness)
+
 
     def publish_velocity(self, surge, sway, yaw, heave):
         self.desired_vel.surge = surge
@@ -223,11 +197,6 @@ class ChainPosController(Node):
         with open(self.log_file, 'a', newline='') as file:
             writer = csv.writer(file)
             writer.writerow([current_time, surge, sway, heave, yaw, depth, yaw_angle, self.desired_depth])
-
-    def publish_led(self, brightness):
-        led_msg = Float32()
-        led_msg.data = brightness
-        self.led_publisher.publish(led_msg)
 
     # Supplementary functions
     def line_control(self, msg):
@@ -278,31 +247,16 @@ class ChainPosController(Node):
         heave = -0.3 # starting ascent
         self.publish_velocity(surge, sway, yaw, heave)
 
-    def led_control(self):
-        # NOTE: LED will power on based on the mean brightness of input frame
-        frame_brightness = self.frame_brightness
-        if frame_brightness < 100:
-            brightness = 1.0
-        elif frame_brightness < 130:
-            brightness = 0.6
-        else:
-            brightness = 0.0
-
-        return brightness
-
 
     # Callback functions
     def depth_callback(self, msg):
         self.current_depth = msg.w  # Extract depth from the subscription
 
-    def led_callback(self, msg):
-        self.current_brightness = msg.data # Extract LED brightness from subscription
-
-    def frame_brightness_callback(self, msg):
-        self.frame_brightness = msg.data
-
     def line_angle_callback(self, msg):
         self.angle_rad = msg.data
+
+    def bbox_callback(self, msg):
+        self.bounding_boxes = msg.bounding_boxes
 
     def publish_desired_width(self, msg): # Publish desired depth
         self.desired_width_publisher.publish(msg)
