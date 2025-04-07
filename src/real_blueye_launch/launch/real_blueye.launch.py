@@ -142,10 +142,10 @@ def generate_launch_description():
         name = 'MarineSnowRemoval' 
     )
 
-    YoloCanny = Node(
+    CannyYolo = Node(
         package = 'image_prosessing',
-        executable = 'CannyYolo',
-        name = 'CannyYolo'
+        executable = 'Canny_Yolo',
+        name = 'Canny_Yolo'
     )
 
     yolov5_ros = launch_ros.actions.Node(
@@ -216,19 +216,20 @@ def generate_launch_description():
         #Adaptive_threshold,
         #Hybrid_approach,
         #Canny_edge_new,
-        #MarineSnowRemoval,
+        MarineSnowRemoval,
+        #CannyYolo,
         #Chain_pos_thresh,
         #Chain_pos_thresh_mean,
 
         #Desired_velocity_test,
-        #Desired_velocity,
+        Desired_velocity,
         #Desired_velocity_spiral,
         #Desired_velocity_compass,
         #Desired_velocity_switch,
 
         #control,
 
-        yolov5_ros,
+        #yolov5_ros,
         #yolo_image,
         #yolo_chain_canny,
 
