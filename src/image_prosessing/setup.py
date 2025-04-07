@@ -32,7 +32,8 @@ setup(
             'Adaptive_threshold = image_prosessing.adaptive_threshold:main',
             'Hybrid_approach = image_prosessing.hybrid_approach:main',
             'Canny_edge_new = image_prosessing.Canny_edge_new:main',
-            'MarineSnowRemoval = image_prosessing.MarineSnowRemoval:main'
+            'MarineSnowRemoval = image_prosessing.MarineSnowRemoval:main',
+            'Canny_Yolo = image_prosessing.Canny_Yolo:main',
         ],
     },
 )
