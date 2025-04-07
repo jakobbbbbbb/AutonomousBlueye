@@ -10,6 +10,9 @@ import cv2
 import numpy as np
 import math
 
+def nothing(x):
+    pass
+
 class BlueyeImage(Node):
     def __init__(self):
         super().__init__("blueye_image")
@@ -18,9 +21,11 @@ class BlueyeImage(Node):
         self.bounding_boxes = None
         self.bbox_subscriber = self.create_subscription(BoundingBoxes, 'yolov5/bounding_boxes', self.bbox_callback, 10)
         self.YoloChainPose_publisher = self.create_publisher(YoloCannyChainPose, 'YoloCannyChainPose', 10)
-        cv2.namedWindow('Yolov5 Image', cv2.WINDOW_NORMAL)
-        cv2.createTrackbar("Min Threshold", "Yolov5 Image", 42, 255, lambda x: None)
-        cv2.createTrackbar("Max Threshold", "Yolov5 Image", 78, 255, lambda x: None)
+        
+        cv2.namedWindow('Canny inside Yolo', cv2.WINDOW_NORMAL)
+        cv2.resizeWindow('Canny inside Yolo', 960, 600)
+        cv2.createTrackbar("Min Threshold", "Canny inside Yolo", 6, 255, lambda x: None)
+        cv2.createTrackbar("Max Threshold", "Canny inside Yolo", 9, 255, lambda x: None)
 
     def bbox_callback(self, msg):
         self.bounding_boxes = msg.bounding_boxes
@@ -29,9 +34,14 @@ class BlueyeImage(Node):
         image = self.bridge.imgmsg_to_cv2(msg, 'bgr8')
         image_center_x, image_center_y = image.shape[1] // 2, image.shape[0] // 2
 
+        # Check if window is closed
+        if cv2.getWindowProperty('Canny Edge Detection', cv2.WND_PROP_VISIBLE) < 1:
+            rclpy.shutdown()
+            return
+
         # Collecting thresholds and box size from GUI
-        lower_thresh = cv2.getTrackbarPos("Lower Threshold", 'Canny Edge Detection')
-        upper_thresh = cv2.getTrackbarPos("Upper Threshold", 'Canny Edge Detection')
+        lower_thresh = cv2.getTrackbarPos("Lower Threshold", 'Canny inside Yolo')
+        upper_thresh = cv2.getTrackbarPos("Upper Threshold", 'Canny inside Yolo')
 
         if self.bounding_boxes:
             for box in self.bounding_boxes:
@@ -100,7 +110,7 @@ class BlueyeImage(Node):
                         cv2.putText(image, f'Angle: {angle_deg:.2f} degrees', (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
                         cv2.putText(image, f'Width: {average_width:.2f} pixels', (10, 110), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
 
-        cv2.imshow("Yolov5 Image", image)
+        cv2.imshow("Canny inside Yolo", image)
         cv2.waitKey(1)
 
 def main():
@@ -109,6 +119,7 @@ def main():
     rclpy.spin(blueye_img)
     blueye_img.destroy_node()
     rclpy.shutdown()
+    cv2.destroyAllWindows()
 
 if __name__ == "__main__":
     main()
