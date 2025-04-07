@@ -12,6 +12,7 @@ def generate_launch_description():
 
     yolox_ros_share_dir = get_package_share_directory('yolov5_ros')
 
+    # NOTE: BLUEYE TOPICS -----------------------------------------
     Blueye_IMU = Node(
         package='drone_sensors',
         executable='IMU_to_ros2',
@@ -23,22 +24,42 @@ def generate_launch_description():
         executable='BluEye_Pose',
         name='pose_node'
     )
+
     Blueye_Force = Node(
         package='drone_sensors',
         executable='BluEye_Force',
         name='force_node'
     )
+
     Blueye_camera = Node(
         package='drone_sensors',
         executable='Video_to_ros2',
         name='video_node'
     )
+
+    control = Node(
+        package='control',
+        executable='control',
+        name = 'control_test_name'
+    )
+
+    control_test = Node(
+        package='control',
+        executable='control_test',
+        name = 'control_test_name_test'
+    )
+
+
+    # NOTE: LAPTOP CAMERA -----------------------------------------
     Laptop_camera = Node(
         package='drone_sensors',
         executable='laptop_camera',
         name='laptop_camera',
         parameters=[{"video_device": "/dev/video0"}]
     )
+
+
+    # NOTE: IMAGE FILTERING -----------------------------------------
     Chain_pos_canny = Node(
         package='image_prosessing',
         executable='canny_with_box',
@@ -73,11 +94,13 @@ def generate_launch_description():
         executable='blueye_image_yolo',
         name = 'Yolo_bbox_drawer'
     )
+
     yolo_chain_canny = Node(
         package='image_prosessing',
         executable='yolo_chain_value',
         name = 'yolo_chain'
     )
+
     Canny_inside_yolo = Node(
         package='image_prosessing',
         executable='Canny_inside_yolo',
@@ -119,6 +142,23 @@ def generate_launch_description():
         name = 'MarineSnowRemoval' 
     )
 
+    YoloCanny = Node(
+        package = 'image_prosessing',
+        executable = 'CannyYolo',
+        name = 'CannyYolo'
+    )
+
+    yolov5_ros = launch_ros.actions.Node(
+        package="yolov5_ros",
+        executable="yolov5_ros",
+        parameters=[
+            {"view_img": True},
+            {"input_topic": "/image_raw"},
+        ],
+    )
+
+
+    # NOTE: VIDEO PLAYBACK -----------------------------------------
     Video_topic = Node(
         package='experimental',
         # executable='Video_to_topic_no_trackbar',
@@ -126,6 +166,8 @@ def generate_launch_description():
         name = 'video_topic'
     )
 
+
+    # NOTE: CONTROLLERS -----------------------------------------
     Desired_velocity = Node(
         package='control',
         executable='desired_velocity',
@@ -143,6 +185,7 @@ def generate_launch_description():
         executable='desired_velocity_spiral_surge',
         name = 'Chain_controller_spiral'
     )
+
     Desired_velocity_compass = Node(
         package='control',
         executable='desired_velocity_compass',
@@ -155,29 +198,6 @@ def generate_launch_description():
         name = 'Chain_controller_switch'
     )
     
-    control = Node(
-        package='control',
-        executable='control',
-        name = 'control_test_name'
-    )
-    control_test = Node(
-        package='control',
-        executable='control_test',
-        name = 'control_test_name_test'
-    )
-
-    yolov5_ros = launch_ros.actions.Node(
-        package="yolov5_ros",
-        executable="yolov5_ros",
-        parameters=[
-            {"view_img": True},
-            {"input_topic": "/image_raw"},  # Explicitly setting the input topic
-            #{"weights": "/home/ovsj/Code/AutonomousBlueye/ws_yolov5/src/YOLOv5-ROS/yolov5_ros/yolov5_ros/config/mooring.pt"},
-            #{"data": "/home/ovsj/Code/AutonomousBlueye/ws_yolov5/src/YOLOv5-ROS/yolov5_ros/yolov5_ros/data/mooring.yaml"},
-            #{"conf_thres": 0.1},  # Lower confidence threshold
-            #{"iou_thres": 0.45},  # Intersection Over Union threshold
-        ],
-    )
 
 
     return LaunchDescription([
@@ -196,19 +216,19 @@ def generate_launch_description():
         #Adaptive_threshold,
         #Hybrid_approach,
         #Canny_edge_new,
-        MarineSnowRemoval,
+        #MarineSnowRemoval,
         #Chain_pos_thresh,
         #Chain_pos_thresh_mean,
 
-        # Desired_velocity_test,
-        Desired_velocity,
-        # Desired_velocity_spiral,
-        # Desired_velocity_compass,
-        # Desired_velocity_switch,
+        #Desired_velocity_test,
+        #Desired_velocity,
+        #Desired_velocity_spiral,
+        #Desired_velocity_compass,
+        #Desired_velocity_switch,
 
         #control,
 
-        #yolov5_ros,
+        yolov5_ros,
         #yolo_image,
         #yolo_chain_canny,
 
