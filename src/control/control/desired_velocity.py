@@ -35,6 +35,9 @@ class ChainPosController(Node):
         self.reached_target_depth = False
         self.angle_rad = 0.0
         self.bounding_boxes = None
+        self.transition_detected = False
+        self.awaiting_cvi = False
+        self.awaiting_ascent_confirmation = False
 
         # Failsafe initialization
         self.line_lost_time = None
@@ -108,13 +111,21 @@ class ChainPosController(Node):
 
 
     def update_gains_from_trackbars(self):
-        #between 0 and 2
         self.surge_gain = cv2.getTrackbarPos("Surge Gain", 'Gain') / 10.0
         self.sway_gain = cv2.getTrackbarPos("Sway Gain", 'Gain') / 10.0
         self.heave_gain = cv2.getTrackbarPos("Heave Gain", 'Gain') / 10.0   
         self.yaw_gain = cv2.getTrackbarPos("Yaw Gain", 'Gain') / 10.0
-        self.desired_width = cv2.getTrackbarPos("Desired Line Width", 'Gain') * 10
-        self.desired_depth = cv2.getTrackbarPos("Depth Rating", 'Gain')
+        new_width = cv2.getTrackbarPos("Desired Line Width", 'Gain') * 10
+        new_depth = cv2.getTrackbarPos("Depth Rating", 'Gain')
+
+        # Check if CVI is acknowledged
+        if self.awaiting_cvi and new_width != self.desired_width:
+            self.awaiting_cvi = False
+            self.awaiting_ascent_confirmation = True
+            self.get_logger().info("CVI acknowledged. Press 'a' to begin ascent.")
+
+        self.desired_width = new_width
+        self.desired_depth = new_depth
         width_msg = Float32()
         width_msg.data = float(self.desired_width)
         self.publish_desired_width(width_msg)
@@ -172,8 +183,13 @@ class ChainPosController(Node):
             cv2.putText(canvas, f"Yaw Gain: {self.yaw_gain:.1f}", (300, start_y + 4 * line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
 
             cv2.imshow('Gain', canvas)
-            if cv2.waitKey(50) == 27:  # Exit on ESC
+            key = cv2.waitKey(50)
+            if key == 27:  # ESC
                 break
+            elif key == ord('a') and self.awaiting_ascent_confirmation:
+                self.awaiting_ascent_confirmation = False
+                self.reached_target_depth = True
+                self.get_logger().info("User confirmed ascent. Ascending...")
 
     def chain_pos_callback(self, msg):
         # Line following control
@@ -257,6 +273,14 @@ class ChainPosController(Node):
 
     def bbox_callback(self, msg):
         self.bounding_boxes = msg.bounding_boxes
+        for box in self.bounding_boxes:
+            if box.Class == "TransitionPiece":
+                if not self.transition_detected:
+                    self.transition_detected = True
+                    self.awaiting_cvi = True
+                    self.get_logger().info("Shackle detected. Perform CVI by adjusting 'Desired Line Width'.")
+                    # Optionally pause motion
+                    self.publish_velocity(0.0, 0.0, 0.0, 0.0)
 
     def publish_desired_width(self, msg): # Publish desired depth
         self.desired_width_publisher.publish(msg)
