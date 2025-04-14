@@ -17,9 +17,11 @@ class BlueyeImage(Node):
         self.bounding_boxes = None
         self.bbox_subscriber = self.create_subscription(BoundingBoxes, 'yolov5/bounding_boxes', self.bbox_callback, 10)
         self.YoloChainPose_publisher = self.create_publisher(YoloThreshChainPose, 'YoloThreshChainPose', 10)
-        cv2.namedWindow('Yolov5 Threshold', cv2.WINDOW_NORMAL)
-        cv2.resizeWindow('Yolov5 Threshold', 800, 500)
-        cv2.createTrackbar("Threshold", "Yolov5 Threshold", 190, 255, lambda x: None)  # Simple binary threshold
+        cv2.namedWindow('Threshold Detection', cv2.WINDOW_NORMAL)
+        cv2.resizeWindow('Threshold Detection', 960, 600)
+        cv2.namedWindow('Threshold inside Yolo', cv2.WINDOW_NORMAL)
+        cv2.resizeWindow('Threshold inside Yolo', 960, 600)
+        cv2.createTrackbar("Threshold", "Threshold inside Yolo", 190, 255, lambda x: None)  # Simple binary threshold
 
     def bbox_callback(self, msg):
         self.bounding_boxes = msg.bounding_boxes
@@ -35,7 +37,7 @@ class BlueyeImage(Node):
                 if box.class_id in ["Chain", "Wire", "Rope"]:
                     roi = image[box.ymin:box.ymax, box.xmin:box.xmax]
                     gray_roi = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-                    threshold_value = cv2.getTrackbarPos("Threshold", "Yolov5 Threshold")
+                    threshold_value = cv2.getTrackbarPos("Threshold", "Threshold inside Yolo")
                     _, binary_roi = cv2.threshold(gray_roi, threshold_value, 255, cv2.THRESH_BINARY)
 
                     print(f"Threshold value: {threshold_value}")
@@ -83,7 +85,7 @@ class BlueyeImage(Node):
                         cv2.putText(image, f'Angle: {angle_deg:.2f} degrees', (10, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
                         cv2.putText(image, f'Width: {average_width:.2f} pixels', (10, 110), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-        cv2.imshow("Yolov5 Threshold", image)
+        cv2.imshow("Threshold Detection", image)
         cv2.waitKey(1)
 
 def main():

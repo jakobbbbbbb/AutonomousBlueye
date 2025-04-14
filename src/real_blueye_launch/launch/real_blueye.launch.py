@@ -171,14 +171,37 @@ def generate_launch_description():
         executable="yolov5_ros",
         parameters=[
             {"view_img": True},
-            {"input_topic": "/image_raw"},  # Explicitly setting the input topic
-            #{"weights": "/home/ovsj/Code/AutonomousBlueye/ws_yolov5/src/YOLOv5-ROS/yolov5_ros/yolov5_ros/config/mooring.pt"},
-            #{"data": "/home/ovsj/Code/AutonomousBlueye/ws_yolov5/src/YOLOv5-ROS/yolov5_ros/yolov5_ros/data/mooring.yaml"},
-            #{"conf_thres": 0.1},  # Lower confidence threshold
-            #{"iou_thres": 0.45},  # Intersection Over Union threshold
+            {"input_topic": "/image_raw"},
+            {"imgsz": 416},
+            {"image_size": [960, 540]},
+            {"classes": {"value": [0]}},  # MooringLine class, wrapped in dict
+            {"conf_thres": 0.25},
+            {"iou_thres": 0.45},
+            {"weights": os.path.join(get_package_share_directory('yolov5_ros'), "yolov5_ros/config/mooring.pt")},
+            {"data": os.path.join(get_package_share_directory('yolov5_ros'), "yolov5_ros/data/mooring.yaml")},
         ],
+        output="screen",
     )
 
+    Canny_yolo = launch_ros.actions.Node(
+        package="image_prosessing",
+        executable="Canny_yolo",
+        name="Canny_yolo"
+    )
+
+    Object_detection = launch_ros.actions.Node(
+        package="image_prosessing",
+        executable="object_detection",
+        name="object_detection"
+    )
+
+    # Add the new combined detection node
+    combined_detection = launch_ros.actions.Node(
+        package="image_prosessing",
+        executable="combined_detection",
+        name="combined_detection",
+        output="screen",
+    )
 
     return LaunchDescription([
         # The following topics can be uncommented depending on desired use
@@ -188,27 +211,29 @@ def generate_launch_description():
         #Blueye_Force,
         #Blueye_camera,
 
-        Video_topic,
-        #Laptop_camera,
+        Video_topic,        # Video source first
+        #MarineSnowRemoval,  # Commented out as it's replaced by Canny_yolo
+        #Canny_yolo,         # Commented out as it's replaced by object_detection
+        #Object_detection,   # New combined detection node
+        yolov5_ros,         #YOLO detection
+        combined_detection,  #Add this after yolov5_ros
+        Desired_velocity,   #Control
 
         #Image_test,
         #Chain_pos_canny,
         #Adaptive_threshold,
         #Hybrid_approach,
         #Canny_edge_new,
-        MarineSnowRemoval
         #Chain_pos_thresh,
         #Chain_pos_thresh_mean,
 
-        # Desired_velocity_test,
-        # Desired_velocity,
-        # Desired_velocity_spiral,
-        # Desired_velocity_compass,
-        #Desired_velocity_switch
+        #Desired_velocity_test,
+        #Desired_velocity_spiral,
+        #Desired_velocity_compass,
+        #Desired_velocity_switch,
 
         #control,
 
-        #yolov5_ros,
         #yolo_image,
         #yolo_chain_canny,
 

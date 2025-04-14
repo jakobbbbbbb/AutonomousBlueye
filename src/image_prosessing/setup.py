@@ -1,4 +1,6 @@
 from setuptools import find_packages, setup
+import os
+from glob import glob
 
 package_name = 'image_prosessing'
 
@@ -11,7 +13,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
     ],
-    install_requires=['setuptools', 'pytest'],
+    install_requires=['setuptools'],
     zip_safe=True,
     maintainer='nikolai',
     maintainer_email='nikolarn@stud.ntnu.no',
@@ -32,7 +34,10 @@ setup(
             'Adaptive_threshold = image_prosessing.adaptive_threshold:main',
             'Hybrid_approach = image_prosessing.hybrid_approach:main',
             'Canny_edge_new = image_prosessing.Canny_edge_new:main',
-            'MarineSnowRemoval = image_prosessing.MarineSnowRemoval:main'
+            'MarineSnowRemoval = image_prosessing.MarineSnowRemoval:main',
+            'Canny_yolo = image_prosessing.Canny_yolo:main',
+            'object_detection = image_prosessing.Object_detection:main',
+            'combined_detection = image_prosessing.Combined_detection:main',
         ],
     },
 )

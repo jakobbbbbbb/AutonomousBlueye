@@ -18,14 +18,19 @@ class VideoPublisher(Node):
         #self.cap = cv2.VideoCapture('/home/ovsj/Code/Video/10m.mp4')
         self.cap = cv2.VideoCapture('/home/cle/upward_inspection.mp4')
         #self.cap = cv2.VideoCapture('/home/ovsj/Code/Video/autonomous_seafloor.mp4')
+        #self.cap = cv2.VideoCapture(0)  # Use webcam
 
         if not self.cap.isOpened():
-            self.get_logger().error('Unable to open video file.')
+            self.get_logger().error('Unable to open video device.')
             exit()
 
         self.video_fps = self.cap.get(cv2.CAP_PROP_FPS) # Finding video fps
-        self.width = 1920
-        self.height = 1080
+        # For webcam, use these settings:
+        #self.width = 1920
+        #self.height = 1080
+        # For video file, use actual video dimensions:
+        self.width = int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        self.height = int(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
         self.paused = False # Play/Pause button
         self.last_frame_time = time.time()
 
@@ -39,9 +44,10 @@ class VideoPublisher(Node):
         cv2.resizeWindow('Video', 700, 500)
 
         self.total_frames = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))
-        cv2.createTrackbar('Frames', 'Video', 0, self.total_frames, nothing)
-        
-        self.last_trackbar_val = 0  # Keep track of the last trackbar value to detect changes
+        # Only create trackbar if we're using a video file (not webcam)
+        if self.total_frames > 0:
+            cv2.createTrackbar('Frames', 'Video', 0, self.total_frames, nothing)
+            self.last_trackbar_val = 0  # Keep track of the last trackbar value to detect changes
 
     def timer_callback(self):
         key = cv2.waitKey(1) & 0xFF # adding a key input
@@ -49,10 +55,12 @@ class VideoPublisher(Node):
         if key == ord(' '): # Play/Pause key
             self.paused = not self.paused
         
-        trackbar_val = cv2.getTrackbarPos('Frames', 'Video')
-        if trackbar_val != self.last_trackbar_val:
-            self.cap.set(cv2.CAP_PROP_POS_FRAMES, trackbar_val)
-            self.last_trackbar_val = trackbar_val
+        # Only check trackbar if we're using a video file
+        if self.total_frames > 0:
+            trackbar_val = cv2.getTrackbarPos('Frames', 'Video')
+            if trackbar_val != self.last_trackbar_val:
+                self.cap.set(cv2.CAP_PROP_POS_FRAMES, trackbar_val)
+                self.last_trackbar_val = trackbar_val
         
         if not self.paused:
             ret, frame = self.cap.read()
