@@ -1,16 +1,14 @@
 # Autonomous Mooring Line Inspection Using Blueye
 This is a project which continues on the work conducted by [Nikolai Arntzen](https://github.com/Nikolaiarn) as part of his master thesis at NTNU.
 
-The code consists of a control system that ensures autonomous following of a mooring line chain using a Blueye ROV. This project has an emphasis on only utilizing camera and IMU as sensors to ensure low-cost. The code has been tested on a Blueye Pioneer and Blueye X3. As the thruster configuration and dimensions are equal between the two models; no issues have yet been discovered by using the two different Blueye ROVs.
+The framework consists of a control system that ensures autonomous path following of a mooring line chain using a Blueye ROV. This project has an emphasis on only utilizing camera and IMU as sensors to ensure low-cost. The code has been tested on a Blueye Pioneer and Blueye X3.
 
-The way this ROS 2 control system is structured is two nodes listening for IMU data and camera data. One node subscribes to the camera data and outputs angle and position to where it thinks the chain is in the camera frame. 
+A ROS 2 control system is structured with two nodes listening for IMU data and camera data. One node subscribes to the camera data and determines an estimat of the angle and position of the chain. Another node takes this data and outputs desired thruster commands in surge, sway, heave, and yaw. These values are then transmitted to thruster values by the onboard SDK which includes thrust allocation. 
 
-Another node takes this info and outputs values in surge, sway, heave, and yaw. These values will then be translated into thruster values by the onboard SDK which includes thrust allocation. 
-
-The code is developed for Ubuntu 22.04.5 LTS (Jammy Jellyfish). It is strongly advised to run from a native Linux computer or a dual boot. Applying and testing code on video playback has been tested from macOS but we strongly discourage using Mac for other purposes. Install [UTM](https://mac.getutm.app) to install Ubuntu on a Mac.
+The code is developed for Ubuntu 22.04.5 LTS (Jammy Jellyfish). It is strongly advised to run from a native Linux computer or a dual boot. Applying and testing code on video playback has been tested from macOS but we strongly discourage using macOS for other purposes.
 
 ## Project details
-This project is developed by Christian Lindahl Elseth and Jakob Rude Øvstaas as part of our master thesis at Marine Technology NTNU.
+This project is developed by Christian Lindahl Elseth and Jakob Rude Øvstaas as part of a master thesis at Marine Technology NTNU. A journal paper summarizing the work is to be published summer of 2025.
 <p float="left">
   <img src="Photos/Unfiltered.png" width="45%" />
   <img src="Photos/Filtered.png" width="45%" />
@@ -36,7 +34,8 @@ pip install -r requirements.txt
 ```
 ## Connection guide
 1. Power on Blueye and Surface Unit. Connect computer to Blueye Surface Unit Wi-Fi. Standard password is 1234567890
-2. Source the code:
+2. Initialize dive in the Blueye app and turn on auto-heading and auto-depth (this is subject to implementation in the code at a later point). 
+3. Source the code:
 ```sh
 source /opt/ros/humble/setup.bash
 ```
@@ -50,4 +49,4 @@ ros2 launch real_blueye_launch real_blueye.launch.py
 ```
 
 **Note:**  
-Upon making changes to the code make sure to save the file, rebuild and source the workspace again (step 3 above).
+Upon making changes to the code make sure to save the file, rebuild and source the workspace again (step 3 & 4 above).
