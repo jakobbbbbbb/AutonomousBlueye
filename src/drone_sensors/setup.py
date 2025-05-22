@@ -26,6 +26,7 @@ setup(
             'blueye_image_simple = drone_sensors.blueye_image_simple:main',
             'BluEye_Pose = drone_sensors.BluEye_Pose:main',
             'BluEye_Force = drone_sensors.BluEye_Force:main',
+            'BluEye_Led = drone_sensors.BluEye_LED:main',
         ],
     },
 )

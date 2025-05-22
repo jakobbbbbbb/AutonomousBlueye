@@ -37,7 +37,9 @@ setup(
             'MarineSnowRemoval = image_prosessing.MarineSnowRemoval:main',
             'Canny_yolo = image_prosessing.Canny_yolo:main',
             'object_detection = image_prosessing.Object_detection:main',
-            'combined_detection = image_prosessing.Combined_detection:main',
+            'combined_detection = image_prosessing.combined_detection:main',
+            'transitionpiece_monitor = image_prosessing.transitionpiece_monitor:main',
+            'video_to_topic = image_prosessing.video_to_topic:main',
         ],
     },
 )

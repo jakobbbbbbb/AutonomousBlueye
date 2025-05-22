@@ -6,6 +6,7 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch_ros.actions import Node
 from launch_ros.actions import LifecycleNode
+import cv2
 
 
 def generate_launch_description():
@@ -38,6 +39,12 @@ def generate_launch_description():
         executable='laptop_camera',
         name='laptop_camera',
         parameters=[{"video_device": "/dev/video0"}]
+    )
+    Blueye_led = Node(
+        package='drone_sensors',
+        #executable='BluEye_LED',
+        executable='BluEye_Led',
+        name='led_node'
     )
     Chain_pos_canny = Node(
         package='image_prosessing',
@@ -121,15 +128,14 @@ def generate_launch_description():
 
     Video_topic = Node(
         package='experimental',
-        # executable='Video_to_topic_no_trackbar',
         executable='Video_to_topic',
-        name = 'video_topic'
+        name='video_topic'
     )
 
     Desired_velocity = Node(
         package='control',
         executable='desired_velocity',
-        name = 'Chain_controller'
+        name='Chain_controller'
     )
 
     Desired_velocity_test = Node(
@@ -169,17 +175,13 @@ def generate_launch_description():
     yolov5_ros = launch_ros.actions.Node(
         package="yolov5_ros",
         executable="yolov5_ros",
-        parameters=[
-            {"view_img": True},
-            {"input_topic": "/image_raw"},
-            {"imgsz": 416},
-            {"image_size": [960, 540]},
-            {"classes": {"value": [0]}},  # MooringLine class, wrapped in dict
-            {"conf_thres": 0.25},
-            {"iou_thres": 0.45},
-            {"weights": os.path.join(get_package_share_directory('yolov5_ros'), "yolov5_ros/config/mooring.pt")},
-            {"data": os.path.join(get_package_share_directory('yolov5_ros'), "yolov5_ros/data/mooring.yaml")},
-        ],
+        parameters=[{
+            'weights': os.path.join(yolox_ros_share_dir, 'config', 'mooring_v2.pt'),
+            'data': os.path.join(yolox_ros_share_dir, 'data', 'mooring_v2.yaml'),
+            'conf_thres': 0.25,
+            'iou_thres': 0.45,
+            'view_img': True,
+        }],
         output="screen",
     )
 
@@ -196,7 +198,7 @@ def generate_launch_description():
     )
 
     # Add the new combined detection node
-    combined_detection = launch_ros.actions.Node(
+    combined_detection = Node(
         package="image_prosessing",
         executable="combined_detection",
         name="combined_detection",
@@ -210,13 +212,14 @@ def generate_launch_description():
         #Blueye_pose,
         #Blueye_Force,
         #Blueye_camera,
+        #Blueye_led,
 
         Video_topic,        # Video source first
         #MarineSnowRemoval,  # Commented out as it's replaced by Canny_yolo
         #Canny_yolo,         # Commented out as it's replaced by object_detection
         #Object_detection,   # New combined detection node
         yolov5_ros,         #YOLO detection
-        combined_detection,  #Add this after yolov5_ros
+        combined_detection,  
         Desired_velocity,   #Control
 
         #Image_test,
@@ -241,3 +244,5 @@ def generate_launch_description():
         #Thresh_inside_yolo,
         #Median_inside_yolo,
     ])
+
+    cv2.destroyAllWindows()

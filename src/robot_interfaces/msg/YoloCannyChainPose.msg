@@ -1,6 +1,5 @@
-float64 mid_x
-float64 mid_y
-float64 angle_degrees
+float64[] data  # To store [mid_x, mid_y, angle_degrees, width]
+bool shackle_detected
 string detection_type
-float64 width
+string turn_direction
 

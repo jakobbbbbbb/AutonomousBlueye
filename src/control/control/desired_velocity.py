@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from robot_interfaces.msg import DesiredVelocity, ThreshChainPos, CannyChainPos, YoloCannyChainPose
+from robot_interfaces.msg import DesiredVelocity, ThreshChainPos, CannyChainPos, YoloCannyChainPose, BoundingBoxes
 import cv2
 import numpy as np
 import threading
 from geometry_msgs.msg import Quaternion
-from std_msgs.msg import Float32
+from std_msgs.msg import Float32, Bool
 import csv
 import os
 import time
@@ -24,334 +24,510 @@ class ChainPosController(Node):
         self.led_publisher = self.create_publisher(Float32, '/set_led_brightness', 10)
         self.frame_brightness_pub = self.create_publisher(Float32, '/frame_brightness', 10)
 
-        # Subscribers
-        self.current_subscription = None  # Initialized as None to handle the zero output state.
-        self.current_topic = 'ZERO_OUTPUT'  # No topic is initially selected.
+        # Initialize desired_vel object
         self.desired_vel = DesiredVelocity()
-        self.desired_led = 0.0
+        self.desired_vel.surge = 0.0
+        self.desired_vel.sway = 0.0
+        self.desired_vel.heave = 0.0
+        self.desired_vel.yaw = 0.0
 
-        # Initializations
-        self.last_normalized_mid_x = 0
-        self.current_depth = 0.0
-        self.reached_target_depth = False
-        self.angle_rad = 0.0
+        # Control values dictionary
+        self.control_values = {
+            'surge': 0.0,
+            'sway': 0.0,
+            'heave': 0.0,
+            'yaw': 0.0
+        }
 
-        # Failsafe initialization
+        # Line control parameters
+        self.desired_width = 150  # Default desired width
+        self.width_threshold = 20  # Minimum width to consider line visible
+        self.width = 0
         self.line_lost_time = None
         self.failsafe_triggered = False
         self.failsafe_timeout = 20
+        self.last_normalized_mid_x = 0
+        self.reached_target_depth = False
+        self.desired_depth = 50  # Default desired depth
 
-        # LED and frame brightness initialization
-        self.current_brightness = 0.0 
-        self.frame_brightness = 128.0 # dummy value
-        self.last_led_brightness = 0.0
-
-        # Logging stuff
-        self.log_file = "pid_log.csv"
-        self.write_header()
-
-        # Adding depth from BluEye_Pose.py
-        self.depth_sub = self.create_subscription(
-            Quaternion,
-            'BlueyePose',
-            self.depth_callback,
-            10
-        )
-
-        # Adding LED brightness from Blueye_LED.py
-        self.led_brightness_sub = self.create_subscription(
-            Float32,
-            '/led_brightness',
-            self.led_callback,
-            10
-        )
-
-        # Adding mean frame brightness from MarineSnowRemoval.py
-        self.frame_brightness_sub = self.create_subscription(
-            Float32,
-            '/frame_brightness',
-            self.frame_brightness_callback,
-            10
-        )
-
-        # Adding mooring line angle
-        self.line_angle = self.create_subscription(
-            Float32,
-            '/line_angle',
-            self.line_angle_callback,
-            10
-        )
+        # Log file setup
+        self.log_dir = os.path.join(os.path.expanduser('~'), 'logs')
+        os.makedirs(self.log_dir, exist_ok=True)
+        self.log_file = os.path.join(self.log_dir, 'control_log.csv')
         
+        # Initialize log file with headers if it doesn't exist
+        if not os.path.exists(self.log_file):
+            with open(self.log_file, 'w', newline='') as file:
+                writer = csv.writer(file)
+                writer.writerow(['timestamp', 'surge', 'sway', 'heave', 'yaw', 'depth', 'yaw_angle', 'desired_depth','desired_width', 'width'])
+
+        # Available topics and current topic
+        self.topics = {
+            0: 'ZERO_OUTPUT',
+            1: '/thresh_chain_pos',
+            2: '/canny_chain_pos',
+            3: '/YoloCannyChainPose'
+        }
+        self.current_topic = 'ZERO_OUTPUT'
+        self.current_subscription = None
+        
+        # Subscribers
+        self.depth_sub = self.create_subscription(Quaternion, 'BlueyePose', self.depth_callback, 10)
+        self.led_brightness_sub = self.create_subscription(Float32, '/set_led_brightness', self.led_brightness_callback, 10)
+        self.frame_brightness_sub = self.create_subscription(Float32, '/frame_brightness', self.frame_brightness_callback, 10)
+        self.line_angle = self.create_subscription(Float32, '/line_angle', self.line_angle_callback, 10)
+        self.reverse_sub = self.create_subscription(Bool, '/reverse_command', self.reverse_callback, 10)
+        self.bbox_sub = self.create_subscription(BoundingBoxes, '/yolov5/bounding_boxes', self.bbox_callback, 10)
+
+        # Initialize variables
+        self.current_depth = 0.0
+        self.frame_brightness = 128.0
+        self.desired_led = 0.5
+        self.angle_rad = 0.0
+        self.shackle_detected = False
+        self.heave_direction = 1  # -1 for up, 1 for down
+        self.shackle_action = None  # 'ned', 'opp', eller None
+
+        # Control gains
         self.surge_gain = 1.0
         self.sway_gain = 1.0
         self.heave_gain = 1.0
         self.yaw_gain = 1.0
+
+        # Start GUI in a separate thread
         self.start_gui()
 
+        # Added for mouse callback
+        self.ned_rect = (10, 550, 200, 60)
+        self.opp_rect = (220, 550, 200, 60)
+        self.last_mouse_event = None
 
-    def write_header(self):
-            """ Skriver en header til loggfilen. """
-            if not os.path.exists(self.log_file):
-                with open(self.log_file, 'w', newline='') as file:
-                    writer = csv.writer(file)
-                    writer.writerow(["Time", "Surge", "Sway", "Heave", "Yaw", "Depth", "Yaw Angle", "Desired Depth"])
-    
-    
+        self.inspection_mode = False
+        self.inspection_target_width = None
+        self.original_desired_width = self.desired_width
+        self.inspection_rect = (430, 550, 200, 60)
+
     def switch_subscription(self, index):
-        topic_options = {0: 'ZERO_OUTPUT', 1: '/CannyChainPos', 2: '/ThreshChainPos', 3: '/mooring_line_data'}
-        topic = topic_options.get(index, 'ZERO_OUTPUT')  # Default to ZERO_OUTPUT if not specified.
-
+        """Switch the current subscription to a different topic"""
+        topic = self.topics.get(index, 'ZERO_OUTPUT')
+        
         if topic == 'ZERO_OUTPUT':
             if self.current_subscription is not None:
                 self.destroy_subscription(self.current_subscription)
                 self.current_subscription = None
-            # Explicitly cast 0 to float to ensure type consistency.
             self.publish_velocity(0.0, 0.0, 0.0, 0.0)
             self.current_topic = 'ZERO_OUTPUT'
         else:
             if self.current_topic == 'ZERO_OUTPUT' or self.current_subscription is None:
-                # Create a new subscription if coming from ZERO_OUTPUT or if it's the initial setup.
                 self.create_new_subscription(topic)
             elif self.current_topic != topic:
                 self.destroy_subscription(self.current_subscription)
                 self.create_new_subscription(topic)
 
-
     def create_new_subscription(self, topic):
-        # Creates a new subscription based on the topic.
-        if topic == '/CannyChainPos':
-            self.current_subscription = self.create_subscription(CannyChainPos, topic, self.chain_pos_callback, 10)
-        elif topic == '/ThreshChainPos':
-            self.current_subscription = self.create_subscription(ThreshChainPos, topic, self.chain_pos_callback, 10)
-        elif topic == '/mooring_line_data':
-            self.current_subscription = self.create_subscription(YoloCannyChainPose, topic, self.chain_pos_callback, 10)
+        """Create a new subscription based on the topic"""
+        if topic == '/thresh_chain_pos':
+            self.current_subscription = self.create_subscription(
+                ThreshChainPos,
+                topic,
+                self.thresh_callback,
+                10)
+        elif topic == '/canny_chain_pos':
+            self.current_subscription = self.create_subscription(
+                CannyChainPos,
+                topic,
+                self.canny_callback,
+                10)
+        elif topic == '/YoloCannyChainPose':
+            self.current_subscription = self.create_subscription(
+                YoloCannyChainPose,
+                topic,
+                self.mooring_line_callback,
+                #self.line_control,
+                10)
         self.current_topic = topic
+        self.get_logger().info(f'Switched to topic: {topic}')
 
+    def thresh_callback(self, msg):
+        """Handle threshold-based chain position data"""
+        try:
+            # Extract values from data array: [mid_x, mid_y, angle_degrees]
+            if len(msg.data) >= 3:
+                mid_x = msg.data[0]
+                mid_y = msg.data[1]
+                angle_degrees = msg.data[2]
+                
+                # Calculate control values from normalized coordinates [0,1]
+                # Convert to [-1,1] range for control
+                self.control_values['sway'] = (mid_x - 0.5) * 2 * self.sway_gain
+                self.control_values['yaw'] = (angle_degrees / 90.0) * self.yaw_gain
+                self.control_values['heave'] = (mid_y - 0.5) * 2 * self.heave_gain * self.heave_direction
+                self.control_values['surge'] = 0.5 * self.surge_gain
 
-    def update_gains_from_trackbars(self):
-        #between 0 and 2
-        self.surge_gain = cv2.getTrackbarPos("Surge Gain", 'Gain') / 10.0
-        self.sway_gain = cv2.getTrackbarPos("Sway Gain", 'Gain') / 10.0
-        self.heave_gain = cv2.getTrackbarPos("Heave Gain", 'Gain') / 10.0   
-        self.yaw_gain = cv2.getTrackbarPos("Yaw Gain", 'Gain') / 10.0
-        self.desired_width = cv2.getTrackbarPos("Desired Line Width", 'Gain') * 10
-        self.desired_depth = cv2.getTrackbarPos("Depth Rating", 'Gain')
-        width_msg = Float32()
-        width_msg.data = float(self.desired_width)
-        self.publish_desired_width(width_msg)
+                # Publish velocity
+                self.publish_velocity(
+                    self.control_values['surge'],
+                    self.control_values['sway'],
+                    self.control_values['yaw'],
+                    self.control_values['heave']
+                )
+            else:
+                self.get_logger().error("Received data array with insufficient elements in thresh_callback")
+        except Exception as e:
+            self.get_logger().error(f"Error in thresh_callback: {str(e)}")
 
+    def canny_callback(self, msg):
+        """Handle Canny-based chain position data"""
+        try:
+            # Extract values from data array: [mid_x, mid_y, angle_degrees]
+            if len(msg.data) >= 3:
+                mid_x = msg.data[0]
+                mid_y = msg.data[1]
+                angle_degrees = msg.data[2]
+                
+                # Calculate control values from normalized coordinates [0,1]
+                # Convert to [-1,1] range for control
+                self.control_values['sway'] = (mid_x - 0.5) * 2 * self.sway_gain
+                self.control_values['yaw'] = (angle_degrees / 90.0) * self.yaw_gain
+                self.control_values['heave'] = (mid_y - 0.5) * 2 * self.heave_gain * self.heave_direction
+                self.control_values['surge'] = 0.5 * self.surge_gain
+
+                # Publish velocity
+                self.publish_velocity(
+                    self.control_values['surge'],
+                    self.control_values['sway'],
+                    self.control_values['yaw'],
+                    self.control_values['heave']
+                )
+            else:
+                self.get_logger().error("Received data array with insufficient elements in canny_callback")
+        except Exception as e:
+            self.get_logger().error(f"Error in canny_callback: {str(e)}")
+
+    def mooring_line_callback(self, msg):
+        """Handle mooring line data messages"""
+        try:
+            # Update shackle detection status from the message
+            self.shackle_detected = msg.shackle_detected
+            self.get_logger().info(f"Shackle detected: {self.shackle_detected}")
+            # Reset shackle_action if shackle is not detected
+            if not self.shackle_detected:
+                self.shackle_action = None
+            
+            if len(msg.data) >= 4:
+                # Extract values from data array: [centered_x, centered_y, angle_degrees, width]
+                centered_x = msg.data[0]
+                centered_y = msg.data[1]
+                angle_degrees = msg.data[2]
+                width = msg.data[3]
+                self.width = width
+                # Calculate normalized mid_x
+                normalized_mid_x = centered_x / 960
+                width_threshold = max(self.desired_width, 1)  # Prevent divide-by-zero
+                
+                # Set default values
+                surge = 0.0
+                sway = 0.0
+                heave = 0.0
+                yaw = 0.0
+                
+                # Update last known position if the object is visible
+                if width > 20:
+                    self.line_lost_time = None
+                    self.failsafe_triggered = False
+                    self.last_normalized_mid_x = normalized_mid_x
+                    
+                    sway = normalized_mid_x * self.sway_gain
+                    surge = (1 - width / width_threshold) * self.surge_gain if width <= width_threshold else -((width - width_threshold) / 200.0) * self.surge_gain
+                    yaw = normalized_mid_x * self.yaw_gain
+
+                    # Inspection mode løkke
+                    if self.inspection_mode:
+                        if width >= self.inspection_target_width:
+                            self.desired_width = self.original_desired_width
+                            cv2.setTrackbarPos("Desired Width", 'Control', self.desired_width // 10)
+                            self.inspection_mode = False
+                            self.get_logger().info("Inspection finished, back to original desired width.")
+                        heave = self.heave_direction * abs(self.heave_gain * np.cos(np.abs(np.deg2rad(angle_degrees))))
+                    elif self.shackle_detected:
+                        heave = self.heave_direction * abs(self.heave_gain * np.cos(np.abs(np.deg2rad(angle_degrees ))))
+                    else:
+                        heave = self.heave_direction * abs(self.heave_gain * np.cos(np.abs(np.deg2rad(angle_degrees))))
+                else:
+                    now = time.time()
+                    if self.line_lost_time is None:
+                        self.line_lost_time = now
+                    
+                    if (now - self.line_lost_time) > self.failsafe_timeout and not self.failsafe_triggered:
+                        self.failsafe_triggered = True
+                        self.failsafe_mode()
+                
+                # Update control_values dictionary for GUI display
+                self.control_values['surge'] = surge
+                self.control_values['sway'] = sway
+                self.control_values['heave'] = heave
+                self.control_values['yaw'] = yaw
+                
+                # Log control values
+                self.get_logger().info(
+                    f"Control values - "
+                    f"Surge: {surge:.3f}, "
+                    f"Sway: {sway:.3f}, "
+                    f"Yaw: {yaw:.3f}, "
+                    f"Heave: {heave:.3f}, "
+                    f"Width: {width:.1f}px"
+                    f"Angle: {angle_degrees:.1f}°"
+                )
+                
+                # Publish velocity
+                self.publish_velocity(surge, sway, yaw, heave)
+            else:
+                self.get_logger().error("Received data array with insufficient elements")
+        except Exception as e:
+            self.get_logger().error(f"Error in mooring_line_callback: {str(e)}")
+
+    def bbox_callback(self, msg):
+        """Handle bounding box messages"""
+        # Remove redundant shackle detection cosce it's now handled by YoloCannyChainPose
+        pass
 
     def start_gui(self):
+        """Start GUI in a separate thread"""
         threading.Thread(target=self.setup_gui, daemon=True).start()
 
-
     def setup_gui(self):
-        cv2.namedWindow('Gain', cv2.WINDOW_NORMAL)
-        cv2.resizeWindow('Gain', 600, 600)
+        """Setup GUI window with trackbars and display"""
+        cv2.namedWindow('Control', cv2.WINDOW_NORMAL)
+        cv2.resizeWindow('Control', 600, 800)
 
-        cv2.createTrackbar("Surge Gain", 'Gain', 5, 20, nothing)
-        cv2.createTrackbar("Sway Gain", 'Gain', 10, 20, nothing)
-        cv2.createTrackbar("Heave Gain", 'Gain', 10, 20, nothing)
-        cv2.createTrackbar("Yaw Gain", 'Gain', 10, 100, nothing)
-        cv2.createTrackbar("Desired Line Width", 'Gain', 7, 10, nothing) # Set default to 70
-        cv2.createTrackbar("Depth Rating", 'Gain', 50, 100, nothing) # Depthfor turnaround
-        cv2.createTrackbar("Toggle Topic", 'Gain', 0, 3, lambda x: self.switch_subscription(x))
+        # Create trackbars
+        cv2.createTrackbar("Surge Gain", 'Control', 5, 20, nothing)
+        cv2.createTrackbar("Sway Gain", 'Control', 10, 20, nothing)
+        cv2.createTrackbar("Heave Gain", 'Control', 3, 20, nothing)
+        cv2.createTrackbar("Yaw Gain", 'Control', 2, 100, nothing)
+        cv2.createTrackbar("Desired Width", 'Control', 15, 30, nothing)
+        cv2.createTrackbar("LED Brightness", 'Control', 50, 100, nothing)
+        cv2.createTrackbar("Desired Depth", 'Control', 50, 100, nothing)
+        cv2.createTrackbar("Heave Direction (0:Down 1:Up)", 'Control', 0, 1, self.heave_direction_callback)
+        cv2.createTrackbar("Toggle Topic", 'Control', 0, 3, lambda x: self.switch_subscription(x))
+
+        cv2.setMouseCallback('Control', self.mouse_callback)
 
         while True:
-            self.update_gains_from_trackbars()  # Update gain values based on trackbars
-            canvas = np.zeros((400, 600, 3), dtype=np.uint8)
-            # Increased font size from 0.7 to 1.0 and added more vertical space between lines
-            font_scale = 1.0  # Larger font size for increased text size
-            line_space = 40  # Increased space between lines
-
-            # Layout offsets
+            self.update_gains_from_trackbars()
+            canvas = np.zeros((800, 600, 3), dtype=np.uint8)
+            
+            # Layout settings
             font_scale = 1.0
             line_space = 40
-            start_y = 150 # Shifting all text up a bit
+            start_y = 150
 
-            # Subscriber info
-            cv2.putText(canvas, f"Subscriber: {self.current_topic}", (10, start_y - line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
+            # Display information
+            cv2.putText(canvas, f"Current Topic: {self.current_topic}", (10, start_y - line_space), 
+                       cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
 
-            # Depth info (Line 1)
-            cv2.putText(canvas, f"Depth Now: {self.current_depth:.2f}", (10, start_y), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
-            cv2.putText(canvas, f"Depth Rating: {self.desired_depth}", (300, start_y), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
+            # Control Parameters
+            cv2.putText(canvas, f"Depth: {self.current_depth:.2f}", (10, start_y), 
+                       cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
+            cv2.putText(canvas, f"Desired Depth: {self.desired_depth}", (300, start_y), 
+                       cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
 
-            # Surge info (Line 2)
-            cv2.putText(canvas, f"Surge: {self.desired_vel.surge:.2f}", (10, start_y + 1 * line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
-            cv2.putText(canvas, f"Surge Gain: {self.surge_gain:.1f}", (300, start_y + 1 * line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
+            # Control Values and Gains
+            for i, param in enumerate(['surge', 'sway', 'heave', 'yaw']):
+                y_pos = start_y + (i + 1) * line_space
+                cv2.putText(canvas, f"{param.capitalize()}: {self.control_values[param]:.2f}", 
+                           (10, y_pos), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
+                cv2.putText(canvas, f"{param.capitalize()} Gain: {getattr(self, f'{param}_gain'):.1f}", 
+                           (300, y_pos), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
 
-            # Sway info (Line 3)
-            cv2.putText(canvas, f"Sway: {self.desired_vel.sway:.2f}", (10, start_y + 2 * line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
-            cv2.putText(canvas, f"Sway Gain: {self.sway_gain:.1f}", (300, start_y + 2 * line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
+            # Additional Parameters
+            y_pos = start_y + 5 * line_space
+            cv2.putText(canvas, f"Desired Width: {self.desired_width}", (10, y_pos), 
+                       cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
 
-            # Heave info (Line 4)
-            cv2.putText(canvas, f"Heave: {self.desired_vel.heave:.2f}", (10, start_y + 3 * line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
-            cv2.putText(canvas, f"Heave Gain: {self.heave_gain:.1f}", (300, start_y + 3 * line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
+            y_pos = start_y + 6 * line_space
+            cv2.putText(canvas, f"LED Brightness: {self.desired_led:.2f}", (10, y_pos), 
+                       cv2.FONT_HERSHEY_SIMPLEX, font_scale, (0, 255, 255), 2)
 
-            # Yaw info (Line 5)
-            cv2.putText(canvas, f"Yaw: {self.desired_vel.yaw:.2f}", (10, start_y + 4 * line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
-            cv2.putText(canvas, f"Yaw Gain: {self.yaw_gain:.1f}", (300, start_y + 4 * line_space), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
+            # Shackle Detection Status
+            y_pos = start_y + 7 * line_space
+            status_color = (0, 255, 0) if self.shackle_detected else (0, 0, 255)
+            cv2.putText(canvas, f"Shackle Detected: {'Yes' if self.shackle_detected else 'No'}", 
+                       (10, y_pos), cv2.FONT_HERSHEY_SIMPLEX, font_scale, status_color, 2)
 
-            cv2.putText(canvas, f"LED Brightness: {self.current_brightness:.2f}", (10, start_y + 5 * line_space),
-            cv2.FONT_HERSHEY_SIMPLEX, font_scale, (0, 255, 255), 2)
+            # Heave Direction
+            y_pos = start_y + 8 * line_space
+            cv2.putText(canvas, f"Heave Direction: {'Up' if self.heave_direction == -1 else 'Down'}", 
+                       (10, y_pos), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), 2)
 
-            cv2.imshow('Gain', canvas)
+            self.handle_shackle_buttons(canvas, y_pos)
+
+            cv2.imshow('Control', canvas)
             if cv2.waitKey(50) == 27:  # Exit on ESC
                 break
 
-    def chain_pos_callback(self, msg):
-        try:
-            # Log only essential received message info
-            self.get_logger().info(
-                f"\nReceived message on {self.current_topic}:\n"
-                f"  mid_x: {msg.mid_x:.2f}\n"
-                f"  mid_y: {msg.mid_y:.2f}\n"
-                f"  angle_degrees: {msg.angle_degrees:.2f}\n"
-                f"  detection_type: {msg.detection_type}\n"
-                f"  width: {msg.width:.2f}"
-            )
+    def update_gains_from_trackbars(self):
+        """Update control gains and parameters from trackbar values"""
+        self.surge_gain = cv2.getTrackbarPos("Surge Gain", 'Control') / 10.0
+        self.sway_gain = cv2.getTrackbarPos("Sway Gain", 'Control') / 10.0
+        self.heave_gain = cv2.getTrackbarPos("Heave Gain", 'Control') / 10.0
+        self.yaw_gain = cv2.getTrackbarPos("Yaw Gain", 'Control') / 10.0
+        self.desired_width = cv2.getTrackbarPos("Desired Width", 'Control') * 10
+        self.desired_depth = cv2.getTrackbarPos("Desired Depth", 'Control')
+        self.desired_led = cv2.getTrackbarPos("LED Brightness", 'Control') / 100.0
 
-            # Line following control
-            surge, sway, yaw, heave = self.line_control(msg)
-            brightness = self.led_control()
-            self.publish_velocity(surge, sway, yaw, heave)
-            self.publish_led(brightness)
-        except Exception as e:
-            self.get_logger().error(f"Error in chain_pos_callback: {str(e)}")
+        # Publish desired width
+        width_msg = Float32()
+        width_msg.data = float(self.desired_width)
+        self.desired_width_publisher.publish(width_msg)
+
+    def heave_direction_callback(self, value):
+        """Handle heave direction changes from trackbar"""
+        self.heave_direction = 1 if value == 0 else -1
+        self.get_logger().info(f"Heave direction changed to: {'Up' if self.heave_direction == -1 else 'Down'}")
 
     def publish_velocity(self, surge, sway, yaw, heave):
-        # Store the values for display in GUI
+        """Publish velocity commands"""
         self.desired_vel.surge = surge
         self.desired_vel.sway = sway
         self.desired_vel.heave = heave
         self.desired_vel.yaw = yaw
-        
-        # Publish the velocity message
         self.vel_publisher.publish(self.desired_vel)
 
-        # Log only essential published values
-        self.get_logger().info(
-            f"Published:\n"
-            f"  Surge: {surge:.2f}\n"
-            f"  Sway: {sway:.2f}\n"
-            f"  Yaw: {yaw:.2f}\n"
-            f"  Heave: {heave:.2f}"
-        )
+        try:
+            # Log PID-data to CSV-file
+            current_time = self.get_clock().now().to_msg().sec
+            depth = self.current_depth
+            yaw_angle = self.angle_rad
 
-        # Log PID-data to CSV-fil
-        current_time = self.get_clock().now().to_msg().sec
-        depth = self.current_depth
-        yaw_angle = self.pose["yaw"] if hasattr(self, "pose") else None
+            with open(self.log_file, 'a', newline='') as file:
+                self.get_logger().info(f"Writing to log file: {self.log_file}")
+                writer = csv.writer(file)
+                writer.writerow([current_time, surge, sway, heave, yaw, depth, yaw_angle, self.desired_depth, self.desired_width, self.width])
+        except Exception as e:
+            self.get_logger().error(f"Error writing to log file: {str(e)}")
 
-        with open(self.log_file, 'a', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow([current_time, surge, sway, heave, yaw, depth, yaw_angle, self.desired_depth])
-
-    def publish_led(self, brightness):
-        led_msg = Float32()
-        led_msg.data = brightness
-        self.led_publisher.publish(led_msg)
-
-    # Supplementary functions
-    def line_control(self, msg):
-        # Calculate normalized mid_x (scale from -1 to 1)
-        normalized_mid_x = msg.mid_x / 480.0  # msg.mid_x is already relative to center, just normalize to [-1,1]
-        
-        # Use the actual width from the message
-        width = msg.width
-        self.angle_rad = np.radians(msg.angle_degrees)
-            
-        width_threshold = max(self.desired_width, 1)  # Prevent divide-by-zero   
-        desired_depth = self.desired_depth
-        current_depth = self.current_depth
-
-        # Set default values
-        surge = 0.0
-        sway = 0.0
-        heave = 0.0
-        yaw = 0.0
-        
-        # Only process if we have valid detection
-        if width > 0:  # Changed threshold since we're using actual width now
-            self.line_lost_time = None
-            self.failsafe_triggered = False
-            self.last_normalized_mid_x = normalized_mid_x
-            
-            # Calculate control values with width-specific adjustments
-            sway = normalized_mid_x * self.sway_gain
-            
-            # Adjust surge based on detection type
-            if msg.detection_type == "YOLO":
-                # More conservative surge for YOLO detections
-                surge = (1 - width / width_threshold) * self.surge_gain * 0.7
-            else:
-                # Standard surge calculation for traditional detection
-                surge = (1 - width / width_threshold) * self.surge_gain if width <= width_threshold else -((width - width_threshold) / 200.0) * self.surge_gain
-            
-            # Reduced yaw gain and made it detection-type dependent
-            yaw_multiplier = 0.005 if msg.detection_type == "YOLO" else 0.01
-            yaw = self.yaw_gain * normalized_mid_x * yaw_multiplier
-            
-            # Handle depth control
-            if not self.reached_target_depth:
-                heave = self.heave_gain * np.sin(np.abs(self.angle_rad))
-                if current_depth >= desired_depth:
-                    self.reached_target_depth = True
-            else:
-                heave = -self.heave_gain * np.sin(np.abs(self.angle_rad))
-            
-            heave = np.clip(heave, -1.0, 1.0)
-        else:
-            now = time.time()
-            if self.line_lost_time is None:
-                self.line_lost_time = now
-                self.get_logger().warn("Line detection lost!")
-            
-            if (now - self.line_lost_time) > self.failsafe_timeout and not self.failsafe_triggered:
-                self.failsafe_triggered = True
-                self.get_logger().warn("Failsafe timeout reached - activating failsafe mode")
-                self.failsafe_mode()
-                
-        return surge, sway, yaw, heave
-
-    def failsafe_mode(self):
-        self.get_logger().warn("Failsafe Activated: Aborting mission")
-        surge = 0.0
-        sway = 0.0
-        # If the object is out of view, set yaw based on the last known side
-        yaw = 0.1 if self.last_normalized_mid_x > 0 else -0.1
-        heave = -0.3 # starting ascent
-        self.publish_velocity(surge, sway, yaw, heave)
-
-    def led_control(self):
-        # NOTE: LED will power on based on the mean brightness of input frame
-        frame_brightness = self.frame_brightness
-        if frame_brightness < 100:
-            brightness = 1.0
-        elif frame_brightness < 130:
-            brightness = 0.6
-        else:
-            brightness = 0.0
-
-        return brightness
-
-
-    # Callback functions
     def depth_callback(self, msg):
-        self.current_depth = msg.w  # Extract depth from the subscription
+        """Handle depth data"""
+        self.current_depth = msg.w
 
-    def led_callback(self, msg):
-        self.current_brightness = msg.data # Extract LED brightness from subscription
+    def led_brightness_callback(self, msg):
+        """Handle LED brightness updates"""
+        self.desired_led = msg.data
 
     def frame_brightness_callback(self, msg):
+        """Handle frame brightness updates"""
         self.frame_brightness = msg.data
 
     def line_angle_callback(self, msg):
-        self.angle_rad = msg.data
+        """Handle line angle updates"""
+        self.angle_rad = msg.data[2]
 
-    def publish_desired_width(self, msg): # Publish desired depth
-        self.desired_width_publisher.publish(msg)
+    def reverse_callback(self, msg):
+        """Handle reverse command"""
+        if msg.data:
+            self.heave_direction *= -1
 
+    def line_control(self, msg):
+        """Control ROV based on line detection"""
+        try:
+            # Extract values from data array
+            if len(msg.data) >= 4:
+                mid_x = msg.data[0]
+                mid_y = msg.data[1]
+                angle_degrees = msg.data[2]
+                width = msg.data[3]
+                
+                # Normalize mid_x to [0,1]
+                normalized_mid_x = mid_x / 960
+                width_threshold = max(self.desired_width, 1)  # Prevent divide-by-zero
+                
+                # Set default values
+                surge = 0.0
+                sway = 0.0
+                heave = 0.0
+                yaw = 0.0
+                
+                # Update last known position if the object is visible
+                if width > self.width_threshold:
+                    self.line_lost_time = None
+                    self.failsafe_triggered = False
+                    self.last_normalized_mid_x = normalized_mid_x
+                    
+                    # Calculate control values
+                    sway = (normalized_mid_x)* self.sway_gain
+                    surge = (1 - width / width_threshold) * self.surge_gain if width <= width_threshold else -((width - width_threshold) / 200.0) * self.surge_gain
+                    yaw = normalized_mid_x * self.yaw_gain
+                    
+                    # Depth control
+                    if not self.reached_target_depth:
+                        heave = self.heave_gain * np.cos(np.abs(self.angle_rad))
+                        if self.current_depth >= self.desired_depth:
+                            self.reached_target_depth = True
+                            self.get_logger().info(f"Reached desired depth {self.current_depth:.2f}m → Switching to ascent.")
+                    else:
+                        heave = -self.heave_gain * np.cos(np.abs(self.angle_rad))
+                    
+                    heave = np.clip(heave, -1.0, 1.0)
+                else:
+                    now = time.time()
+                    if self.line_lost_time is None:
+                        self.line_lost_time = now
+                    
+                    if (now - self.line_lost_time) > self.failsafe_timeout and not self.failsafe_triggered:
+                        self.failsafe_triggered = True
+                        self.failsafe_mode()
+                
+                return surge, sway, yaw, heave
+            else:
+                self.get_logger().error("Received data array with insufficient elements in line_control")
+                return 0.0, 0.0, 0.0, 0.0
+        except Exception as e:
+            self.get_logger().error(f"Error in line_control: {str(e)}")
+            return 0.0, 0.0, 0.0, 0.0
+
+    def failsafe_mode(self):
+        """Handle failsafe mode when line is lost"""
+        self.get_logger().warn("Failsafe Activated: Aborting mission")
+        surge = 0.0
+        sway = 0.0
+        yaw = 0.1 if self.last_normalized_mid_x > 0 else -0.1
+        heave = 0.3  # Start ascent
+        self.publish_velocity(surge, sway, yaw, heave)
+
+    def handle_shackle_buttons(self, canvas, y_pos):
+        if self.shackle_detected and self.shackle_action is None:
+            #cv2.putText(canvas, "Shackle detected! Choose handling:", (10, y_pos), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,255), 2)
+            ned_rect = self.ned_rect
+            opp_rect = self.opp_rect
+            insp_rect = self.inspection_rect
+            cv2.rectangle(canvas, ned_rect[:2], (ned_rect[0]+ned_rect[2], ned_rect[1]+ned_rect[3]), (0,255,0), -1)
+            cv2.rectangle(canvas, opp_rect[:2], (opp_rect[0]+opp_rect[2], opp_rect[1]+opp_rect[3]), (255,0,0), -1)
+            cv2.rectangle(canvas, insp_rect[:2], (insp_rect[0]+insp_rect[2], insp_rect[1]+insp_rect[3]), (0,255,255), -1)
+            cv2.putText(canvas, "Continue down", (ned_rect[0]+10, ned_rect[1]+40), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,0), 2)
+            cv2.putText(canvas, "Start ascent", (opp_rect[0]+10, opp_rect[1]+40), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,0), 2)
+            cv2.putText(canvas, "Inspection", (insp_rect[0]+10, insp_rect[1]+40), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,0), 2)
+
+    def mouse_callback(self, event, x, y, flags, param):
+        if event == cv2.EVENT_LBUTTONDOWN and self.shackle_detected and self.shackle_action is None:
+            x1, y1, w1, h1 = self.ned_rect
+            if x1 <= x <= x1 + w1 and y1 <= y <= y1 + h1:
+                self.heave_direction = 1
+                cv2.setTrackbarPos("Heave Direction (0:Down 1:Up)", 'Control', 0)
+                self.get_logger().info("User chose: Continue down")
+            x2, y2, w2, h2 = self.opp_rect
+            if x2 <= x <= x2 + w2 and y2 <= y <= y2 + h2:
+                self.heave_direction = -1
+                cv2.setTrackbarPos("Heave Direction (0:Down 1:Up)", 'Control', 1)
+                self.get_logger().info("User chose: Start ascent")
+            x3, y3, w3, h3 = self.inspection_rect
+            if x3 <= x <= x3 + w3 and y3 <= y <= y3 + h3:
+                self.inspection_mode = True
+                self.original_desired_width = self.desired_width
+                self.inspection_target_width = self.desired_width + 40
+                self.desired_width = self.inspection_target_width
+                cv2.setTrackbarPos("Desired Width", 'Control', self.desired_width // 10)
+                self.get_logger().info(f"Inspection mode: Increases desired width to {self.desired_width}")
 
 def main(args=None):
     rclpy.init(args=args)
